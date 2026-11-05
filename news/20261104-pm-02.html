@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>김민석 민주당 대표, 신천지 연합 의혹 근거 없었다며 의총서 사과…정청래 전 대표는 공개 사과 요구 · 뉴스밸런스</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7EFE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+  /* ==========================================================================
+     Editorial Minutes — 잡지 지면풍 회의록 스타일시트
+     핵심 원칙
+     - 색은 전부 CSS 변수(:root)로 선언 → 다크모드는 아래쪽에서 변수만 재정의
+     - 발언자/섹션마다 --hue, --hue-soft 색을 배정해 시각적으로 구분
+     - 곡률은 3px 정도로만 (뉴스레터형처럼 각지지도, 카드형처럼 둥글지도 않음)
+     - 원본은 Pretendard 서브셋을 폰트 파일로 직접 내장했으나, 템플릿에서는
+       용량 문제로 CDN 링크로 대체함 (오프라인이 꼭 필요하면 폰트를 다시 내장)
+     ========================================================================== */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #191C22;
+    --muted: #5C626E;
+    --faint: #8A909C;
+    --rule: #E3E6EB;
+    --rule-strong: #C9CEd6;
+    --accent: #2E5D62;
+    --accent-soft: #E4EDEC;
+    --flag: #8C5312;
+    --flag-soft: #F6ECDF;
+
+    /* 섹션/발언자 컬러 팔레트 — 필요하면 색을 더 추가하거나 값만 바꿔도 됨 */
+    --teal: #1F6A6E;      --teal-soft: #DCEDEC;
+    --indigo: #3D4E9E;    --indigo-soft: #E3E7F7;
+    --plum: #7A3F73;      --plum-soft: #F1E4EF;
+    --moss: #4A6B2A;      --moss-soft: #E6EEDC;
+    --clay: #9A4B2C;      --clay-soft: #F7E6DE;
+    --shadow: 0 1px 2px rgba(25, 28, 34, .05), 0 8px 24px -16px rgba(25, 28, 34, .25);
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+
+  /* 시스템이 다크모드면 자동 전환 (사용자가 명시적으로 라이트를 고르지 않은 경우) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+      --rule: #282C34; --rule-strong: #3A404A;
+      --accent: #83B7B2; --accent-soft: #1E2A2B;
+      --flag: #D6A354; --flag-soft: #2A2318;
+      --teal: #7FBDB9; --teal-soft: #16292A;
+      --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+      --plum: #D19BC9; --plum-soft: #2B1E29;
+      --moss: #A8C482; --moss-soft: #1E2618;
+      --clay: #E0997A; --clay-soft: #2E1D16;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    }
+  }
+  /* 사용자가 명시적으로 dark를 고른 경우(data-theme="dark") */
+  :root[data-theme="dark"] {
+    --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+    --rule: #282C34; --rule-strong: #3A404A;
+    --accent: #83B7B2; --accent-soft: #1E2A2B;
+    --flag: #D6A354; --flag-soft: #2A2318;
+    --teal: #7FBDB9; --teal-soft: #16292A;
+    --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+    --plum: #D19BC9; --plum-soft: #2B1E29;
+    --moss: #A8C482; --moss-soft: #1E2618;
+    --clay: #E0997A; --clay-soft: #2E1D16;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.72; letter-spacing: -.011em;
+    word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 50rem; margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 4vw, 2.5rem) 6rem;
+    display: flex; flex-direction: column; gap: 3.25rem;
+  }
+
+  /* 상단 마스트헤드: 라벨 + 제목 + 부제 + 참여자 롤콜 + 그라디언트 바 */
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+  .kicker { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+  .masthead::after {
+    content: ""; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal) 0 20%, var(--indigo) 20% 40%, var(--plum) 40% 60%, var(--moss) 60% 80%, var(--clay) 80% 100%);
+  }
+  h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.15; font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -.035em; }
+  .standfirst { margin: 0; color: var(--muted); font-size: 1.02rem; max-width: 38rem; }
+  .roster { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding-top: .3rem; }
+  .roster .roster-label { border: none; background: none; padding: 0 .25rem 0 0; font-weight: 600; font-size: .78rem; color: var(--ink); }
+  .roster span {
+    font-weight: 500; font-size: .8rem; font-family: var(--mono); padding: .2rem .55rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--muted); background: var(--surface);
+  }
+
+  /* 섹션: --hue 변수로 색을 지정. section.s-xxx 클래스로 색 배정 */
+  section { display: flex; flex-direction: column; gap: 1.15rem; --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  section.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  section.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  section.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  section.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  /* 섹션끼리는 .page의 기본 gap(3.25rem)보다 더 띄워서, 마스트헤드/footer 여백과 구분되게 함.
+     필요하면 margin-top 값만 조절 — 0으로 두면 다른 요소와 동일한 간격으로 돌아감 */
+  section + section { margin-top: 2rem; }
+
+  h2 {
+    font-size: 1.32rem; letter-spacing: -.025em; font-weight: 700; margin: 0;
+    padding-bottom: .75rem; border-bottom: 2px solid var(--hue);
+    display: flex; align-items: center; gap: .65rem;
+  }
+  h2 .num {
+    font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .05em;
+    color: var(--surface); background: var(--hue); border-radius: 3px; padding: .22rem .45rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  ul ul { margin-top: .5rem; padding-left: 1.1rem; }
+  li::marker { color: var(--faint); }
+  strong { font-weight: 600; }
+
+  /* 결론/요약 강조 박스 */
+  .lede {
+    background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--hue);
+    border-radius: 3px; padding: 1.4rem 1.6rem; box-shadow: var(--shadow);
+  }
+
+  /* 발언자 카드: 좌측 고정 이름/역할 라벨 + 우측 괘선 본문 */
+  .speakers { display: flex; flex-direction: column; gap: 1.6rem; }
+  .speaker {
+    display: grid; --hue: var(--teal); --hue-soft: var(--teal-soft);
+    grid-template-columns: 8.5rem 1fr; gap: 1.5rem; align-items: start;
+  }
+  .speaker.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .speaker.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  .speaker.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  .speaker.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  .speaker > header { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: .25rem; padding-top: .35rem; }
+  .speaker h3 { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.3; letter-spacing: -.02em; }
+  .speaker .role {
+    font-size: .72rem; font-weight: 600; color: var(--hue); background: var(--hue-soft);
+    border-radius: 3px; padding: .12rem .4rem; align-self: flex-start;
+  }
+  .speaker .body { border-left: 2px solid var(--hue-soft); padding-left: 1.5rem; }
+  @media (max-width: 40rem) {
+    .speaker { grid-template-columns: 1fr; gap: .7rem; }
+    .speaker > header { position: static; flex-direction: row; align-items: baseline; gap: .6rem; }
+    .speaker .body { border-left: 2px solid var(--rule); padding-left: 1rem; }
+  }
+
+  /* 검증 필요 등 짧은 라벨 플래그 */
+  .flag {
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; color: var(--flag);
+    background: var(--flag-soft); border-radius: 2px; padding: .1rem .38rem; white-space: nowrap;
+  }
+
+  h4 { margin: 1.1rem 0 0; font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  h4:first-child { margin-top: 0; }
+
+  /* 역할분담표 등 표 */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead { background: var(--hue-soft); }
+  thead th { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 500; border-bottom: 1px solid var(--rule-strong); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.n { font-family: var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; width: 2.5rem; }
+  td.who { white-space: nowrap; font-weight: 700; color: var(--hue); }
+  td.what { color: var(--muted); line-height: 1.6; }
+
+  /* 공지/마감 안내 박스 */
+  .notice { background: var(--hue-soft); border-left: 4px solid var(--hue); border-radius: 3px; padding: .9rem 1.1rem; font-size: .93rem; color: var(--ink); }
+
+  /* 미해결/확인 필요 항목 리스트 */
+  .open { list-style: none; padding: 0; gap: 0; }
+  .open li { display: grid; grid-template-columns: 1.4rem 1fr; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .open li:first-child { border-top: 1px solid var(--rule); }
+  .open .idx { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--hue); font-variant-numeric: tabular-nums; }
+  .open .note { display: block; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+
+  footer { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .04em; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+</style>
+<style>
+  .page.news { max-width: 44rem; gap: 1.5rem; }
+  .news, .s-teal { --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  .s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .s-plum { --hue: var(--plum); --hue-soft: var(--plum-soft); }
+  .s-moss { --hue: var(--moss); --hue-soft: var(--moss-soft); }
+  .s-clay { --hue: var(--clay); --hue-soft: var(--clay-soft); }
+  .crumbs { display: flex; align-items: center; justify-content: space-between; gap: .8rem; font-size: .85rem; color: var(--muted); }
+  .crumbs a { font-weight: 600; color: var(--accent); text-decoration: none; padding: .4rem 0; }
+  .n-head { display: flex; flex-direction: column; gap: .6rem; padding-bottom: 1rem; border-bottom: 3px solid var(--hue); }
+  .n-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .8rem; font-size: .8rem; color: var(--muted); }
+  .n-cat { display: inline-flex; align-items: center; gap: .3rem; font-weight: 700; color: var(--hue); }
+  .n-cat svg { width: 1rem; height: 1rem; }
+  .n-head h1 { font-size: clamp(1.35rem, 5vw, 1.9rem); line-height: 1.35; letter-spacing: -.03em; }
+  .orig { margin: 0; font-size: .82rem; color: var(--faint); }
+  .meter { display: inline-flex; gap: 2px; vertical-align: middle; margin-right: .25rem; }
+  .meter i { width: .9rem; height: .38rem; border-radius: 1px; background: var(--rule-strong); }
+  .meter.lv3 i.on { background: var(--flag); }
+  .meter.lv2 i.on { background: var(--clay); }
+  .meter.lv1 i.on { background: var(--faint); }
+  .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
+  .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
+  .block { display: flex; flex-direction: column; gap: .75rem; }
+  .block h2 { font-size: 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--hue); }
+  .stance-q { margin: 0; font-size: .95rem; font-weight: 600; }
+  .stance-q span { display: block; font-size: .72rem; font-weight: 500; color: var(--faint); letter-spacing: .08em; }
+  .note { margin: 0; font-size: .9rem; color: var(--muted); }
+  .sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .side { --side: var(--indigo); --side-soft: var(--indigo-soft); background: var(--side-soft); border-left: 3px solid var(--side);
+    border-radius: 3px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .3rem; }
+  .side-con { --side: var(--clay); --side-soft: var(--clay-soft); }
+  .side p { margin: 0; }
+  .side-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--side); font-weight: 600; }
+  .side-pos { font-weight: 700; line-height: 1.5; }
+  .side-outlets { font-size: .85rem; font-weight: 600; color: var(--side); }
+  .side-focus { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  /* 펼치기: 손가락으로 누르기 쉬운 넓은 막대 */
+  .fold { background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; }
+  .fold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .6rem 1rem;
+    font-size: .95rem; font-weight: 700; }
+  .fold summary::-webkit-details-marker { display: none; }
+  .fold summary small { font-family: var(--mono); font-size: .72rem; font-weight: 500; color: var(--faint); }
+  .fold summary::after { content: "펼치기 ▾"; margin-left: auto; font-size: .78rem; font-weight: 600; color: var(--accent); }
+  .fold[open] summary::after { content: "접기 ▴"; }
+  .fold[open] summary { border-bottom: 1px solid var(--rule); }
+  .fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .fold-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .7rem; }
+  .grp { display: flex; flex-direction: column; gap: .2rem; padding-left: .8rem; border-left: 2px solid var(--rule-strong); }
+  .grp b { font-size: .92rem; }
+  .grp .who { font-size: .82rem; font-weight: 600; color: var(--hue); }
+  .grp .what { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  .facts { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .5rem; font-size: .95rem; }
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .pager a { display: flex; flex-direction: column; gap: .15rem; padding: .7rem .85rem; border: 1px solid var(--rule); border-radius: 5px;
+    background: var(--surface); color: var(--ink); text-decoration: none; font-size: .85rem; line-height: 1.45; }
+  .pager a span { font-size: .72rem; color: var(--faint); }
+  .pager a.next { text-align: right; grid-column: 2; }
+  .sources { font-size: .8rem; color: var(--muted); }
+  .sources summary { cursor: pointer; padding: .4rem 0; }
+  .sources ul { list-style: none; padding: .4rem 0 0; margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .sources .outlet { display: inline-block; min-width: 4.6rem; font-weight: 600; }
+  .sources a { color: var(--muted); }
+  a, button, summary { -webkit-tap-highlight-color: transparent; }
+  @media (max-width: 600px) {
+    .page.news { gap: 1.15rem; padding: 1rem max(16px, env(safe-area-inset-right)) 3rem max(16px, env(safe-area-inset-left)); }
+    .lede { padding: 1rem 1.05rem; }
+    .lede p { font-size: .98rem; }
+    .sides { grid-template-columns: 1fr; }
+    .fold-body { padding: .8rem .85rem .9rem; }
+  }
+
+  /* 누를 수 있다는 게 바로 보이게: 연한 파스텔 형광펜(버터색) + 점선 밑줄. 찬반 색(초록·보라)과 겹치지 않는 색 */
+  .term { --mark: #FBEDC2; --mark-on: #F5DC93;
+    font: inherit; color: inherit; background: var(--mark); border: 0; padding: 0 .18em; margin: 0 .02em; cursor: pointer; border-radius: 6px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    text-decoration: underline dotted var(--hue); text-decoration-thickness: 1.5px; text-underline-offset: .22em; }
+  .term:hover, .term[aria-expanded="true"] { background: var(--mark-on); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .term { --mark: #4A3E22; --mark-on: #635230; } }
+  :root[data-theme="dark"] .term { --mark: #4A3E22; --mark-on: #635230; }
+  .term:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .term-hint { font-weight: 400; color: var(--faint); margin-left: .6rem; letter-spacing: 0; text-transform: none; }
+  .tip { position: absolute; z-index: 20; width: min(21rem, calc(100vw - 32px)); display: flex; flex-direction: column; gap: .35rem;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px;
+    padding: .75rem .9rem; box-shadow: 0 6px 24px rgba(0, 0, 0, .16); font-size: .88rem; line-height: 1.55; }
+  .tip[hidden] { display: none; }
+  .tip p { margin: 0; }
+  .tip-head { display: flex; align-items: baseline; gap: .5rem; }
+  .tip-tier { font-size: .72rem; color: var(--muted); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0 .35rem; }
+  .tip-def { font-weight: 600; }
+  .tip-detail { font-size: .84rem; }
+  .tip-ctx { color: var(--muted); padding-top: .35rem; border-top: 1px dashed var(--rule); }
+
+  :root {
+    --bg: #F7EFE2; --surface: #FFFAF2; --ink: #3D2B1F; --muted: #7B6250; --faint: #A89079;
+    --rule: #EBDDC9; --rule-strong: #DCC5A7; --accent: #8A5A33; --accent-soft: #F2E3CF;
+    --flag: #B65A35; --flag-soft: #F7E2D5;
+    /* 분야 색: 이름은 템플릿 그대로 두고 값만 따뜻한 색으로 (indigo=갈색, clay=캐러멜, moss=올리브, plum=로즈우드, teal=세이지) */
+    --teal: #5E8473; --teal-soft: #E2ECE3;
+    --indigo: #8A5A33; --indigo-soft: #F2E3CF;
+    --plum: #A35F78; --plum-soft: #F6E3E8;
+    --moss: #7A8A3C; --moss-soft: #EEF0D9;
+    --clay: #C27237; --clay-soft: #F9E6D3;
+    --shadow: 0 2px 4px rgba(110, 70, 30, .06), 0 10px 24px -14px rgba(110, 70, 30, .35);
+    --round: "Jua", var(--sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+      --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+      --flag: #E4906A; --flag-soft: #3A2219;
+      --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+      --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+      --clay: #F0A877; --clay-soft: #3A2516;
+      --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+    --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+    --flag: #E4906A; --flag-soft: #3A2219;
+    --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+    --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+    --clay: #F0A877; --clay-soft: #3A2516;
+    --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+  }
+  body { background: var(--bg); }
+
+  /* 둥근 글꼴: 제목·키워드·섹션 이름 */
+  h1, .t-key, .t-sub, .day-head h2, .block h2, .fold summary, .d-label b, .side-tag, .lede .label, .ed-tag, .brand { font-family: var(--round); font-weight: 400; }
+  h1 { letter-spacing: -.01em; }
+  .t-key, .t-sub { letter-spacing: 0; }
+  .kicker { font-family: var(--sans); font-weight: 600; letter-spacing: .04em; text-transform: none; color: var(--accent); }
+  .brand { display: inline-flex; align-items: center; gap: .45rem; }
+  .brand svg { width: 1em; height: 1em; filter: drop-shadow(0 2px 3px rgba(110, 70, 30, .2)); }
+  .masthead::after { height: 6px; border-radius: 999px; }
+
+  /* 동글동글: 모서리를 크게, 작은 표시는 알약 모양 */
+  .card { border-radius: 22px; border-width: 1.5px; }
+  .thumb { margin: 7px 7px 0; border-radius: 16px; border-bottom: 0; }
+  .t-num, .ed-tag, .scroll-btn, .full, .crumbs a { border-radius: 999px; }
+  .meter i { border-radius: 999px; }
+  .date-group { border-radius: 16px; padding: 3px; gap: 2px; border-width: 1.5px; }
+  .d-label { border-bottom: 0; text-align: center; padding: .2rem .4rem .1rem; }
+  .dates button, .ed-none { border-radius: 11px; justify-content: center; gap: .35rem; }
+  .dates button + button, .dates button + .ed-none, .ed-none + button { border-top: 0; }
+  .lede { border: 0; border-radius: 22px; }
+  .lede .label { display: inline-block; font-size: .85rem; letter-spacing: 0; color: var(--hue); background: var(--hue-soft);
+    border-radius: 999px; padding: .15rem .7rem; }
+  .lede .term-hint { font-family: var(--sans); font-size: .72rem; }
+  .side { border-left: 0; border-radius: 18px; }
+  /* 찬반 색: 정치 성향을 떠올리게 하는 파랑·빨강은 쓰지 않고 파스텔 초록(찬성)·보라(반대)로 구분 */
+  .side-pro { --side: #4F7D4A; --side-soft: #E2F0DC; }
+  .side-con { --side: #75589E; --side-soft: #ECE4F6; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+    :root:not([data-theme="light"]) .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  }
+  :root[data-theme="dark"] .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+  :root[data-theme="dark"] .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  .side-tag { align-self: flex-start; font-size: .82rem; letter-spacing: 0; color: var(--surface); background: var(--side);
+    border-radius: 999px; padding: .05rem .65rem; }
+  .fold { border-radius: 20px; border-width: 1.5px; }
+  .fold summary { font-size: 1.02rem; }
+  .fold[open] summary { border-bottom: 1.5px dashed var(--rule); }
+  .grp { border-left: 0; background: var(--bg); border-radius: 14px; padding: .6rem .85rem; }
+  .pager a { border-radius: 18px; }
+  .tip { border-radius: 16px; }
+  .term { border-radius: 6px; }
+  .n-head { border-bottom: 3px dotted var(--hue); }
+  .crumbs a { background: var(--surface); border: 1.5px solid var(--rule); padding: .35rem .85rem; }
+  .full { display: inline-block; background: var(--surface); border: 1.5px solid var(--rule-strong); padding: .4rem 1rem; }
+  footer { border-top: 1.5px dashed var(--rule-strong); }
+  @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
+  @media (max-width: 600px) { .full { display: block; } }
+</style>
+</head>
+<body>
+<div class="page news s-indigo">
+  <nav class="crumbs"><a href="../index.html#e-20261104-pm">← 목록으로</a><span>11월 4일 오후판 · 2/5</span></nav>
+  <header class="n-head">
+    <div class="n-meta">
+      <span class="n-cat"><svg aria-hidden="true" focusable="false" class=""
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <line x1="3" x2="21" y1="22" y2="22" />
+  <line x1="6" x2="6" y1="18" y2="11" />
+  <line x1="10" x2="10" y1="18" y2="11" />
+  <line x1="14" x2="14" y1="18" y2="11" />
+  <line x1="18" x2="18" y1="18" y2="11" />
+  <polygon points="12 2 20 7 4 7" />
+</svg>국내 정치</span>
+      <span>언론사 11곳</span>
+      <span><span class="meter lv2" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i></span>관점 차이 보통</span>
+    </div>
+    <h1>김민석 민주당 대표, 신천지 연합 의혹 근거 없었다며 의총서 사과…정청래 전 대표는 공개 사과 요구</h1>
+    <p class="orig">대표 원제목 — 김민석 &quot;반명·신천지 연합 증거 없었다&quot;…정청래 &quot;책임져야&quot;(종합)</p>
+  </header>
+
+  <section class="lede"><div class="label">중립 수정본 · <span class="term-hint">밑줄 친 말을 누르면 뜻이 나옵니다</span></div><p>더불어민주당 <button type="button" class="term" data-tip="g-44/02" aria-expanded="false">김민석</button> 대표는 3일 비공개 <button type="button" class="term" data-tip="g-11/02" aria-expanded="false">의원총회</button>에서 8·17 <button type="button" class="term" data-tip="g-137/02" aria-expanded="false">전당대회</button> 때 자신이 제기한 &#x27;반명·분열주의·<button type="button" class="term" data-tip="g-174/02" aria-expanded="false">신천지</button> 3자 비밀연합&#x27; 의혹에 대해 &quot;조사 결과 증거는 없었다&quot;며 &quot;본의 아니게 피해를 입으신 분들께 죄송하다&quot;고 말했다. 이에 따라 당원 정비 <button type="button" class="term" data-tip="g-175/02" aria-expanded="false">TF</button>의 신천지 조사 결과 보고는 취소됐고, 결과는 공개하지 않은 채 원하는 의원에게만 <button type="button" class="term" data-tip="g-171/02" aria-expanded="false">열람</button>을 허용하는 방안이 거론됐다. <button type="button" class="term" data-tip="g-72/02" aria-expanded="false">정청래</button> 전 대표는 &quot;비공개 의총에서 숨어서 죄송하다고 할 것이 아니라 당원들에게 공개 사과하라&quot;며 책임을 요구했고, <button type="button" class="term" data-tip="g-236/02" aria-expanded="false">친청계</button> <button type="button" class="term" data-tip="g-176/02" aria-expanded="false">최고위원</button>들도 같은 취지로 말했다. 김 대표는 4일 최고위원회의에서 별도의 공개 사과 없이 &quot;종교의 정치 개입 우려가 사라지도록 자정 노력과 제도 개선 절차를 밟겠다&quot;고 밝혔다.</p></section>
+
+  <section class="block">
+    <h2>찬반 입장</h2>
+    <p class="stance-q"><span>쟁점</span>김민석 대표는 신천지 연합 의혹 제기에 대해 당원들에게 공개 사과하고 책임을 져야 한다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">비공개 의총 사과로는 부족하며 당원들에게 공개 사과하고 정치적 책임을 져야 한다</p><p class="side-outlets">조선일보, 동아일보, 노컷뉴스</p><p class="side-focus">정청래 전 대표와 이성윤·한민수 최고위원의 공개 사과·책임 요구(정당법 위반 조사 주장 포함)와 김 대표가 이를 피해 간 점을 제목·본문 중심으로 전함</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">의총에서의 사과로 충분하며 논란을 매듭짓고 당 통합과 민생에 집중해야 한다</p><p class="side-outlets">한국일보</p><p class="side-focus">김 대표가 울먹이며 사과하고 의원들이 박수를 친 장면, 사과를 결단하게 된 배경, 당내 수습론 확산을 비중 있게 전함</p></div></div>
+  </section>
+  <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>7곳</small></summary><div class="fold-body"><div class="grp"><b>사과 경위와 양측 반응 병기</b><span class="who">연합뉴스, 뉴시스, 경향신문, YTN</span><span class="what">김 대표 사과 내용과 보고 취소 과정, 정청래 전 대표·친청계 반발을 비슷한 비중으로 전하고 합당 설전도 함께 다룸</span></div><div class="grp"><b>당내 갈등 전망·리더십·야당 공세 해석</b><span class="who">한겨레, 매일경제, 중앙일보</span><span class="what">사과 이후 내홍이 이어질지, 김 대표 리더십 부담, 친명계 옹호 기류와 친청계 반발, 국민의힘 수사 요구 등 정치적 파장을 해석함</span></div></div></details>
+  <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>김민석 대표가 3일 비공개 의총에서 &#x27;3자 비밀연합&#x27; 의혹의 증거가 없었다며 사과했다</li><li><button type="button" class="term" data-tip="g-237/02" aria-expanded="false">박선원</button> 최고위원이 하려던 당원 정비 TF 신천지 조사 결과 보고는 취소됐고, 결과는 외부에 공개하지 않기로 했다</li><li>정청래 전 대표는 &quot;공개 사과하고 어떤 책임을 질지 밝혀라&quot;고 요구했고, 한민수·이성윤·최민희 최고위원 등 친청계도 공개 사과를 요구했다</li><li>김 대표는 4일 최고위에서 공개 사과 요구에는 별도 언급 없이 제도 개선과 당 통합·<button type="button" class="term" data-tip="g-38/02" aria-expanded="false">민생</button>을 말했다</li><li>일부 의원은 사과로 논란을 매듭짓자고 했고, 국민의힘은 민주당도 수사를 받아야 한다고 주장했다</li></ul></div></details>
+
+  <nav class="pager"><a class="prev" href="20261104-pm-01.html"><span>← 이전 뉴스</span>민주당, 공소취소 조항 뺀 조작기소 특검법 당론 채택…법사위 소위 통과, 국민의힘 퇴장</a><a class="next" href="20261104-pm-03.html"><span>다음 뉴스 →</span>윤석열 전 대통령 공직선거법 위반 2심, 1심과 같은 징역 1년 6개월 집행유예 3년</a></nav>
+  <details class="sources"><summary>원문 기사 16건 · 각 언론사 링크</summary><ul><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261103151652001" target="_blank" rel="noopener">김민석 &quot;반명·신천지 연합 증거 없었다&quot;…정청래 &quot;책임져야&quot;(종합)</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261103_0003853424" target="_blank" rel="noopener">김민석 &#x27;신천지 연합 의혹&#x27; 사과…친청계 &quot;거짓 주장 책임져야&quot; 반발(종합2보)</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25475422" target="_blank" rel="noopener">김민석, 신천지 의혹 ‘울컥 사과’…정청래 “공개 사과하라”</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261103/134959956/1" target="_blank" rel="noopener">국힘 “與, ‘신천지 개입설’ 셀프 꼼수종결 말고 수사 받아야”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/politics_general/1285648.html" target="_blank" rel="noopener">‘신천지발’ 내홍 또 불붙나…김민석 사과에도 친청계 거센 반발</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/assembly/1285650.html" target="_blank" rel="noopener">김민석 사과로 끝난 ‘신천지 개입설’…“3자 비밀연합 증거 없었다”</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611032130005/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">김민석 “신천지 연합 증거 없어, 죄송”…정청래 “공개 사과하라”</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110317020004829" target="_blank" rel="noopener">&#x27;신천지 개입설&#x27; 사과하며 울먹인 김민석… 의총선 박수, 친청계 반발-정치ㅣ한국일보</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/politics/12195142" target="_blank" rel="noopener">고개숙인 김민석 &quot;반명·신천지연합 증거없어&quot;…정청래 &quot;책임져야&quot;</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6601594" target="_blank" rel="noopener">김민석 &quot;신천지 연합 근거 없었다&quot; 사과…정청래 &quot;책임져야&quot;</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611032200336924" target="_blank" rel="noopener">김민석 &quot;신천지 의혹 근거 없었다&quot; 사과...정청래 &quot;책임져라&quot;</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/politics/politics_general/2026/11/04/Z7HCYEHZU5FPXGA2HYCSJEAHOM/" target="_blank" rel="noopener">김민석 “당 통합과 민생에 매진”... 친청계 요구 ‘공개사과’는 안 해</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25475745" target="_blank" rel="noopener">與, 김민석 사과 옹호 우세 속 정청래 “2차 가해” 與 내홍 격화</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261104/134962991/2" target="_blank" rel="noopener">‘신천지’ 공개사과 요구에…김민석 “제도 개선할 것” 비켜가</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/politics_general/1285709.html" target="_blank" rel="noopener">박지원 “김민석 공개사과 하라? 장충단공원에서 해야 사과냐”</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/politics/12196123" target="_blank" rel="noopener">‘신천지’ 사과한 김민석…목소리 커지는 친청계</a></li></ul></details>
+  <footer>뉴스밸런스 · 요약과 관점 정리는 AI가 기사 본문을 읽고 쓴 자동 초안</footer>
+</div>
+<script type="application/json" id="tips">{"g-44/02": {"term": "김민석", "tier": "인물", "def": "더불어민주당 대표", "detail": "", "ctx": "더불어민주당 대표로 비공개 의총에서 의혹 근거가 없었다고 사과했다."}, "g-11/02": {"term": "의원총회", "tier": "필수", "def": "한 정당 소속 국회의원들이 모두 모이는 당내 회의", "detail": "당의 중요한 방침을 정하거나 의견을 모으는 자리로, 국회의 공식 회의는 아니다. 여기서 정한 공식 입장을 '당론'이라고 한다.", "ctx": "민주당 의원들이 모이는 비공개 회의에서 김 대표가 사과했다."}, "g-137/02": {"term": "전당대회", "tier": "상황", "def": "정당이 당 대표 등을 뽑으려고 당원 대표들이 모이는 큰 행사", "detail": "", "ctx": "8·17 전당대회에서 김 대표가 신천지 연합 의혹을 제기했다."}, "g-174/02": {"term": "신천지", "tier": "상황", "def": "국내 종교단체 이름. 신도의 당원 가입 의혹이 쟁점", "detail": "", "ctx": "특정 종교 단체로, 정치권과 연합했다는 의혹이 이번 논란의 중심이다."}, "g-175/02": {"term": "TF", "tier": "표현", "def": "(특정 과제를 위해 임시로 꾸린 팀)", "detail": "", "ctx": "당원 정비 TF가 신천지 관련 조사를 했고, 결과 보고가 취소됐다."}, "g-171/02": {"term": "열람", "tier": "표현", "def": "(자료를 찾아 읽어 봄)", "detail": "", "ctx": "조사 결과를 공개하지 않고 원하는 의원만 볼 수 있게 하는 방안이 거론됐다."}, "g-72/02": {"term": "정청래", "tier": "인물", "def": "더불어민주당 의원. 당대표를 지냈다", "detail": "", "ctx": "전 대표로 김 대표에게 당원들 앞에서 공개 사과하라고 요구했다."}, "g-236/02": {"term": "친청계", "tier": "표현", "def": "(정청래 의원과 가까운 당내 사람들)", "detail": "", "ctx": "정청래 전 대표와 가까운 쪽으로, 공개 사과를 요구하며 반발했다."}, "g-176/02": {"term": "최고위원", "tier": "상황", "def": "당 대표와 함께 당의 주요 결정을 하는 지도부 구성원", "detail": "", "ctx": "친청계 최고위원들이 김 대표에게 공개 사과를 요구했다."}, "g-237/02": {"term": "박선원", "tier": "인물", "def": "더불어민주당 최고위원. 당원 정비 TF 단장으로 신천지 당원 가입 의혹을 조사했다", "detail": "", "ctx": "최고위원으로 신천지 조사 결과를 보고하려 했으나 취소됐다."}, "g-38/02": {"term": "민생", "tier": "표현", "def": "국민이 먹고사는 일", "detail": "", "ctx": "김 대표는 당 통합과 이것에 집중하겠다고 말했다."}}</script>
+<script>
+  // 밑줄 친 용어: 누르면 짧은 설명 창, 다시 누르거나 바깥을 누르거나 Esc면 닫힘
+  (() => {
+    const tips = JSON.parse(document.getElementById('tips').textContent);
+    const tip = document.createElement('div');
+    tip.className = 'tip'; tip.setAttribute('role', 'dialog'); tip.hidden = true;
+    document.body.appendChild(tip);
+    let opener = null;
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; return n; };
+    function closeTip() { tip.hidden = true; if (opener) opener.setAttribute('aria-expanded', 'false'); opener = null; }
+    document.querySelectorAll('.term').forEach(b => b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if (opener === b) return closeTip();
+      closeTip();
+      const d = tips[b.dataset.tip];
+      const head = el('div', 'tip-head', '');
+      head.append(el('b', '', d.term), el('span', 'tip-tier', d.tier));
+      const parts = [head, el('p', 'tip-def', d.def)];
+      if (d.detail) parts.push(el('p', 'tip-detail', d.detail));  // 필수 용어만 2~3문장 설명이 있음
+      parts.push(el('p', 'tip-ctx', '이 기사에서 — ' + d.ctx));
+      tip.replaceChildren(...parts);
+      tip.hidden = false; opener = b; b.setAttribute('aria-expanded', 'true');
+      const r = b.getBoundingClientRect();
+      tip.style.left = Math.max(16, Math.min(r.left, innerWidth - tip.offsetWidth - 16)) + scrollX + 'px';
+      tip.style.top = r.bottom + scrollY + 6 + 'px';
+    }));
+    document.addEventListener('click', ev => { if (!tip.hidden && !tip.contains(ev.target)) closeTip(); });
+    document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>이재명 대통령, 820조9천억원 규모 2027년도 예산안 시정연설…미래대응기금 여유 자금 두고 여야 공방, 연설 중 항의·퇴장 · 뉴스밸런스</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7EFE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+  /* ==========================================================================
+     Editorial Minutes — 잡지 지면풍 회의록 스타일시트
+     핵심 원칙
+     - 색은 전부 CSS 변수(:root)로 선언 → 다크모드는 아래쪽에서 변수만 재정의
+     - 발언자/섹션마다 --hue, --hue-soft 색을 배정해 시각적으로 구분
+     - 곡률은 3px 정도로만 (뉴스레터형처럼 각지지도, 카드형처럼 둥글지도 않음)
+     - 원본은 Pretendard 서브셋을 폰트 파일로 직접 내장했으나, 템플릿에서는
+       용량 문제로 CDN 링크로 대체함 (오프라인이 꼭 필요하면 폰트를 다시 내장)
+     ========================================================================== */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #191C22;
+    --muted: #5C626E;
+    --faint: #8A909C;
+    --rule: #E3E6EB;
+    --rule-strong: #C9CEd6;
+    --accent: #2E5D62;
+    --accent-soft: #E4EDEC;
+    --flag: #8C5312;
+    --flag-soft: #F6ECDF;
+
+    /* 섹션/발언자 컬러 팔레트 — 필요하면 색을 더 추가하거나 값만 바꿔도 됨 */
+    --teal: #1F6A6E;      --teal-soft: #DCEDEC;
+    --indigo: #3D4E9E;    --indigo-soft: #E3E7F7;
+    --plum: #7A3F73;      --plum-soft: #F1E4EF;
+    --moss: #4A6B2A;      --moss-soft: #E6EEDC;
+    --clay: #9A4B2C;      --clay-soft: #F7E6DE;
+    --shadow: 0 1px 2px rgba(25, 28, 34, .05), 0 8px 24px -16px rgba(25, 28, 34, .25);
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+
+  /* 시스템이 다크모드면 자동 전환 (사용자가 명시적으로 라이트를 고르지 않은 경우) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+      --rule: #282C34; --rule-strong: #3A404A;
+      --accent: #83B7B2; --accent-soft: #1E2A2B;
+      --flag: #D6A354; --flag-soft: #2A2318;
+      --teal: #7FBDB9; --teal-soft: #16292A;
+      --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+      --plum: #D19BC9; --plum-soft: #2B1E29;
+      --moss: #A8C482; --moss-soft: #1E2618;
+      --clay: #E0997A; --clay-soft: #2E1D16;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    }
+  }
+  /* 사용자가 명시적으로 dark를 고른 경우(data-theme="dark") */
+  :root[data-theme="dark"] {
+    --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+    --rule: #282C34; --rule-strong: #3A404A;
+    --accent: #83B7B2; --accent-soft: #1E2A2B;
+    --flag: #D6A354; --flag-soft: #2A2318;
+    --teal: #7FBDB9; --teal-soft: #16292A;
+    --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+    --plum: #D19BC9; --plum-soft: #2B1E29;
+    --moss: #A8C482; --moss-soft: #1E2618;
+    --clay: #E0997A; --clay-soft: #2E1D16;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.72; letter-spacing: -.011em;
+    word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 50rem; margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 4vw, 2.5rem) 6rem;
+    display: flex; flex-direction: column; gap: 3.25rem;
+  }
+
+  /* 상단 마스트헤드: 라벨 + 제목 + 부제 + 참여자 롤콜 + 그라디언트 바 */
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+  .kicker { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+  .masthead::after {
+    content: ""; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal) 0 20%, var(--indigo) 20% 40%, var(--plum) 40% 60%, var(--moss) 60% 80%, var(--clay) 80% 100%);
+  }
+  h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.15; font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -.035em; }
+  .standfirst { margin: 0; color: var(--muted); font-size: 1.02rem; max-width: 38rem; }
+  .roster { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding-top: .3rem; }
+  .roster .roster-label { border: none; background: none; padding: 0 .25rem 0 0; font-weight: 600; font-size: .78rem; color: var(--ink); }
+  .roster span {
+    font-weight: 500; font-size: .8rem; font-family: var(--mono); padding: .2rem .55rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--muted); background: var(--surface);
+  }
+
+  /* 섹션: --hue 변수로 색을 지정. section.s-xxx 클래스로 색 배정 */
+  section { display: flex; flex-direction: column; gap: 1.15rem; --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  section.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  section.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  section.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  section.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  /* 섹션끼리는 .page의 기본 gap(3.25rem)보다 더 띄워서, 마스트헤드/footer 여백과 구분되게 함.
+     필요하면 margin-top 값만 조절 — 0으로 두면 다른 요소와 동일한 간격으로 돌아감 */
+  section + section { margin-top: 2rem; }
+
+  h2 {
+    font-size: 1.32rem; letter-spacing: -.025em; font-weight: 700; margin: 0;
+    padding-bottom: .75rem; border-bottom: 2px solid var(--hue);
+    display: flex; align-items: center; gap: .65rem;
+  }
+  h2 .num {
+    font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .05em;
+    color: var(--surface); background: var(--hue); border-radius: 3px; padding: .22rem .45rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  ul ul { margin-top: .5rem; padding-left: 1.1rem; }
+  li::marker { color: var(--faint); }
+  strong { font-weight: 600; }
+
+  /* 결론/요약 강조 박스 */
+  .lede {
+    background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--hue);
+    border-radius: 3px; padding: 1.4rem 1.6rem; box-shadow: var(--shadow);
+  }
+
+  /* 발언자 카드: 좌측 고정 이름/역할 라벨 + 우측 괘선 본문 */
+  .speakers { display: flex; flex-direction: column; gap: 1.6rem; }
+  .speaker {
+    display: grid; --hue: var(--teal); --hue-soft: var(--teal-soft);
+    grid-template-columns: 8.5rem 1fr; gap: 1.5rem; align-items: start;
+  }
+  .speaker.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .speaker.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  .speaker.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  .speaker.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  .speaker > header { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: .25rem; padding-top: .35rem; }
+  .speaker h3 { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.3; letter-spacing: -.02em; }
+  .speaker .role {
+    font-size: .72rem; font-weight: 600; color: var(--hue); background: var(--hue-soft);
+    border-radius: 3px; padding: .12rem .4rem; align-self: flex-start;
+  }
+  .speaker .body { border-left: 2px solid var(--hue-soft); padding-left: 1.5rem; }
+  @media (max-width: 40rem) {
+    .speaker { grid-template-columns: 1fr; gap: .7rem; }
+    .speaker > header { position: static; flex-direction: row; align-items: baseline; gap: .6rem; }
+    .speaker .body { border-left: 2px solid var(--rule); padding-left: 1rem; }
+  }
+
+  /* 검증 필요 등 짧은 라벨 플래그 */
+  .flag {
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; color: var(--flag);
+    background: var(--flag-soft); border-radius: 2px; padding: .1rem .38rem; white-space: nowrap;
+  }
+
+  h4 { margin: 1.1rem 0 0; font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  h4:first-child { margin-top: 0; }
+
+  /* 역할분담표 등 표 */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead { background: var(--hue-soft); }
+  thead th { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 500; border-bottom: 1px solid var(--rule-strong); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.n { font-family: var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; width: 2.5rem; }
+  td.who { white-space: nowrap; font-weight: 700; color: var(--hue); }
+  td.what { color: var(--muted); line-height: 1.6; }
+
+  /* 공지/마감 안내 박스 */
+  .notice { background: var(--hue-soft); border-left: 4px solid var(--hue); border-radius: 3px; padding: .9rem 1.1rem; font-size: .93rem; color: var(--ink); }
+
+  /* 미해결/확인 필요 항목 리스트 */
+  .open { list-style: none; padding: 0; gap: 0; }
+  .open li { display: grid; grid-template-columns: 1.4rem 1fr; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .open li:first-child { border-top: 1px solid var(--rule); }
+  .open .idx { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--hue); font-variant-numeric: tabular-nums; }
+  .open .note { display: block; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+
+  footer { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .04em; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+</style>
+<style>
+  .page.news { max-width: 44rem; gap: 1.5rem; }
+  .news, .s-teal { --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  .s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .s-plum { --hue: var(--plum); --hue-soft: var(--plum-soft); }
+  .s-moss { --hue: var(--moss); --hue-soft: var(--moss-soft); }
+  .s-clay { --hue: var(--clay); --hue-soft: var(--clay-soft); }
+  .crumbs { display: flex; align-items: center; justify-content: space-between; gap: .8rem; font-size: .85rem; color: var(--muted); }
+  .crumbs a { font-weight: 600; color: var(--accent); text-decoration: none; padding: .4rem 0; }
+  .n-head { display: flex; flex-direction: column; gap: .6rem; padding-bottom: 1rem; border-bottom: 3px solid var(--hue); }
+  .n-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .8rem; font-size: .8rem; color: var(--muted); }
+  .n-cat { display: inline-flex; align-items: center; gap: .3rem; font-weight: 700; color: var(--hue); }
+  .n-cat svg { width: 1rem; height: 1rem; }
+  .n-head h1 { font-size: clamp(1.35rem, 5vw, 1.9rem); line-height: 1.35; letter-spacing: -.03em; }
+  .orig { margin: 0; font-size: .82rem; color: var(--faint); }
+  .meter { display: inline-flex; gap: 2px; vertical-align: middle; margin-right: .25rem; }
+  .meter i { width: .9rem; height: .38rem; border-radius: 1px; background: var(--rule-strong); }
+  .meter.lv3 i.on { background: var(--flag); }
+  .meter.lv2 i.on { background: var(--clay); }
+  .meter.lv1 i.on { background: var(--faint); }
+  .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
+  .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
+  .block { display: flex; flex-direction: column; gap: .75rem; }
+  .block h2 { font-size: 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--hue); }
+  .stance-q { margin: 0; font-size: .95rem; font-weight: 600; }
+  .stance-q span { display: block; font-size: .72rem; font-weight: 500; color: var(--faint); letter-spacing: .08em; }
+  .note { margin: 0; font-size: .9rem; color: var(--muted); }
+  .sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .side { --side: var(--indigo); --side-soft: var(--indigo-soft); background: var(--side-soft); border-left: 3px solid var(--side);
+    border-radius: 3px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .3rem; }
+  .side-con { --side: var(--clay); --side-soft: var(--clay-soft); }
+  .side p { margin: 0; }
+  .side-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--side); font-weight: 600; }
+  .side-pos { font-weight: 700; line-height: 1.5; }
+  .side-outlets { font-size: .85rem; font-weight: 600; color: var(--side); }
+  .side-focus { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  /* 펼치기: 손가락으로 누르기 쉬운 넓은 막대 */
+  .fold { background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; }
+  .fold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .6rem 1rem;
+    font-size: .95rem; font-weight: 700; }
+  .fold summary::-webkit-details-marker { display: none; }
+  .fold summary small { font-family: var(--mono); font-size: .72rem; font-weight: 500; color: var(--faint); }
+  .fold summary::after { content: "펼치기 ▾"; margin-left: auto; font-size: .78rem; font-weight: 600; color: var(--accent); }
+  .fold[open] summary::after { content: "접기 ▴"; }
+  .fold[open] summary { border-bottom: 1px solid var(--rule); }
+  .fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .fold-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .7rem; }
+  .grp { display: flex; flex-direction: column; gap: .2rem; padding-left: .8rem; border-left: 2px solid var(--rule-strong); }
+  .grp b { font-size: .92rem; }
+  .grp .who { font-size: .82rem; font-weight: 600; color: var(--hue); }
+  .grp .what { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  .facts { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .5rem; font-size: .95rem; }
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .pager a { display: flex; flex-direction: column; gap: .15rem; padding: .7rem .85rem; border: 1px solid var(--rule); border-radius: 5px;
+    background: var(--surface); color: var(--ink); text-decoration: none; font-size: .85rem; line-height: 1.45; }
+  .pager a span { font-size: .72rem; color: var(--faint); }
+  .pager a.next { text-align: right; grid-column: 2; }
+  .sources { font-size: .8rem; color: var(--muted); }
+  .sources summary { cursor: pointer; padding: .4rem 0; }
+  .sources ul { list-style: none; padding: .4rem 0 0; margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .sources .outlet { display: inline-block; min-width: 4.6rem; font-weight: 600; }
+  .sources a { color: var(--muted); }
+  a, button, summary { -webkit-tap-highlight-color: transparent; }
+  @media (max-width: 600px) {
+    .page.news { gap: 1.15rem; padding: 1rem max(16px, env(safe-area-inset-right)) 3rem max(16px, env(safe-area-inset-left)); }
+    .lede { padding: 1rem 1.05rem; }
+    .lede p { font-size: .98rem; }
+    .sides { grid-template-columns: 1fr; }
+    .fold-body { padding: .8rem .85rem .9rem; }
+  }
+
+  /* 누를 수 있다는 게 바로 보이게: 연한 파스텔 형광펜(버터색) + 점선 밑줄. 찬반 색(초록·보라)과 겹치지 않는 색 */
+  .term { --mark: #FBEDC2; --mark-on: #F5DC93;
+    font: inherit; color: inherit; background: var(--mark); border: 0; padding: 0 .18em; margin: 0 .02em; cursor: pointer; border-radius: 6px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    text-decoration: underline dotted var(--hue); text-decoration-thickness: 1.5px; text-underline-offset: .22em; }
+  .term:hover, .term[aria-expanded="true"] { background: var(--mark-on); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .term { --mark: #4A3E22; --mark-on: #635230; } }
+  :root[data-theme="dark"] .term { --mark: #4A3E22; --mark-on: #635230; }
+  .term:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .term-hint { font-weight: 400; color: var(--faint); margin-left: .6rem; letter-spacing: 0; text-transform: none; }
+  .tip { position: absolute; z-index: 20; width: min(21rem, calc(100vw - 32px)); display: flex; flex-direction: column; gap: .35rem;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px;
+    padding: .75rem .9rem; box-shadow: 0 6px 24px rgba(0, 0, 0, .16); font-size: .88rem; line-height: 1.55; }
+  .tip[hidden] { display: none; }
+  .tip p { margin: 0; }
+  .tip-head { display: flex; align-items: baseline; gap: .5rem; }
+  .tip-tier { font-size: .72rem; color: var(--muted); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0 .35rem; }
+  .tip-def { font-weight: 600; }
+  .tip-detail { font-size: .84rem; }
+  .tip-ctx { color: var(--muted); padding-top: .35rem; border-top: 1px dashed var(--rule); }
+
+  :root {
+    --bg: #F7EFE2; --surface: #FFFAF2; --ink: #3D2B1F; --muted: #7B6250; --faint: #A89079;
+    --rule: #EBDDC9; --rule-strong: #DCC5A7; --accent: #8A5A33; --accent-soft: #F2E3CF;
+    --flag: #B65A35; --flag-soft: #F7E2D5;
+    /* 분야 색: 이름은 템플릿 그대로 두고 값만 따뜻한 색으로 (indigo=갈색, clay=캐러멜, moss=올리브, plum=로즈우드, teal=세이지) */
+    --teal: #5E8473; --teal-soft: #E2ECE3;
+    --indigo: #8A5A33; --indigo-soft: #F2E3CF;
+    --plum: #A35F78; --plum-soft: #F6E3E8;
+    --moss: #7A8A3C; --moss-soft: #EEF0D9;
+    --clay: #C27237; --clay-soft: #F9E6D3;
+    --shadow: 0 2px 4px rgba(110, 70, 30, .06), 0 10px 24px -14px rgba(110, 70, 30, .35);
+    --round: "Jua", var(--sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+      --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+      --flag: #E4906A; --flag-soft: #3A2219;
+      --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+      --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+      --clay: #F0A877; --clay-soft: #3A2516;
+      --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+    --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+    --flag: #E4906A; --flag-soft: #3A2219;
+    --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+    --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+    --clay: #F0A877; --clay-soft: #3A2516;
+    --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+  }
+  body { background: var(--bg); }
+
+  /* 둥근 글꼴: 제목·키워드·섹션 이름 */
+  h1, .t-key, .t-sub, .day-head h2, .block h2, .fold summary, .d-label b, .side-tag, .lede .label, .ed-tag, .brand { font-family: var(--round); font-weight: 400; }
+  h1 { letter-spacing: -.01em; }
+  .t-key, .t-sub { letter-spacing: 0; }
+  .kicker { font-family: var(--sans); font-weight: 600; letter-spacing: .04em; text-transform: none; color: var(--accent); }
+  .brand { display: inline-flex; align-items: center; gap: .45rem; }
+  .brand svg { width: 1em; height: 1em; filter: drop-shadow(0 2px 3px rgba(110, 70, 30, .2)); }
+  .masthead::after { height: 6px; border-radius: 999px; }
+
+  /* 동글동글: 모서리를 크게, 작은 표시는 알약 모양 */
+  .card { border-radius: 22px; border-width: 1.5px; }
+  .thumb { margin: 7px 7px 0; border-radius: 16px; border-bottom: 0; }
+  .t-num, .ed-tag, .scroll-btn, .full, .crumbs a { border-radius: 999px; }
+  .meter i { border-radius: 999px; }
+  .date-group { border-radius: 16px; padding: 3px; gap: 2px; border-width: 1.5px; }
+  .d-label { border-bottom: 0; text-align: center; padding: .2rem .4rem .1rem; }
+  .dates button, .ed-none { border-radius: 11px; justify-content: center; gap: .35rem; }
+  .dates button + button, .dates button + .ed-none, .ed-none + button { border-top: 0; }
+  .lede { border: 0; border-radius: 22px; }
+  .lede .label { display: inline-block; font-size: .85rem; letter-spacing: 0; color: var(--hue); background: var(--hue-soft);
+    border-radius: 999px; padding: .15rem .7rem; }
+  .lede .term-hint { font-family: var(--sans); font-size: .72rem; }
+  .side { border-left: 0; border-radius: 18px; }
+  /* 찬반 색: 정치 성향을 떠올리게 하는 파랑·빨강은 쓰지 않고 파스텔 초록(찬성)·보라(반대)로 구분 */
+  .side-pro { --side: #4F7D4A; --side-soft: #E2F0DC; }
+  .side-con { --side: #75589E; --side-soft: #ECE4F6; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+    :root:not([data-theme="light"]) .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  }
+  :root[data-theme="dark"] .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+  :root[data-theme="dark"] .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  .side-tag { align-self: flex-start; font-size: .82rem; letter-spacing: 0; color: var(--surface); background: var(--side);
+    border-radius: 999px; padding: .05rem .65rem; }
+  .fold { border-radius: 20px; border-width: 1.5px; }
+  .fold summary { font-size: 1.02rem; }
+  .fold[open] summary { border-bottom: 1.5px dashed var(--rule); }
+  .grp { border-left: 0; background: var(--bg); border-radius: 14px; padding: .6rem .85rem; }
+  .pager a { border-radius: 18px; }
+  .tip { border-radius: 16px; }
+  .term { border-radius: 6px; }
+  .n-head { border-bottom: 3px dotted var(--hue); }
+  .crumbs a { background: var(--surface); border: 1.5px solid var(--rule); padding: .35rem .85rem; }
+  .full { display: inline-block; background: var(--surface); border: 1.5px solid var(--rule-strong); padding: .4rem 1rem; }
+  footer { border-top: 1.5px dashed var(--rule-strong); }
+  @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
+  @media (max-width: 600px) { .full { display: block; } }
+</style>
+</head>
+<body>
+<div class="page news s-indigo">
+  <nav class="crumbs"><a href="../index.html#e-20261102-pm">← 목록으로</a><span>11월 2일 오후판 · 1/5</span></nav>
+  <header class="n-head">
+    <div class="n-meta">
+      <span class="n-cat"><svg aria-hidden="true" focusable="false" class=""
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <line x1="3" x2="21" y1="22" y2="22" />
+  <line x1="6" x2="6" y1="18" y2="11" />
+  <line x1="10" x2="10" y1="18" y2="11" />
+  <line x1="14" x2="14" y1="18" y2="11" />
+  <line x1="18" x2="18" y1="18" y2="11" />
+  <polygon points="12 2 20 7 4 7" />
+</svg>국내 정치</span>
+      <span>언론사 13곳</span>
+      <span><span class="meter lv3" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>관점 차이 높음</span>
+    </div>
+    <h1>이재명 대통령, 820조9천억원 규모 2027년도 예산안 시정연설…미래대응기금 여유 자금 두고 여야 공방, 연설 중 항의·퇴장</h1>
+    <p class="orig">대표 원제목 — 미래기금 여유 자금 두고…민주 ‘세수 결손 대비’ 국힘 ‘국채 발행 축소’</p>
+  </header>
+
+  <section class="lede"><div class="label">중립 수정본 · <span class="term-hint">밑줄 친 말을 누르면 뜻이 나옵니다</span></div><p>이재명 대통령은 11월 2일 국회 <button type="button" class="term" data-tip="g-107/01" aria-expanded="false">시정연설</button>에서 올해보다 12.8% 늘어난 820조9천억원 규모의 2027년도 <button type="button" class="term" data-tip="g-106/01" aria-expanded="false">예산안</button>을 설명하고, 법정 기한인 12월 2일까지 처리해 달라고 요청했다. 쟁점은 반도체 호황에 따른 추가세수로 만드는 162조원대 <button type="button" class="term" data-tip="g-108/01" aria-expanded="false">미래대응기금</button>으로, 정부 계획상 104조4천억원은 용처를 정하지 않은 <button type="button" class="term" data-tip="g-155/01" aria-expanded="false">여유 자금</button>이다. 이 대통령은 기금을 &#x27;전략적 투자 플랫폼이자 재정안정 장치&#x27;라고 설명했고, 국민의힘은 여유 자금 전액을 <button type="button" class="term" data-tip="g-110/01" aria-expanded="false">국채</button> 발행 축소에 써야 한다며 &#x27;<button type="button" class="term" data-tip="g-115/01" aria-expanded="false">백지수표</button>&#x27;라고 비판했다. 연설 중 이 대통령이 &#x27;국채의 순증가분이 거의 없다&#x27;고 말하자 국민의힘 의원들의 항의가 나와 연설이 잠시 멈췄고, 민주당은 연설 중 30차례 박수를 보냈다. 연설이 끝난 뒤 국민의힘 의원들은 조경태 의원을 제외하고 본회의장을 떠났다.</p></section>
+
+  <section class="block">
+    <h2>찬반 입장</h2>
+    <p class="stance-q"><span>쟁점</span>미래대응기금의 여유 자금은 전액 국채 발행 축소에 써야 한다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">여유 자금 104조4천억원을 국채 발행 축소에 전액 써서 국가채무 부담을 낮춰야 한다(국민의힘 주장)</p><p class="side-outlets">이 입장을 앞세운 언론사 없음</p><p class="side-focus">이 주장을 중심에 두고 실은 언론사는 없었고, 국민의힘 주장은 여러 기사에서 정당 논평 인용 형태로만 전해짐</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">여유 자금은 세수 부족 등에 대비해 기금에 두고 청년·지방 등에 투자해야 한다(대통령·민주당 설명)</p><p class="side-outlets">연합뉴스, 뉴시스, 매일경제, KBS, 경향신문</p><p class="side-focus">대통령 연설의 설명(모두의 성장, 기금은 재정안정 장치, 국채 순증가분 거의 없음, 국가채무비율 하락 전망)을 중심으로 전함. 뉴시스는 기금 비판에 대한 대통령 반박을 함께 실었고, 경향신문은 양당 논평을 한 줄씩 덧붙임</p></div></div>
+  </section>
+  <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>8곳</small></summary><div class="fold-body"><div class="grp"><b>양당 주장을 나란히 전한 기금 쟁점 중심</b><span class="who">한겨레, YTN, 노컷뉴스, JTBC</span><span class="what">민주당 &#x27;저수지처럼 모아 대비&#x27;와 국민의힘 &#x27;백지수표·국채 상환 우선&#x27; 발언을 비슷한 비중으로 인용하고, 국민의힘 134조원 삭감안·국회 예산정책처의 2029년 이후 추가세수 전망·예결위 일정 등 심사 전망을 함께 다룸</span></div><div class="grp"><b>시정연설장 현장 신경전·퇴장 중심</b><span class="who">조선일보, 동아일보, 한국일보, 한국경제</span><span class="what">피켓 시위, 야유와 &#x27;재판 재개하라&#x27; 외침, 이 대통령의 &#x27;자꾸 방해&#x27; 응수, 국민의힘 집단 퇴장과 조경태 의원 악수를 시간순으로 전함. 한국일보는 7개월 전 4월 시정연설 분위기와 비교했고, 조선일보는 사전 환담에서 나온 대통령 발언도 실음</span></div></div></details>
+  <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>이 대통령은 2일 국회 시정연설에서 12.8% 늘어난 820조9천억원 규모의 2027년도 예산안을 설명하고 12월 2일까지 처리에 협조해 달라고 요청했다</li><li>미래대응기금은 반도체 호황에 따른 추가세수를 재원으로 신설되는 162조원대 기금이며, 정부 계획상 이 가운데 104조4천억원은 용처를 정하지 않은 여유 자금이다</li><li>국민의힘은 여유 자금 전액을 국채 발행 축소에 써야 한다고 주장하고, 민주당은 <button type="button" class="term" data-tip="g-112/01" aria-expanded="false">세수</button> 결손 등에 대비하는 재정안정 기능을 이유로 삭감할 수 없다는 입장이다</li><li>이 대통령이 &#x27;국채 순증가분이 거의 없다&#x27;고 말하자 국민의힘 의원들이 항의하며 &#x27;재판 재개하라&#x27;는 외침도 나왔고, 이 대통령은 연설을 잠시 멈춘 뒤 이어 갔다</li><li>민주당 의원들은 연설 중 30차례 박수를 보냈고, 국민의힘은 피켓 시위와 침묵 속에 있다가 연설이 끝나자 조경태 의원을 제외하고 <button type="button" class="term" data-tip="g-117/01" aria-expanded="false">퇴장</button>했다</li></ul></div></details>
+
+  <nav class="pager"><a class="next" href="20261102-pm-02.html"><span>다음 뉴스 →</span>국민의힘 장동혁 대표, MBN 출연해 박근혜 전 대통령 오찬 발언 전하고 연임 도전 가능성·한동훈 복당 선긋기 언급</a></nav>
+  <details class="sources"><summary>원문 기사 34건 · 각 언론사 링크</summary><ul><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/politics_general/1285215.html" target="_blank" rel="noopener">미래기금 여유 자금 두고…민주 ‘세수 결손 대비’ 국힘 ‘국채 발행 축소’</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611011738563992" target="_blank" rel="noopener">내일 내년도 예산안 시정연설...&quot;미래투자&quot; &quot;백지수표&quot;</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6600300" target="_blank" rel="noopener">국감 끝나자 &#x27;820조 예산전쟁&#x27;…曺국조·특검까지 연말 정국 격랑</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6600328" target="_blank" rel="noopener">李대통령, 오늘 국회 시정연설…&#x27;역대 최대 820조&#x27; 예산안 협조 요청</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6600331" target="_blank" rel="noopener">李대통령 오늘 &#x27;역대 최대&#x27; 820조 슈퍼예산 시정연설[오늘아침]</a></li><li><span class="outlet">JTBC</span> <a href="https://news.jtbc.co.kr/article/NB12325930" target="_blank" rel="noopener">이 대통령, 오늘 예산안 시정연설…역대 최대 821조원 직접 설득</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261102080400001" target="_blank" rel="noopener">李대통령, &#x27;성장&#x27; 36번 언급 속 3대 민생과제 부각…전략 대전환</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261102084051001" target="_blank" rel="noopener">국힘 &quot;재판 재개&quot; 야유에 李대통령 &quot;자꾸 방해&quot;…연설 중 신경전(종합)</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261102_0003850523" target="_blank" rel="noopener">이 대통령 &quot;선도국가 만들어 갈 미래선점 예산…미래성장·격차완화 집중투자&quot;</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261102_0003850669" target="_blank" rel="noopener">&#x27;모두의 성장&#x27; 방점 찍은 이 대통령…27분 연설서 &quot;성장&quot; 36번 언급</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/politics/assembly/2026/11/02/IW4IXWS77VDAVJMVUMFFN45AUU/" target="_blank" rel="noopener">野 “재판 재개하라” 야유... 李 “하실 말씀 다 하셨나”</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/politics/politics_general/2026/11/02/FHXTPLVDCJCWPPN4CMVG2DTZXM/" target="_blank" rel="noopener">李대통령 “소수의 성장이 아닌 모두의 성장으로 대전환”</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261102/134949179/2" target="_blank" rel="noopener">국힘 “재판 재개하라” 야유…李 “자꾸 방해하는 얘기네요”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/assembly/1285289.html" target="_blank" rel="noopener">국힘 “말 안되는 소리” 고성…이 대통령 “계속해도 되겠습니까”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/bluehouse/1285284.html" target="_blank" rel="noopener">이 대통령 “‘소수의 성장’ 아닌 ‘모두의 성장’으로 확산…AI·지방 등 미래선점 예산”</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611021526001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">이 대통령 “‘소수의 성장’ 아닌 ‘모두의 성장’으로 대전환해야”…821조 예산 시정연설</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611021017001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">[속보]이 대통령 “30년 만에 IMF 졸업···K자 성장 극복은 새 성장 공식으로”</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110213350002605" target="_blank" rel="noopener">7개월 만에 180도 바뀐 시정연설, 대화 대신 ‘고성·집단 퇴장’-정치ㅣ한국일보</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110211270004130" target="_blank" rel="noopener">&quot;재판 재개하라&quot; 野 고성에 이 대통령 연설 중단… &quot;계속 방해하는 얘기&quot; 신경전-정치ㅣ한국일보</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/politics/12193368" target="_blank" rel="noopener">李대통령 “불평등·양극화 그늘 여전…‘모두의 성장’으로 대전환을”</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/politics/12193197" target="_blank" rel="noopener">[속보] 이 대통령 “불평등 양극화 그늘 여전 …‘모두의 성장’ 대전환”</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/politics/12193242" target="_blank" rel="noopener">[속보] 이 대통령 “국방예산 8.2%↑…전작권 필요전력·핵잠 확보할 것”</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/202611020342i" target="_blank" rel="noopener">李 시정연설에 與 30차례 박수…野 침묵 속 &quot;재판 재개&quot; 야유도</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8701364" target="_blank" rel="noopener">이 대통령 “양극화 그늘 여전…소수 아닌 ‘모두의 성장’으로 대전환”</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8701385" target="_blank" rel="noopener">시정연설 잠시 멈춘 이 대통령…‘국채 발행’에 야당 항의 [지금뉴스]</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8701189" target="_blank" rel="noopener">이 대통령 “양극화 그늘 여전…소수 아닌 ‘모두의 성장’으로 대전환”</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6600855" target="_blank" rel="noopener">조희대엔 응원, 李엔 야유…대통령은 고개 숙여 인사한 &#x27;두 쪽 난 국회&#x27;</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6600749" target="_blank" rel="noopener">李 국회 오자 與 기립박수·野 외면…연설 끝나자 &#x27;셀카 행렬&#x27;</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6600740" target="_blank" rel="noopener">시정연설 끝나자 집단 퇴장한 국민의힘…홀로 남은 조경태의 악수</a></li><li><span class="outlet">JTBC</span> <a href="https://news.jtbc.co.kr/article/NB12325953" target="_blank" rel="noopener">텅 빈 국힘 의원석에 남은 한 사람…대통령이 먼저 다가갔다 [현장영상]</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611021549208588" target="_blank" rel="noopener">30차례 박수 vs 규탄·야유...이 대통령 연설 멈추기도</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611021025546288" target="_blank" rel="noopener">&quot;하실 말 있으면 하시고...&quot; 이 대통령 시정연설 멈춘 이유 [현장영상+]</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611021338397754" target="_blank" rel="noopener">30차례 박수 vs 규탄·야유...이 대통령 연설 멈추기도</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611021129352618" target="_blank" rel="noopener">민주 &#x27;박수갈채&#x27; 국힘 &#x27;야유&#x27;...이 대통령 연설 멈추기도</a></li></ul></details>
+  <footer>뉴스밸런스 · 요약과 관점 정리는 AI가 기사 본문을 읽고 쓴 자동 초안</footer>
+</div>
+<script type="application/json" id="tips">{"g-107/01": {"term": "시정연설", "tier": "필수", "def": "대통령이 국회에 나와 예산안과 나라 운영 방향을 설명하는 연설", "detail": "정부가 다음 해 예산안을 국회에 낸 뒤, 대통령이나 국무총리가 국회 본회의에 나와 예산을 왜 이렇게 짰는지 설명한다. 이 연설을 시작으로 국회의 예산 심사가 본격적으로 시작된다.", "ctx": "이재명 대통령이 11월 2일 국회 본회의에서 2027년도 예산안의 방향과 규모를 직접 설명했다."}, "g-106/01": {"term": "예산안", "tier": "필수", "def": "정부가 다음 해 나라 돈을 어디에 얼마나 쓸지 짠 계획", "detail": "정부가 만들어 국회에 내면, 국회가 심사해 늘리거나 깎은 뒤 본회의에서 확정한다. 헌법에 따라 국회는 새해가 시작되기 30일 전인 12월 2일까지 예산안을 의결해야 한다. 이렇게 확정된 한 해 예산을 '본예산'이라고 부른다.", "ctx": "정부가 짠 820조9천억원 규모의 내년 살림 계획으로, 법정 기한인 12월 2일까지 국회 처리를 요청했다."}, "g-108/01": {"term": "미래대응기금", "tier": "필수", "def": "더 걷힌 세금으로 새로 만들려는 160조원대 나라 기금", "detail": "정부가 내년 예산안에 새로 넣은 기금으로, 반도체 호황으로 예상보다 더 걷힌 세금을 재원으로 한다. 일부는 미래 투자에 쓰고, 약 104조원은 용처를 정하지 않은 여유 자금으로 남겨 둘 계획이다. 이 여유 자금을 빚을 줄이는 데 쓸지, 세수가 줄 때를 대비해 모아 둘지를 두고 의견이 갈린다.", "ctx": "반도체 호황으로 더 걷힌 세금으로 만드는 162조원대 기금이며, 쓸 곳이 정해지지 않은 돈의 규모가 쟁점이다."}, "g-155/01": {"term": "여유 자금", "tier": "상황", "def": "아직 쓸 곳을 정하지 않고 남겨 둔 돈", "detail": "", "ctx": "미래대응기금 중 정부 계획상 용처가 정해지지 않은 104조4천억원을 가리킨다."}, "g-110/01": {"term": "국채", "tier": "필수", "def": "나라가 돈을 빌리려고 발행하는 빚 증서", "detail": "세금만으로 쓸 돈이 모자라면 정부는 국채를 팔아 돈을 빌리고, 정해진 때에 이자와 함께 갚는다. 국채를 많이 발행할수록 나라 빚(국가채무)이 늘어난다.", "ctx": "국민의힘은 여유 자금을 국채 발행을 줄이는 데 써야 한다고 했고, 대통령 발언 중 '국채 순증가분'이 항의를 불렀다."}, "g-115/01": {"term": "백지수표", "tier": "표현", "def": "쓸 곳을 정하지 않고 맡기는 것의 비유", "detail": "", "ctx": "국민의힘이 쓸 곳이 정해지지 않은 여유 자금을 두고 한 비판 표현이다."}, "g-112/01": {"term": "세수", "tier": "상황", "def": "나라가 세금으로 거둬들인 돈", "detail": "", "ctx": "반도체 호황으로 더 걷힌 세금이 미래대응기금의 재원이다."}, "g-117/01": {"term": "퇴장", "tier": "표현", "def": "항의하며 회의장을 나감", "detail": "", "ctx": "연설이 끝난 뒤 국민의힘 의원들이 조경태 의원을 빼고 본회의장을 떠났다."}}</script>
+<script>
+  // 밑줄 친 용어: 누르면 짧은 설명 창, 다시 누르거나 바깥을 누르거나 Esc면 닫힘
+  (() => {
+    const tips = JSON.parse(document.getElementById('tips').textContent);
+    const tip = document.createElement('div');
+    tip.className = 'tip'; tip.setAttribute('role', 'dialog'); tip.hidden = true;
+    document.body.appendChild(tip);
+    let opener = null;
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; return n; };
+    function closeTip() { tip.hidden = true; if (opener) opener.setAttribute('aria-expanded', 'false'); opener = null; }
+    document.querySelectorAll('.term').forEach(b => b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if (opener === b) return closeTip();
+      closeTip();
+      const d = tips[b.dataset.tip];
+      const head = el('div', 'tip-head', '');
+      head.append(el('b', '', d.term), el('span', 'tip-tier', d.tier));
+      const parts = [head, el('p', 'tip-def', d.def)];
+      if (d.detail) parts.push(el('p', 'tip-detail', d.detail));  // 필수 용어만 2~3문장 설명이 있음
+      parts.push(el('p', 'tip-ctx', '이 기사에서 — ' + d.ctx));
+      tip.replaceChildren(...parts);
+      tip.hidden = false; opener = b; b.setAttribute('aria-expanded', 'true');
+      const r = b.getBoundingClientRect();
+      tip.style.left = Math.max(16, Math.min(r.left, innerWidth - tip.offsetWidth - 16)) + scrollX + 'px';
+      tip.style.top = r.bottom + scrollY + 6 + 'px';
+    }));
+    document.addEventListener('click', ev => { if (!tip.hidden && !tip.contains(ev.target)) closeTip(); });
+    document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
+  })();
+</script>
+</body>
+</html>

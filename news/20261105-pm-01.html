@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>조작기소 특검법안 법사위 통과 후 본회의 상정, 국민의힘은 필리버스터로 맞서 · 뉴스밸런스</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7EFE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+  /* ==========================================================================
+     Editorial Minutes — 잡지 지면풍 회의록 스타일시트
+     핵심 원칙
+     - 색은 전부 CSS 변수(:root)로 선언 → 다크모드는 아래쪽에서 변수만 재정의
+     - 발언자/섹션마다 --hue, --hue-soft 색을 배정해 시각적으로 구분
+     - 곡률은 3px 정도로만 (뉴스레터형처럼 각지지도, 카드형처럼 둥글지도 않음)
+     - 원본은 Pretendard 서브셋을 폰트 파일로 직접 내장했으나, 템플릿에서는
+       용량 문제로 CDN 링크로 대체함 (오프라인이 꼭 필요하면 폰트를 다시 내장)
+     ========================================================================== */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #191C22;
+    --muted: #5C626E;
+    --faint: #8A909C;
+    --rule: #E3E6EB;
+    --rule-strong: #C9CEd6;
+    --accent: #2E5D62;
+    --accent-soft: #E4EDEC;
+    --flag: #8C5312;
+    --flag-soft: #F6ECDF;
+
+    /* 섹션/발언자 컬러 팔레트 — 필요하면 색을 더 추가하거나 값만 바꿔도 됨 */
+    --teal: #1F6A6E;      --teal-soft: #DCEDEC;
+    --indigo: #3D4E9E;    --indigo-soft: #E3E7F7;
+    --plum: #7A3F73;      --plum-soft: #F1E4EF;
+    --moss: #4A6B2A;      --moss-soft: #E6EEDC;
+    --clay: #9A4B2C;      --clay-soft: #F7E6DE;
+    --shadow: 0 1px 2px rgba(25, 28, 34, .05), 0 8px 24px -16px rgba(25, 28, 34, .25);
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+
+  /* 시스템이 다크모드면 자동 전환 (사용자가 명시적으로 라이트를 고르지 않은 경우) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+      --rule: #282C34; --rule-strong: #3A404A;
+      --accent: #83B7B2; --accent-soft: #1E2A2B;
+      --flag: #D6A354; --flag-soft: #2A2318;
+      --teal: #7FBDB9; --teal-soft: #16292A;
+      --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+      --plum: #D19BC9; --plum-soft: #2B1E29;
+      --moss: #A8C482; --moss-soft: #1E2618;
+      --clay: #E0997A; --clay-soft: #2E1D16;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    }
+  }
+  /* 사용자가 명시적으로 dark를 고른 경우(data-theme="dark") */
+  :root[data-theme="dark"] {
+    --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+    --rule: #282C34; --rule-strong: #3A404A;
+    --accent: #83B7B2; --accent-soft: #1E2A2B;
+    --flag: #D6A354; --flag-soft: #2A2318;
+    --teal: #7FBDB9; --teal-soft: #16292A;
+    --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+    --plum: #D19BC9; --plum-soft: #2B1E29;
+    --moss: #A8C482; --moss-soft: #1E2618;
+    --clay: #E0997A; --clay-soft: #2E1D16;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.72; letter-spacing: -.011em;
+    word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 50rem; margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 4vw, 2.5rem) 6rem;
+    display: flex; flex-direction: column; gap: 3.25rem;
+  }
+
+  /* 상단 마스트헤드: 라벨 + 제목 + 부제 + 참여자 롤콜 + 그라디언트 바 */
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+  .kicker { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+  .masthead::after {
+    content: ""; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal) 0 20%, var(--indigo) 20% 40%, var(--plum) 40% 60%, var(--moss) 60% 80%, var(--clay) 80% 100%);
+  }
+  h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.15; font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -.035em; }
+  .standfirst { margin: 0; color: var(--muted); font-size: 1.02rem; max-width: 38rem; }
+  .roster { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding-top: .3rem; }
+  .roster .roster-label { border: none; background: none; padding: 0 .25rem 0 0; font-weight: 600; font-size: .78rem; color: var(--ink); }
+  .roster span {
+    font-weight: 500; font-size: .8rem; font-family: var(--mono); padding: .2rem .55rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--muted); background: var(--surface);
+  }
+
+  /* 섹션: --hue 변수로 색을 지정. section.s-xxx 클래스로 색 배정 */
+  section { display: flex; flex-direction: column; gap: 1.15rem; --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  section.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  section.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  section.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  section.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  /* 섹션끼리는 .page의 기본 gap(3.25rem)보다 더 띄워서, 마스트헤드/footer 여백과 구분되게 함.
+     필요하면 margin-top 값만 조절 — 0으로 두면 다른 요소와 동일한 간격으로 돌아감 */
+  section + section { margin-top: 2rem; }
+
+  h2 {
+    font-size: 1.32rem; letter-spacing: -.025em; font-weight: 700; margin: 0;
+    padding-bottom: .75rem; border-bottom: 2px solid var(--hue);
+    display: flex; align-items: center; gap: .65rem;
+  }
+  h2 .num {
+    font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .05em;
+    color: var(--surface); background: var(--hue); border-radius: 3px; padding: .22rem .45rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  ul ul { margin-top: .5rem; padding-left: 1.1rem; }
+  li::marker { color: var(--faint); }
+  strong { font-weight: 600; }
+
+  /* 결론/요약 강조 박스 */
+  .lede {
+    background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--hue);
+    border-radius: 3px; padding: 1.4rem 1.6rem; box-shadow: var(--shadow);
+  }
+
+  /* 발언자 카드: 좌측 고정 이름/역할 라벨 + 우측 괘선 본문 */
+  .speakers { display: flex; flex-direction: column; gap: 1.6rem; }
+  .speaker {
+    display: grid; --hue: var(--teal); --hue-soft: var(--teal-soft);
+    grid-template-columns: 8.5rem 1fr; gap: 1.5rem; align-items: start;
+  }
+  .speaker.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .speaker.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  .speaker.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  .speaker.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  .speaker > header { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: .25rem; padding-top: .35rem; }
+  .speaker h3 { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.3; letter-spacing: -.02em; }
+  .speaker .role {
+    font-size: .72rem; font-weight: 600; color: var(--hue); background: var(--hue-soft);
+    border-radius: 3px; padding: .12rem .4rem; align-self: flex-start;
+  }
+  .speaker .body { border-left: 2px solid var(--hue-soft); padding-left: 1.5rem; }
+  @media (max-width: 40rem) {
+    .speaker { grid-template-columns: 1fr; gap: .7rem; }
+    .speaker > header { position: static; flex-direction: row; align-items: baseline; gap: .6rem; }
+    .speaker .body { border-left: 2px solid var(--rule); padding-left: 1rem; }
+  }
+
+  /* 검증 필요 등 짧은 라벨 플래그 */
+  .flag {
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; color: var(--flag);
+    background: var(--flag-soft); border-radius: 2px; padding: .1rem .38rem; white-space: nowrap;
+  }
+
+  h4 { margin: 1.1rem 0 0; font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  h4:first-child { margin-top: 0; }
+
+  /* 역할분담표 등 표 */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead { background: var(--hue-soft); }
+  thead th { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 500; border-bottom: 1px solid var(--rule-strong); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.n { font-family: var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; width: 2.5rem; }
+  td.who { white-space: nowrap; font-weight: 700; color: var(--hue); }
+  td.what { color: var(--muted); line-height: 1.6; }
+
+  /* 공지/마감 안내 박스 */
+  .notice { background: var(--hue-soft); border-left: 4px solid var(--hue); border-radius: 3px; padding: .9rem 1.1rem; font-size: .93rem; color: var(--ink); }
+
+  /* 미해결/확인 필요 항목 리스트 */
+  .open { list-style: none; padding: 0; gap: 0; }
+  .open li { display: grid; grid-template-columns: 1.4rem 1fr; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .open li:first-child { border-top: 1px solid var(--rule); }
+  .open .idx { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--hue); font-variant-numeric: tabular-nums; }
+  .open .note { display: block; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+
+  footer { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .04em; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+</style>
+<style>
+  .page.news { max-width: 44rem; gap: 1.5rem; }
+  .news, .s-teal { --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  .s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .s-plum { --hue: var(--plum); --hue-soft: var(--plum-soft); }
+  .s-moss { --hue: var(--moss); --hue-soft: var(--moss-soft); }
+  .s-clay { --hue: var(--clay); --hue-soft: var(--clay-soft); }
+  .crumbs { display: flex; align-items: center; justify-content: space-between; gap: .8rem; font-size: .85rem; color: var(--muted); }
+  .crumbs a { font-weight: 600; color: var(--accent); text-decoration: none; padding: .4rem 0; }
+  .n-head { display: flex; flex-direction: column; gap: .6rem; padding-bottom: 1rem; border-bottom: 3px solid var(--hue); }
+  .n-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .8rem; font-size: .8rem; color: var(--muted); }
+  .n-cat { display: inline-flex; align-items: center; gap: .3rem; font-weight: 700; color: var(--hue); }
+  .n-cat svg { width: 1rem; height: 1rem; }
+  .n-head h1 { font-size: clamp(1.35rem, 5vw, 1.9rem); line-height: 1.35; letter-spacing: -.03em; }
+  .orig { margin: 0; font-size: .82rem; color: var(--faint); }
+  .meter { display: inline-flex; gap: 2px; vertical-align: middle; margin-right: .25rem; }
+  .meter i { width: .9rem; height: .38rem; border-radius: 1px; background: var(--rule-strong); }
+  .meter.lv3 i.on { background: var(--flag); }
+  .meter.lv2 i.on { background: var(--clay); }
+  .meter.lv1 i.on { background: var(--faint); }
+  .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
+  .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
+  .block { display: flex; flex-direction: column; gap: .75rem; }
+  .block h2 { font-size: 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--hue); }
+  .stance-q { margin: 0; font-size: .95rem; font-weight: 600; }
+  .stance-q span { display: block; font-size: .72rem; font-weight: 500; color: var(--faint); letter-spacing: .08em; }
+  .note { margin: 0; font-size: .9rem; color: var(--muted); }
+  .sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .side { --side: var(--indigo); --side-soft: var(--indigo-soft); background: var(--side-soft); border-left: 3px solid var(--side);
+    border-radius: 3px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .3rem; }
+  .side-con { --side: var(--clay); --side-soft: var(--clay-soft); }
+  .side p { margin: 0; }
+  .side-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--side); font-weight: 600; }
+  .side-pos { font-weight: 700; line-height: 1.5; }
+  .side-outlets { font-size: .85rem; font-weight: 600; color: var(--side); }
+  .side-focus { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  /* 펼치기: 손가락으로 누르기 쉬운 넓은 막대 */
+  .fold { background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; }
+  .fold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .6rem 1rem;
+    font-size: .95rem; font-weight: 700; }
+  .fold summary::-webkit-details-marker { display: none; }
+  .fold summary small { font-family: var(--mono); font-size: .72rem; font-weight: 500; color: var(--faint); }
+  .fold summary::after { content: "펼치기 ▾"; margin-left: auto; font-size: .78rem; font-weight: 600; color: var(--accent); }
+  .fold[open] summary::after { content: "접기 ▴"; }
+  .fold[open] summary { border-bottom: 1px solid var(--rule); }
+  .fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .fold-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .7rem; }
+  .grp { display: flex; flex-direction: column; gap: .2rem; padding-left: .8rem; border-left: 2px solid var(--rule-strong); }
+  .grp b { font-size: .92rem; }
+  .grp .who { font-size: .82rem; font-weight: 600; color: var(--hue); }
+  .grp .what { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  .facts { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .5rem; font-size: .95rem; }
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .pager a { display: flex; flex-direction: column; gap: .15rem; padding: .7rem .85rem; border: 1px solid var(--rule); border-radius: 5px;
+    background: var(--surface); color: var(--ink); text-decoration: none; font-size: .85rem; line-height: 1.45; }
+  .pager a span { font-size: .72rem; color: var(--faint); }
+  .pager a.next { text-align: right; grid-column: 2; }
+  .sources { font-size: .8rem; color: var(--muted); }
+  .sources summary { cursor: pointer; padding: .4rem 0; }
+  .sources ul { list-style: none; padding: .4rem 0 0; margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .sources .outlet { display: inline-block; min-width: 4.6rem; font-weight: 600; }
+  .sources a { color: var(--muted); }
+  a, button, summary { -webkit-tap-highlight-color: transparent; }
+  @media (max-width: 600px) {
+    .page.news { gap: 1.15rem; padding: 1rem max(16px, env(safe-area-inset-right)) 3rem max(16px, env(safe-area-inset-left)); }
+    .lede { padding: 1rem 1.05rem; }
+    .lede p { font-size: .98rem; }
+    .sides { grid-template-columns: 1fr; }
+    .fold-body { padding: .8rem .85rem .9rem; }
+  }
+
+  /* 누를 수 있다는 게 바로 보이게: 연한 파스텔 형광펜(버터색) + 점선 밑줄. 찬반 색(초록·보라)과 겹치지 않는 색 */
+  .term { --mark: #FBEDC2; --mark-on: #F5DC93;
+    font: inherit; color: inherit; background: var(--mark); border: 0; padding: 0 .18em; margin: 0 .02em; cursor: pointer; border-radius: 6px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    text-decoration: underline dotted var(--hue); text-decoration-thickness: 1.5px; text-underline-offset: .22em; }
+  .term:hover, .term[aria-expanded="true"] { background: var(--mark-on); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .term { --mark: #4A3E22; --mark-on: #635230; } }
+  :root[data-theme="dark"] .term { --mark: #4A3E22; --mark-on: #635230; }
+  .term:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .term-hint { font-weight: 400; color: var(--faint); margin-left: .6rem; letter-spacing: 0; text-transform: none; }
+  .tip { position: absolute; z-index: 20; width: min(21rem, calc(100vw - 32px)); display: flex; flex-direction: column; gap: .35rem;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px;
+    padding: .75rem .9rem; box-shadow: 0 6px 24px rgba(0, 0, 0, .16); font-size: .88rem; line-height: 1.55; }
+  .tip[hidden] { display: none; }
+  .tip p { margin: 0; }
+  .tip-head { display: flex; align-items: baseline; gap: .5rem; }
+  .tip-tier { font-size: .72rem; color: var(--muted); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0 .35rem; }
+  .tip-def { font-weight: 600; }
+  .tip-detail { font-size: .84rem; }
+  .tip-ctx { color: var(--muted); padding-top: .35rem; border-top: 1px dashed var(--rule); }
+
+  :root {
+    --bg: #F7EFE2; --surface: #FFFAF2; --ink: #3D2B1F; --muted: #7B6250; --faint: #A89079;
+    --rule: #EBDDC9; --rule-strong: #DCC5A7; --accent: #8A5A33; --accent-soft: #F2E3CF;
+    --flag: #B65A35; --flag-soft: #F7E2D5;
+    /* 분야 색: 이름은 템플릿 그대로 두고 값만 따뜻한 색으로 (indigo=갈색, clay=캐러멜, moss=올리브, plum=로즈우드, teal=세이지) */
+    --teal: #5E8473; --teal-soft: #E2ECE3;
+    --indigo: #8A5A33; --indigo-soft: #F2E3CF;
+    --plum: #A35F78; --plum-soft: #F6E3E8;
+    --moss: #7A8A3C; --moss-soft: #EEF0D9;
+    --clay: #C27237; --clay-soft: #F9E6D3;
+    --shadow: 0 2px 4px rgba(110, 70, 30, .06), 0 10px 24px -14px rgba(110, 70, 30, .35);
+    --round: "Jua", var(--sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+      --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+      --flag: #E4906A; --flag-soft: #3A2219;
+      --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+      --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+      --clay: #F0A877; --clay-soft: #3A2516;
+      --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+    --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+    --flag: #E4906A; --flag-soft: #3A2219;
+    --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+    --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+    --clay: #F0A877; --clay-soft: #3A2516;
+    --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+  }
+  body { background: var(--bg); }
+
+  /* 둥근 글꼴: 제목·키워드·섹션 이름 */
+  h1, .t-key, .t-sub, .day-head h2, .block h2, .fold summary, .d-label b, .side-tag, .lede .label, .ed-tag, .brand { font-family: var(--round); font-weight: 400; }
+  h1 { letter-spacing: -.01em; }
+  .t-key, .t-sub { letter-spacing: 0; }
+  .kicker { font-family: var(--sans); font-weight: 600; letter-spacing: .04em; text-transform: none; color: var(--accent); }
+  .brand { display: inline-flex; align-items: center; gap: .45rem; }
+  .brand svg { width: 1em; height: 1em; filter: drop-shadow(0 2px 3px rgba(110, 70, 30, .2)); }
+  .masthead::after { height: 6px; border-radius: 999px; }
+
+  /* 동글동글: 모서리를 크게, 작은 표시는 알약 모양 */
+  .card { border-radius: 22px; border-width: 1.5px; }
+  .thumb { margin: 7px 7px 0; border-radius: 16px; border-bottom: 0; }
+  .t-num, .ed-tag, .scroll-btn, .full, .crumbs a { border-radius: 999px; }
+  .meter i { border-radius: 999px; }
+  .date-group { border-radius: 16px; padding: 3px; gap: 2px; border-width: 1.5px; }
+  .d-label { border-bottom: 0; text-align: center; padding: .2rem .4rem .1rem; }
+  .dates button, .ed-none { border-radius: 11px; justify-content: center; gap: .35rem; }
+  .dates button + button, .dates button + .ed-none, .ed-none + button { border-top: 0; }
+  .lede { border: 0; border-radius: 22px; }
+  .lede .label { display: inline-block; font-size: .85rem; letter-spacing: 0; color: var(--hue); background: var(--hue-soft);
+    border-radius: 999px; padding: .15rem .7rem; }
+  .lede .term-hint { font-family: var(--sans); font-size: .72rem; }
+  .side { border-left: 0; border-radius: 18px; }
+  /* 찬반 색: 정치 성향을 떠올리게 하는 파랑·빨강은 쓰지 않고 파스텔 초록(찬성)·보라(반대)로 구분 */
+  .side-pro { --side: #4F7D4A; --side-soft: #E2F0DC; }
+  .side-con { --side: #75589E; --side-soft: #ECE4F6; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+    :root:not([data-theme="light"]) .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  }
+  :root[data-theme="dark"] .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+  :root[data-theme="dark"] .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  .side-tag { align-self: flex-start; font-size: .82rem; letter-spacing: 0; color: var(--surface); background: var(--side);
+    border-radius: 999px; padding: .05rem .65rem; }
+  .fold { border-radius: 20px; border-width: 1.5px; }
+  .fold summary { font-size: 1.02rem; }
+  .fold[open] summary { border-bottom: 1.5px dashed var(--rule); }
+  .grp { border-left: 0; background: var(--bg); border-radius: 14px; padding: .6rem .85rem; }
+  .pager a { border-radius: 18px; }
+  .tip { border-radius: 16px; }
+  .term { border-radius: 6px; }
+  .n-head { border-bottom: 3px dotted var(--hue); }
+  .crumbs a { background: var(--surface); border: 1.5px solid var(--rule); padding: .35rem .85rem; }
+  .full { display: inline-block; background: var(--surface); border: 1.5px solid var(--rule-strong); padding: .4rem 1rem; }
+  footer { border-top: 1.5px dashed var(--rule-strong); }
+  @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
+  @media (max-width: 600px) { .full { display: block; } }
+</style>
+</head>
+<body>
+<div class="page news s-indigo">
+  <nav class="crumbs"><a href="../index.html#e-20261105-pm">← 목록으로</a><span>11월 5일 오후판 · 1/5</span></nav>
+  <header class="n-head">
+    <div class="n-meta">
+      <span class="n-cat"><svg aria-hidden="true" focusable="false" class=""
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <line x1="3" x2="21" y1="22" y2="22" />
+  <line x1="6" x2="6" y1="18" y2="11" />
+  <line x1="10" x2="10" y1="18" y2="11" />
+  <line x1="14" x2="14" y1="18" y2="11" />
+  <line x1="18" x2="18" y1="18" y2="11" />
+  <polygon points="12 2 20 7 4 7" />
+</svg>국내 정치</span>
+      <span>언론사 15곳</span>
+      <span><span class="meter lv3" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>관점 차이 높음</span>
+    </div>
+    <h1>조작기소 특검법안 법사위 통과 후 본회의 상정, 국민의힘은 필리버스터로 맞서</h1>
+    <p class="orig">대표 원제목 — 與, 조작기소 특검법안 내일 처리…국힘 &#x27;필버맞불&#x27;에 대치 격화</p>
+  </header>
+
+  <section class="lede"><div class="label">중립 수정본 · <span class="term-hint">밑줄 친 말을 누르면 뜻이 나옵니다</span></div><p>더불어민주당 주도로 &#x27;<button type="button" class="term" data-tip="g-199/01" aria-expanded="false">조작기소 특검법안</button>&#x27;이 4일 국회 <button type="button" class="term" data-tip="g-25/01" aria-expanded="false">법제사법위원회</button>를 통과했고, 5일 <button type="button" class="term" data-tip="g-10/01" aria-expanded="false">본회의</button>에 <button type="button" class="term" data-tip="g-269/01" aria-expanded="false">상정</button>됐다. 법안은 윤석열 정부 검찰 등의 조작수사·조작기소 의혹을 수사하는 내용으로, 논란이 된 <button type="button" class="term" data-tip="g-58/01" aria-expanded="false">특검</button>의 공소취소 관련 조항은 삭제하고 문재인 정부 관련 사건을 수사 대상에 추가했다. 특검팀은 <button type="button" class="term" data-tip="g-271/01" aria-expanded="false">파견검사</button> 20명 등 최대 309명, 수사 기간은 최장 200일이며, 여야 추천 후보 중 1명을 이재명 대통령이 임명한다. <button type="button" class="term" data-tip="g-156/01" aria-expanded="false">국민의힘</button>은 &quot;대통령 재판을 없애려는 특검&quot;이라고 반발하며 <button type="button" class="term" data-tip="g-20/01" aria-expanded="false">필리버스터</button>에 들어갔고 장외투쟁을 예고했다. 민주당은 검찰의 위법 수사 여부를 밝히는 법이라며 6일 오후 토론을 종결해 <button type="button" class="term" data-tip="g-270/01" aria-expanded="false">표결</button>할 방침이다.</p></section>
+
+  <section class="block">
+    <h2>찬반 입장</h2>
+    <p class="stance-q"><span>쟁점</span>조작기소 특검법의 처리는 정당하다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">윤석열 정부 검찰의 조작수사·기소 의혹을 규명하는 법이며 공소취소 조항은 삭제됐다</p><p class="side-outlets">이 입장을 앞세운 언론사 없음</p><p class="side-focus">민주당의 &#x27;공소취소 삭제·표적수사 규명&#x27; 설명은 여러 기사에 인용됐지만, 이를 중심 주장으로 앞세운 언론사는 없음</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">이재명 대통령 재판을 무마하려는 법이며 절차와 공정성에 문제가 있다</p><p class="side-outlets">조선일보, 중앙일보, 한국경제, 한국일보, 경향신문</p><p class="side-focus">국민의힘의 &#x27;재판 취소·방탄&#x27; 비판, 대통령의 특검 임명 이해충돌, 파견검사 수사권·피의사실 공표·공정성 시비 등 우려 쪽 근거를 중심으로 실음</p></div></div>
+  </section>
+  <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>10곳</small></summary><div class="fold-body"><div class="grp"><b>여야 입장·절차와 일정 병기</b><span class="who">연합뉴스, 뉴시스, 한겨레, 노컷뉴스, 동아일보, 매일경제, KBS, YTN, SBS</span><span class="what">법안 내용과 수정 사항, 여야 발언을 비슷한 비중으로 전하거나 본회의 상정·필리버스터·표결 일정을 중심으로 전함</span></div><div class="grp"><b>윤석열 판결과 연계한 정치 공방</b><span class="who">JTBC</span><span class="what">특검법 대신 윤 전 대통령 선거법 2심 판결 뒤 한동훈 의원의 &#x27;이재명 대통령도 유죄&#x27; 주장을 다룸</span></div></div></details>
+  <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>특검법안은 4일 <button type="button" class="term" data-tip="g-252/01" aria-expanded="false">법사위 소위</button>·전체회의를 하루 만에 통과했고 국민의힘은 표결 전 <button type="button" class="term" data-tip="g-117/01" aria-expanded="false">퇴장</button>했다</li><li><button type="button" class="term" data-tip="g-253/01" aria-expanded="false">수정안</button>에서 특검의 &#x27;<button type="button" class="term" data-tip="g-261/01" aria-expanded="false">공소유지</button> 여부 결정&#x27;과 사건 <button type="button" class="term" data-tip="g-262/01" aria-expanded="false">이첩</button> 요구 등 공소취소로 읽힐 수 있는 조항이 삭제됐다</li><li>수사 대상에 대장동·쌍방울 대북송금 등 이재명 대통령 관련 사건과 함께 문재인 정부 시절 사건(통계 조작, 사위 취업 뇌물, 사드 기밀 유출 등)이 포함됐다</li><li>특검팀은 파견검사 20명을 포함해 최대 309명, 수사 기간은 준비 기간 20일을 포함해 최장 200일이다</li><li>5일 본회의 상정 직후 국민의힘이 필리버스터에 들어갔고, 민주당은 24시간 뒤인 6일 오후 종결 표결을 거쳐 처리할 방침이다</li></ul></div></details>
+
+  <nav class="pager"><a class="next" href="20261105-pm-02.html"><span>다음 뉴스 →</span>윤석열 전 대통령 선거법 위반 2심도 징역 1년 6개월 집행유예 3년, 확정 시 국민의힘 선거비용 397억원 반환</a></nav>
+  <details class="sources"><summary>원문 기사 49건 · 각 언론사 링크</summary><ul><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261104169100001" target="_blank" rel="noopener">與, 조작기소 특검법안 내일 처리…국힘 &#x27;필버맞불&#x27;에 대치 격화</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261104157851001" target="_blank" rel="noopener">조작기소 특검법안, 공소취소 삭제…일각 &quot;형소법 근거로 가능&quot;(종합)</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261104_0003855336" target="_blank" rel="noopener">與, 법사위서 &#x27;조작기소 특검법&#x27; 강행 처리…국힘 &quot;날치기&quot; 반발(종합)</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261104_0003855276" target="_blank" rel="noopener">與, 법사위서 &#x27;조작기소 특검법&#x27; 강행 처리…국힘 &quot;날치기&quot; 반발</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261104/134968342/1" target="_blank" rel="noopener">조작기소 특검법, 與주도 법사위 통과…오늘 본회의 처리 추진</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261104/134968439/1" target="_blank" rel="noopener">공소취소권 삭제 조작기소특검법 법사위 통과…본회의만 남아</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/assembly/1285845.html" target="_blank" rel="noopener">민주당 주도 ‘조작기소 특검법’ 법사위 통과…‘공소취소’ 빼고 문 정부 사건 추가</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/society/society_general/1285792.html" target="_blank" rel="noopener">검사 수사권 없애놓고 ‘조작 기소 특검’엔 예외 조항…법무부도 ‘난색’</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611042116005/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">법사위, 공소취소 뺀 조작기소 특검법 통과…야 “대통령 특혜”</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110417390004008" target="_blank" rel="noopener">국회 법사위, 조작기소특검법 처리 강행…본회의 표결만 앞둬-정치ㅣ한국일보</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110416090001985" target="_blank" rel="noopener">조작기소 특검법 與 주도로 법사위 통과…국힘 &quot;李 재판취소 조작특검&quot; 반발-정치ㅣ한국일보</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/politics/12196700" target="_blank" rel="noopener">&#x27;조작기소 특검법&#x27; 법사위 통과</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/politics/12196960" target="_blank" rel="noopener">[속보] 조작기소 특검법안, 법사위 통과…민주당, 5일 본회의 처리 추진</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/2026110463891" target="_blank" rel="noopener">與 &#x27;조작기소특검법&#x27; 속전속결…법사위 상정 하루 만에 통과</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/2026110466767" target="_blank" rel="noopener">[속보] 조작기소 특검법안, 법사위 통과…與, 내일 본회의 처리 추진</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8704190" target="_blank" rel="noopener">‘조작기소 특검법’ 민주당 주도로 법사위 통과…국민의힘 반발·퇴장</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8704328" target="_blank" rel="noopener">민주당, 오늘(5일) 본회의에서 조작기소 특검법 처리 시도…국힘 “필리버스터”</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6602336" target="_blank" rel="noopener">&#x27;조작기소 특검법&#x27; 법사위 통과…공소취소권 빼고 文정부 사건 추가</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6602249" target="_blank" rel="noopener">조작기소 특검 與野 격돌…&quot;공소취소 없다&quot; &quot;李 구하기 법&quot;[CBS뉴스룸]</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611050002297772" target="_blank" rel="noopener">&#x27;조작기소 특검법&#x27; 속전속결 법사위 통과...오늘 본회의 처리 전망</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611042113201464" target="_blank" rel="noopener">[속보] &#x27;조작기소 특검법안&#x27; 범여권 주도로 법사위 전체회의 통과</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261105122700001" target="_blank" rel="noopener">&#x27;조작기소 특검법안&#x27; 본회의 상정…국힘 필버에 내일 표결 전망</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261105_0003856726" target="_blank" rel="noopener">&#x27;조작기소 특검법&#x27; 국회 본회의 상정…野 필리버스터 돌입</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261105_0003856541" target="_blank" rel="noopener">사법부도 한숨 쉬는 &#x27;조작기소 특검법&#x27;…&quot;자칫 수사·기소 무효&quot;</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261105_0003856769" target="_blank" rel="noopener">국힘, &#x27;조작기소 특검법&#x27;에 장외투쟁 돌입…7일 경복궁역 집회(종합)</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261105_0003856574" target="_blank" rel="noopener">한병도 &quot;국힘 필리버스터 으름장에 흔들리지 않아&quot; [뉴시스Pic]</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261105_0003856276" target="_blank" rel="noopener">조작기소 특검, 文사건까지…&quot;&#x27;李방탄&#x27; 비판 피하려 물타기&quot; 지적도</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/politics/assembly/2026/11/05/CQUPHFEPP5DGNEP73YDEGPVS4U/" target="_blank" rel="noopener">조작기소특검법 본회의 상정... 국힘 “사상 최악의 악법, 기필코 저지”</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25476093" target="_blank" rel="noopener">조작기소 특검엔 “굿 캅” 비유…검찰수사권 없앤 민주당의 모순</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25476092" target="_blank" rel="noopener">죽은 법 살려낸 조작기소 특검법…“파견검사엔 개정 전 형사소송법 적용”</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25476081" target="_blank" rel="noopener">[속보]국힘, ‘조작기소 특검법’ 무제한 토론 돌입…첫 주자 박형수</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261105/134973077/1" target="_blank" rel="noopener">與, 조작기소 특검법 본회의 상정…국힘 필버 맞불</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261105/134972229/1" target="_blank" rel="noopener">국힘 “與, 李범죄 없애는 흥신소 전락…교과서에 악명 박제될 것”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/politics_general/1285876.html" target="_blank" rel="noopener">윤석열 당선무효형에 “397억 반환, 확정되면 수용” 국힘 박형수 공개발언</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/society/society_general/1285929.html" target="_blank" rel="noopener">‘윤석열 손바닥 王자’ 소환한 재판부…“국힘 조직적 대응” 지적도</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/assembly/1285956.html" target="_blank" rel="noopener">국회 본회의 ‘조작기소 특검법’ 상정…국힘, 무제한토론 돌입</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611051614001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">[속보]조작기소 특검법 국회 본회의 상정…국민의힘 필리버스터 돌입</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611051652001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">‘공소취소’ 뺐지만 공정성 시비 여전···대통령 재판에 영향 가능성</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110509030001896" target="_blank" rel="noopener">민주당, &#x27;조작기소 특검법&#x27; 본회의 상정… 국힘 &quot;오늘 국회는 죽었다&quot; &#x27;필버&#x27; 돌입-정치ㅣ한국일보</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110512310000770" target="_blank" rel="noopener">&#x27;이재명 판례&#x27;로 무죄 주장한 윤석열... 尹 재판에 등장한 두 개의 &#x27;李 판례&#x27;는-사회ㅣ한국일보</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110509180001472" target="_blank" rel="noopener">&#x27;조작기소 특검법&#x27; 與 속도전에… 곽규택 &quot;신천지·이화영 폭로 탓 급해서?&quot;-정치ㅣ한국일보</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110511020000906" target="_blank" rel="noopener">법무부 경고 묵살한 &#x27;조작기소 특검법&#x27;… 피의사실 공표, 사실상 가능해졌다-정치ㅣ한국일보</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/2026110588047" target="_blank" rel="noopener">&#x27;조작기소 특검법&#x27; 국회 상정…국힘 필리버스터에 6일 표결할 듯</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/202611058890i" target="_blank" rel="noopener">檢미래위원장 &quot;조작기소 특검과 역할 달라…재발방지·피해회복 논의&quot;</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/202611058431H" target="_blank" rel="noopener">野 &quot;조작기소 특검, 헌정사상 최악의 반헌법적 의회 쿠데타&quot;</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6602833" target="_blank" rel="noopener">檢미래위 &quot;조작기소특검과 역할 달라…&#x27;李 공소취소&#x27; 논의 없다&quot;</a></li><li><span class="outlet">SBS</span> <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008832690&amp;plink=RSSLINK&amp;cooper=RSSREADER" target="_blank" rel="noopener">&#x27;조작기소 의혹 특검법&#x27; 본회의 상정…국힘 필버에 내일 표결 전망</a></li><li><span class="outlet">JTBC</span> <a href="https://news.jtbc.co.kr/article/NB12326604" target="_blank" rel="noopener">윤석열 ‘당선무효형’ 2심 판결에…한동훈 &quot;판례대로라면 이재명 대통령도 유죄&quot;</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202611051556172621" target="_blank" rel="noopener">[속보] &#x27;조작기소 특검법안&#x27; 국회 본회의 상정...필버 대치</a></li></ul></details>
+  <footer>뉴스밸런스 · 요약과 관점 정리는 AI가 기사 본문을 읽고 쓴 자동 초안</footer>
+</div>
+<script type="application/json" id="tips">{"g-199/01": {"term": "조작기소 특검법", "tier": "상황", "def": "수사·기소 과정의 조작 의혹을 특검이 조사하게 하려는 법안", "detail": "", "ctx": "윤석열 정부 검찰 등의 조작수사·기소 의혹을 수사하게 하는 법안으로, 공소취소 조항은 삭제됐다."}, "g-25/01": {"term": "법제사법위원회", "tier": "상황", "def": "법무부·법원 관련 일과 법안 심사를 맡는 국회 위원회", "detail": "", "ctx": "특검법안이 4일 하루 만에 소위와 전체회의를 통과한 국회 상임위원회다."}, "g-10/01": {"term": "본회의", "tier": "필수", "def": "국회의원 전체가 모여 안건을 최종 결정하는 회의", "detail": "위원회에서 먼저 논의한 안건을 본회의에서 표결로 확정한다. 국정조사도 요구서를 본회의에 보고하고, 계획서를 본회의에서 승인받아야 시작된다.", "ctx": "특검법안이 법사위를 거쳐 5일 오른 전체 의원 회의로, 여기서 최종 표결이 이뤄진다."}, "g-269/01": {"term": "상정", "tier": "상황", "def": "안건을 회의에서 논의할 순서에 올리는 것", "detail": "", "ctx": "특검법안이 5일 본회의 논의 순서에 올라 필리버스터가 시작됐다."}, "g-58/01": {"term": "특검", "tier": "상황", "def": "특정 사건을 따로 수사하려고 법으로 정해 둔 수사 책임자와 그 팀", "detail": "", "ctx": "대통령이 임명하는 별도 수사팀으로, 이 법안은 검찰의 조작수사·조작기소 의혹을 수사하게 한다."}, "g-271/01": {"term": "파견검사", "tier": "상황", "def": "특검을 돕기 위해 검찰 등에서 잠시 보내는 검사", "detail": "", "ctx": "특검팀에 최대 20명까지 다른 기관에서 보내 수사를 돕게 하는 검사다."}, "g-156/01": {"term": "국민의힘", "tier": "상황", "def": "국회의 정당 가운데 하나. 이 글 날짜 기준 야당", "detail": "", "ctx": "'대통령 재판을 없애려는 특검'이라며 필리버스터와 장외투쟁에 들어간 정당이다."}, "g-20/01": {"term": "필리버스터", "tier": "상황", "def": "표결을 늦추려고 오래 발언하는 합법적 방법(무제한 토론)", "detail": "", "ctx": "국민의힘이 법안 처리를 늦추려 본회의에서 오래 발언하며 맞선 방식이다."}, "g-270/01": {"term": "표결", "tier": "상황", "def": "의원들이 찬성·반대를 표시해 안건을 결정하는 것", "detail": "", "ctx": "민주당이 필리버스터를 끝낸 뒤 6일 오후 법안 찬반을 가리겠다고 한 절차다."}, "g-252/01": {"term": "법안심사소위원회", "tier": "상황", "def": "상임위원회 안에서 법안을 먼저 꼼꼼히 따지는 작은 모임", "detail": "", "ctx": "법안을 먼저 자세히 따지는 작은 위원회로, 이 법안은 하루 만에 통과시켰다."}, "g-117/01": {"term": "퇴장", "tier": "표현", "def": "항의하며 회의장을 나감", "detail": "", "ctx": "국민의힘 의원들이 법사위 표결 전에 반발하며 회의장을 나간 일을 가리킨다."}, "g-253/01": {"term": "수정안", "tier": "상황", "def": "원래 안의 일부를 고쳐 새로 낸 안", "detail": "", "ctx": "원래 법안에서 공소취소로 읽힐 수 있는 조항을 빼고 문재인 정부 사건을 수사 대상에 넣은 고친 안이다."}, "g-261/01": {"term": "공소유지", "tier": "상황", "def": "검사가 재판에서 유죄를 입증하며 기소를 이어 가는 일", "detail": "", "ctx": "특검이 기소한 사건의 재판을 계속할지 정하는 권한 관련 조항이 수정안에서 삭제됐다."}, "g-262/01": {"term": "이첩", "tier": "상황", "def": "맡던 사건을 다른 수사기관으로 넘김", "detail": "", "ctx": "다른 기관이 수사하던 사건을 특검이 넘겨받는 일로, 이를 요구하는 조항도 삭제됐다."}}</script>
+<script>
+  // 밑줄 친 용어: 누르면 짧은 설명 창, 다시 누르거나 바깥을 누르거나 Esc면 닫힘
+  (() => {
+    const tips = JSON.parse(document.getElementById('tips').textContent);
+    const tip = document.createElement('div');
+    tip.className = 'tip'; tip.setAttribute('role', 'dialog'); tip.hidden = true;
+    document.body.appendChild(tip);
+    let opener = null;
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; return n; };
+    function closeTip() { tip.hidden = true; if (opener) opener.setAttribute('aria-expanded', 'false'); opener = null; }
+    document.querySelectorAll('.term').forEach(b => b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if (opener === b) return closeTip();
+      closeTip();
+      const d = tips[b.dataset.tip];
+      const head = el('div', 'tip-head', '');
+      head.append(el('b', '', d.term), el('span', 'tip-tier', d.tier));
+      const parts = [head, el('p', 'tip-def', d.def)];
+      if (d.detail) parts.push(el('p', 'tip-detail', d.detail));  // 필수 용어만 2~3문장 설명이 있음
+      parts.push(el('p', 'tip-ctx', '이 기사에서 — ' + d.ctx));
+      tip.replaceChildren(...parts);
+      tip.hidden = false; opener = b; b.setAttribute('aria-expanded', 'true');
+      const r = b.getBoundingClientRect();
+      tip.style.left = Math.max(16, Math.min(r.left, innerWidth - tip.offsetWidth - 16)) + scrollX + 'px';
+      tip.style.top = r.bottom + scrollY + 6 + 'px';
+    }));
+    document.addEventListener('click', ev => { if (!tip.hidden && !tip.contains(ev.target)) closeTip(); });
+    document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
+  })();
+</script>
+</body>
+</html>

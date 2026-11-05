@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>미국, 진성준 국회 국방위원장의 방미용 관용 비자 발급 거부…외교부 “절차 종결되지 않아” · 뉴스밸런스</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7EFE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+  /* ==========================================================================
+     Editorial Minutes — 잡지 지면풍 회의록 스타일시트
+     핵심 원칙
+     - 색은 전부 CSS 변수(:root)로 선언 → 다크모드는 아래쪽에서 변수만 재정의
+     - 발언자/섹션마다 --hue, --hue-soft 색을 배정해 시각적으로 구분
+     - 곡률은 3px 정도로만 (뉴스레터형처럼 각지지도, 카드형처럼 둥글지도 않음)
+     - 원본은 Pretendard 서브셋을 폰트 파일로 직접 내장했으나, 템플릿에서는
+       용량 문제로 CDN 링크로 대체함 (오프라인이 꼭 필요하면 폰트를 다시 내장)
+     ========================================================================== */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #191C22;
+    --muted: #5C626E;
+    --faint: #8A909C;
+    --rule: #E3E6EB;
+    --rule-strong: #C9CEd6;
+    --accent: #2E5D62;
+    --accent-soft: #E4EDEC;
+    --flag: #8C5312;
+    --flag-soft: #F6ECDF;
+
+    /* 섹션/발언자 컬러 팔레트 — 필요하면 색을 더 추가하거나 값만 바꿔도 됨 */
+    --teal: #1F6A6E;      --teal-soft: #DCEDEC;
+    --indigo: #3D4E9E;    --indigo-soft: #E3E7F7;
+    --plum: #7A3F73;      --plum-soft: #F1E4EF;
+    --moss: #4A6B2A;      --moss-soft: #E6EEDC;
+    --clay: #9A4B2C;      --clay-soft: #F7E6DE;
+    --shadow: 0 1px 2px rgba(25, 28, 34, .05), 0 8px 24px -16px rgba(25, 28, 34, .25);
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+
+  /* 시스템이 다크모드면 자동 전환 (사용자가 명시적으로 라이트를 고르지 않은 경우) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+      --rule: #282C34; --rule-strong: #3A404A;
+      --accent: #83B7B2; --accent-soft: #1E2A2B;
+      --flag: #D6A354; --flag-soft: #2A2318;
+      --teal: #7FBDB9; --teal-soft: #16292A;
+      --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+      --plum: #D19BC9; --plum-soft: #2B1E29;
+      --moss: #A8C482; --moss-soft: #1E2618;
+      --clay: #E0997A; --clay-soft: #2E1D16;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    }
+  }
+  /* 사용자가 명시적으로 dark를 고른 경우(data-theme="dark") */
+  :root[data-theme="dark"] {
+    --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+    --rule: #282C34; --rule-strong: #3A404A;
+    --accent: #83B7B2; --accent-soft: #1E2A2B;
+    --flag: #D6A354; --flag-soft: #2A2318;
+    --teal: #7FBDB9; --teal-soft: #16292A;
+    --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+    --plum: #D19BC9; --plum-soft: #2B1E29;
+    --moss: #A8C482; --moss-soft: #1E2618;
+    --clay: #E0997A; --clay-soft: #2E1D16;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.72; letter-spacing: -.011em;
+    word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 50rem; margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 4vw, 2.5rem) 6rem;
+    display: flex; flex-direction: column; gap: 3.25rem;
+  }
+
+  /* 상단 마스트헤드: 라벨 + 제목 + 부제 + 참여자 롤콜 + 그라디언트 바 */
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+  .kicker { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+  .masthead::after {
+    content: ""; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal) 0 20%, var(--indigo) 20% 40%, var(--plum) 40% 60%, var(--moss) 60% 80%, var(--clay) 80% 100%);
+  }
+  h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.15; font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -.035em; }
+  .standfirst { margin: 0; color: var(--muted); font-size: 1.02rem; max-width: 38rem; }
+  .roster { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding-top: .3rem; }
+  .roster .roster-label { border: none; background: none; padding: 0 .25rem 0 0; font-weight: 600; font-size: .78rem; color: var(--ink); }
+  .roster span {
+    font-weight: 500; font-size: .8rem; font-family: var(--mono); padding: .2rem .55rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--muted); background: var(--surface);
+  }
+
+  /* 섹션: --hue 변수로 색을 지정. section.s-xxx 클래스로 색 배정 */
+  section { display: flex; flex-direction: column; gap: 1.15rem; --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  section.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  section.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  section.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  section.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  /* 섹션끼리는 .page의 기본 gap(3.25rem)보다 더 띄워서, 마스트헤드/footer 여백과 구분되게 함.
+     필요하면 margin-top 값만 조절 — 0으로 두면 다른 요소와 동일한 간격으로 돌아감 */
+  section + section { margin-top: 2rem; }
+
+  h2 {
+    font-size: 1.32rem; letter-spacing: -.025em; font-weight: 700; margin: 0;
+    padding-bottom: .75rem; border-bottom: 2px solid var(--hue);
+    display: flex; align-items: center; gap: .65rem;
+  }
+  h2 .num {
+    font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .05em;
+    color: var(--surface); background: var(--hue); border-radius: 3px; padding: .22rem .45rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  ul ul { margin-top: .5rem; padding-left: 1.1rem; }
+  li::marker { color: var(--faint); }
+  strong { font-weight: 600; }
+
+  /* 결론/요약 강조 박스 */
+  .lede {
+    background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--hue);
+    border-radius: 3px; padding: 1.4rem 1.6rem; box-shadow: var(--shadow);
+  }
+
+  /* 발언자 카드: 좌측 고정 이름/역할 라벨 + 우측 괘선 본문 */
+  .speakers { display: flex; flex-direction: column; gap: 1.6rem; }
+  .speaker {
+    display: grid; --hue: var(--teal); --hue-soft: var(--teal-soft);
+    grid-template-columns: 8.5rem 1fr; gap: 1.5rem; align-items: start;
+  }
+  .speaker.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .speaker.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  .speaker.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  .speaker.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  .speaker > header { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: .25rem; padding-top: .35rem; }
+  .speaker h3 { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.3; letter-spacing: -.02em; }
+  .speaker .role {
+    font-size: .72rem; font-weight: 600; color: var(--hue); background: var(--hue-soft);
+    border-radius: 3px; padding: .12rem .4rem; align-self: flex-start;
+  }
+  .speaker .body { border-left: 2px solid var(--hue-soft); padding-left: 1.5rem; }
+  @media (max-width: 40rem) {
+    .speaker { grid-template-columns: 1fr; gap: .7rem; }
+    .speaker > header { position: static; flex-direction: row; align-items: baseline; gap: .6rem; }
+    .speaker .body { border-left: 2px solid var(--rule); padding-left: 1rem; }
+  }
+
+  /* 검증 필요 등 짧은 라벨 플래그 */
+  .flag {
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; color: var(--flag);
+    background: var(--flag-soft); border-radius: 2px; padding: .1rem .38rem; white-space: nowrap;
+  }
+
+  h4 { margin: 1.1rem 0 0; font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  h4:first-child { margin-top: 0; }
+
+  /* 역할분담표 등 표 */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead { background: var(--hue-soft); }
+  thead th { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 500; border-bottom: 1px solid var(--rule-strong); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.n { font-family: var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; width: 2.5rem; }
+  td.who { white-space: nowrap; font-weight: 700; color: var(--hue); }
+  td.what { color: var(--muted); line-height: 1.6; }
+
+  /* 공지/마감 안내 박스 */
+  .notice { background: var(--hue-soft); border-left: 4px solid var(--hue); border-radius: 3px; padding: .9rem 1.1rem; font-size: .93rem; color: var(--ink); }
+
+  /* 미해결/확인 필요 항목 리스트 */
+  .open { list-style: none; padding: 0; gap: 0; }
+  .open li { display: grid; grid-template-columns: 1.4rem 1fr; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .open li:first-child { border-top: 1px solid var(--rule); }
+  .open .idx { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--hue); font-variant-numeric: tabular-nums; }
+  .open .note { display: block; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+
+  footer { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .04em; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+</style>
+<style>
+  .page.news { max-width: 44rem; gap: 1.5rem; }
+  .news, .s-teal { --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  .s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .s-plum { --hue: var(--plum); --hue-soft: var(--plum-soft); }
+  .s-moss { --hue: var(--moss); --hue-soft: var(--moss-soft); }
+  .s-clay { --hue: var(--clay); --hue-soft: var(--clay-soft); }
+  .crumbs { display: flex; align-items: center; justify-content: space-between; gap: .8rem; font-size: .85rem; color: var(--muted); }
+  .crumbs a { font-weight: 600; color: var(--accent); text-decoration: none; padding: .4rem 0; }
+  .n-head { display: flex; flex-direction: column; gap: .6rem; padding-bottom: 1rem; border-bottom: 3px solid var(--hue); }
+  .n-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .8rem; font-size: .8rem; color: var(--muted); }
+  .n-cat { display: inline-flex; align-items: center; gap: .3rem; font-weight: 700; color: var(--hue); }
+  .n-cat svg { width: 1rem; height: 1rem; }
+  .n-head h1 { font-size: clamp(1.35rem, 5vw, 1.9rem); line-height: 1.35; letter-spacing: -.03em; }
+  .orig { margin: 0; font-size: .82rem; color: var(--faint); }
+  .meter { display: inline-flex; gap: 2px; vertical-align: middle; margin-right: .25rem; }
+  .meter i { width: .9rem; height: .38rem; border-radius: 1px; background: var(--rule-strong); }
+  .meter.lv3 i.on { background: var(--flag); }
+  .meter.lv2 i.on { background: var(--clay); }
+  .meter.lv1 i.on { background: var(--faint); }
+  .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
+  .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
+  .block { display: flex; flex-direction: column; gap: .75rem; }
+  .block h2 { font-size: 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--hue); }
+  .stance-q { margin: 0; font-size: .95rem; font-weight: 600; }
+  .stance-q span { display: block; font-size: .72rem; font-weight: 500; color: var(--faint); letter-spacing: .08em; }
+  .note { margin: 0; font-size: .9rem; color: var(--muted); }
+  .sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .side { --side: var(--indigo); --side-soft: var(--indigo-soft); background: var(--side-soft); border-left: 3px solid var(--side);
+    border-radius: 3px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .3rem; }
+  .side-con { --side: var(--clay); --side-soft: var(--clay-soft); }
+  .side p { margin: 0; }
+  .side-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--side); font-weight: 600; }
+  .side-pos { font-weight: 700; line-height: 1.5; }
+  .side-outlets { font-size: .85rem; font-weight: 600; color: var(--side); }
+  .side-focus { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  /* 펼치기: 손가락으로 누르기 쉬운 넓은 막대 */
+  .fold { background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; }
+  .fold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .6rem 1rem;
+    font-size: .95rem; font-weight: 700; }
+  .fold summary::-webkit-details-marker { display: none; }
+  .fold summary small { font-family: var(--mono); font-size: .72rem; font-weight: 500; color: var(--faint); }
+  .fold summary::after { content: "펼치기 ▾"; margin-left: auto; font-size: .78rem; font-weight: 600; color: var(--accent); }
+  .fold[open] summary::after { content: "접기 ▴"; }
+  .fold[open] summary { border-bottom: 1px solid var(--rule); }
+  .fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .fold-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .7rem; }
+  .grp { display: flex; flex-direction: column; gap: .2rem; padding-left: .8rem; border-left: 2px solid var(--rule-strong); }
+  .grp b { font-size: .92rem; }
+  .grp .who { font-size: .82rem; font-weight: 600; color: var(--hue); }
+  .grp .what { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  .facts { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .5rem; font-size: .95rem; }
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .pager a { display: flex; flex-direction: column; gap: .15rem; padding: .7rem .85rem; border: 1px solid var(--rule); border-radius: 5px;
+    background: var(--surface); color: var(--ink); text-decoration: none; font-size: .85rem; line-height: 1.45; }
+  .pager a span { font-size: .72rem; color: var(--faint); }
+  .pager a.next { text-align: right; grid-column: 2; }
+  .sources { font-size: .8rem; color: var(--muted); }
+  .sources summary { cursor: pointer; padding: .4rem 0; }
+  .sources ul { list-style: none; padding: .4rem 0 0; margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .sources .outlet { display: inline-block; min-width: 4.6rem; font-weight: 600; }
+  .sources a { color: var(--muted); }
+  a, button, summary { -webkit-tap-highlight-color: transparent; }
+  @media (max-width: 600px) {
+    .page.news { gap: 1.15rem; padding: 1rem max(16px, env(safe-area-inset-right)) 3rem max(16px, env(safe-area-inset-left)); }
+    .lede { padding: 1rem 1.05rem; }
+    .lede p { font-size: .98rem; }
+    .sides { grid-template-columns: 1fr; }
+    .fold-body { padding: .8rem .85rem .9rem; }
+  }
+
+  /* 누를 수 있다는 게 바로 보이게: 연한 파스텔 형광펜(버터색) + 점선 밑줄. 찬반 색(초록·보라)과 겹치지 않는 색 */
+  .term { --mark: #FBEDC2; --mark-on: #F5DC93;
+    font: inherit; color: inherit; background: var(--mark); border: 0; padding: 0 .18em; margin: 0 .02em; cursor: pointer; border-radius: 6px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    text-decoration: underline dotted var(--hue); text-decoration-thickness: 1.5px; text-underline-offset: .22em; }
+  .term:hover, .term[aria-expanded="true"] { background: var(--mark-on); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .term { --mark: #4A3E22; --mark-on: #635230; } }
+  :root[data-theme="dark"] .term { --mark: #4A3E22; --mark-on: #635230; }
+  .term:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .term-hint { font-weight: 400; color: var(--faint); margin-left: .6rem; letter-spacing: 0; text-transform: none; }
+  .tip { position: absolute; z-index: 20; width: min(21rem, calc(100vw - 32px)); display: flex; flex-direction: column; gap: .35rem;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px;
+    padding: .75rem .9rem; box-shadow: 0 6px 24px rgba(0, 0, 0, .16); font-size: .88rem; line-height: 1.55; }
+  .tip[hidden] { display: none; }
+  .tip p { margin: 0; }
+  .tip-head { display: flex; align-items: baseline; gap: .5rem; }
+  .tip-tier { font-size: .72rem; color: var(--muted); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0 .35rem; }
+  .tip-def { font-weight: 600; }
+  .tip-detail { font-size: .84rem; }
+  .tip-ctx { color: var(--muted); padding-top: .35rem; border-top: 1px dashed var(--rule); }
+
+  :root {
+    --bg: #F7EFE2; --surface: #FFFAF2; --ink: #3D2B1F; --muted: #7B6250; --faint: #A89079;
+    --rule: #EBDDC9; --rule-strong: #DCC5A7; --accent: #8A5A33; --accent-soft: #F2E3CF;
+    --flag: #B65A35; --flag-soft: #F7E2D5;
+    /* 분야 색: 이름은 템플릿 그대로 두고 값만 따뜻한 색으로 (indigo=갈색, clay=캐러멜, moss=올리브, plum=로즈우드, teal=세이지) */
+    --teal: #5E8473; --teal-soft: #E2ECE3;
+    --indigo: #8A5A33; --indigo-soft: #F2E3CF;
+    --plum: #A35F78; --plum-soft: #F6E3E8;
+    --moss: #7A8A3C; --moss-soft: #EEF0D9;
+    --clay: #C27237; --clay-soft: #F9E6D3;
+    --shadow: 0 2px 4px rgba(110, 70, 30, .06), 0 10px 24px -14px rgba(110, 70, 30, .35);
+    --round: "Jua", var(--sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+      --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+      --flag: #E4906A; --flag-soft: #3A2219;
+      --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+      --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+      --clay: #F0A877; --clay-soft: #3A2516;
+      --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+    --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+    --flag: #E4906A; --flag-soft: #3A2219;
+    --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+    --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+    --clay: #F0A877; --clay-soft: #3A2516;
+    --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+  }
+  body { background: var(--bg); }
+
+  /* 둥근 글꼴: 제목·키워드·섹션 이름 */
+  h1, .t-key, .t-sub, .day-head h2, .block h2, .fold summary, .d-label b, .side-tag, .lede .label, .ed-tag, .brand { font-family: var(--round); font-weight: 400; }
+  h1 { letter-spacing: -.01em; }
+  .t-key, .t-sub { letter-spacing: 0; }
+  .kicker { font-family: var(--sans); font-weight: 600; letter-spacing: .04em; text-transform: none; color: var(--accent); }
+  .brand { display: inline-flex; align-items: center; gap: .45rem; }
+  .brand svg { width: 1em; height: 1em; filter: drop-shadow(0 2px 3px rgba(110, 70, 30, .2)); }
+  .masthead::after { height: 6px; border-radius: 999px; }
+
+  /* 동글동글: 모서리를 크게, 작은 표시는 알약 모양 */
+  .card { border-radius: 22px; border-width: 1.5px; }
+  .thumb { margin: 7px 7px 0; border-radius: 16px; border-bottom: 0; }
+  .t-num, .ed-tag, .scroll-btn, .full, .crumbs a { border-radius: 999px; }
+  .meter i { border-radius: 999px; }
+  .date-group { border-radius: 16px; padding: 3px; gap: 2px; border-width: 1.5px; }
+  .d-label { border-bottom: 0; text-align: center; padding: .2rem .4rem .1rem; }
+  .dates button, .ed-none { border-radius: 11px; justify-content: center; gap: .35rem; }
+  .dates button + button, .dates button + .ed-none, .ed-none + button { border-top: 0; }
+  .lede { border: 0; border-radius: 22px; }
+  .lede .label { display: inline-block; font-size: .85rem; letter-spacing: 0; color: var(--hue); background: var(--hue-soft);
+    border-radius: 999px; padding: .15rem .7rem; }
+  .lede .term-hint { font-family: var(--sans); font-size: .72rem; }
+  .side { border-left: 0; border-radius: 18px; }
+  /* 찬반 색: 정치 성향을 떠올리게 하는 파랑·빨강은 쓰지 않고 파스텔 초록(찬성)·보라(반대)로 구분 */
+  .side-pro { --side: #4F7D4A; --side-soft: #E2F0DC; }
+  .side-con { --side: #75589E; --side-soft: #ECE4F6; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+    :root:not([data-theme="light"]) .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  }
+  :root[data-theme="dark"] .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+  :root[data-theme="dark"] .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  .side-tag { align-self: flex-start; font-size: .82rem; letter-spacing: 0; color: var(--surface); background: var(--side);
+    border-radius: 999px; padding: .05rem .65rem; }
+  .fold { border-radius: 20px; border-width: 1.5px; }
+  .fold summary { font-size: 1.02rem; }
+  .fold[open] summary { border-bottom: 1.5px dashed var(--rule); }
+  .grp { border-left: 0; background: var(--bg); border-radius: 14px; padding: .6rem .85rem; }
+  .pager a { border-radius: 18px; }
+  .tip { border-radius: 16px; }
+  .term { border-radius: 6px; }
+  .n-head { border-bottom: 3px dotted var(--hue); }
+  .crumbs a { background: var(--surface); border: 1.5px solid var(--rule); padding: .35rem .85rem; }
+  .full { display: inline-block; background: var(--surface); border: 1.5px solid var(--rule-strong); padding: .4rem 1rem; }
+  footer { border-top: 1.5px dashed var(--rule-strong); }
+  @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
+  @media (max-width: 600px) { .full { display: block; } }
+</style>
+</head>
+<body>
+<div class="page news s-teal">
+  <nav class="crumbs"><a href="../index.html#e-20261029-pm">← 목록으로</a><span>10월 29일 오후판 · 4/5</span></nav>
+  <header class="n-head">
+    <div class="n-meta">
+      <span class="n-cat"><svg aria-hidden="true" focusable="false" class=""
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+</svg>외교·안보</span>
+      <span>언론사 11곳</span>
+      <span><span class="meter lv3" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>관점 차이 높음</span>
+    </div>
+    <h1>미국, 진성준 국회 국방위원장의 방미용 관용 비자 발급 거부…외교부 “절차 종결되지 않아”</h1>
+    <p class="orig">대표 원제목 — 정청래 이어 與국방위원장 美비자발급 거부당해…정부 &quot;절차 미종결&quot;(종합)</p>
+  </header>
+
+  <section class="lede"><div class="label">중립 수정본</div><p>더불어민주당 진성준 국회 국방위원장은 28일 11월 1~5일 미 태평양사령부 방문을 위해 신청한 관용 비자(A-2) 발급을 거부당했다고 밝히고 “강력한 유감”을 표했다. 미국은 거부 사유를 밝히지 않았고, 1991년 국가보안법 위반 유죄 전력이 영향을 줬을 것이라는 해석이 나오는 가운데 진 위원장은 미국 측 요청에 따라 판결문을 번역해 제출할 계획이다. 앞서 정청래 의원도 비자 발급이 지연돼 국정감사 방미를 포기했다. 외교부는 “절차가 종결되지 않은 것으로 안다”며 미국과 소통 중이라고 했고, 조현 장관은 29일 신속 발급을 요청하겠다고 밝혔다. 미 국무부는 한겨레 질의에 “모든 비자 신청을 개별 사안별로 심사한다”며 구체적 사안은 논평하지 않았다.</p></section>
+
+  <section class="block">
+    <h2>찬반 입장</h2>
+    <p class="stance-q"><span>쟁점</span>미국의 진성준 국방위원장 비자 발급 거부는 부당하다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">국회의 공식 의정활동을 막은 조치로 한미동맹의 신뢰를 해친다(진 위원장 주장)</p><p class="side-outlets">뉴시스, 노컷뉴스, YTN, 한겨레, 한국일보</p><p class="side-focus">진 위원장의 유감 성명과 2014년 방문 전례, 확정된 면담 일정을 앞세우고, 한겨레·한국일보는 한미 갈등 기류와 연결해 해석(뉴시스는 외교부 입장도 덧붙임)</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">거부의 원인은 미국의 부당한 조치가 아니라 진 위원장의 전력과 정부의 대미 외교에 있다</p><p class="side-outlets">동아일보, 조선일보, 한국경제</p><p class="side-focus">‘반미 전과’ 등 진 위원장의 과거 판결 내용과 이준석·국민의힘 등 야권의 비판을 앞세움(한국경제는 여당 내부 항의·신중론과 국정원 설명도 전함)</p></div></div>
+  </section>
+  <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>3곳</small></summary><div class="fold-body"><div class="grp"><b>정부 대응·절차 중심</b><span class="who">KBS, 경향신문</span><span class="what">외교부의 ‘절차 미종결’ 입장과 조현 장관의 신속 발급 요청 등 정부 대응과 절차를 중심으로 전함</span></div><div class="grp"><b>여야 공방과 한미관계 파장</b><span class="who">연합뉴스</span><span class="what">여야 공방, 정부 입장, SCM 연기와 의원 비자 문제가 겹친 한미관계 ‘난기류’ 전망을 폭넓게 전함</span></div></div></details>
+  <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>진 위원장이 28일 방미용 관용 비자 발급을 거부당했다고 밝혔고, 방미단은 여야 국방위원 4명으로 11월 1~5일 태평양사령부 방문 예정이었다</li><li>미국 측은 거부 사유를 공개하지 않았고, 1991년 국가보안법 위반 전력과 연관됐을 가능성이 거론된다</li><li>정청래 의원도 앞서 국정감사 방미용 비자가 지연돼 유럽으로 감사 지역을 바꿨다</li><li>외교부는 “절차가 종결되지 않았고 미측과 소통 중”이라고 밝혔으며, 조현 장관은 신속 발급을 요청하겠다고 했다</li><li>미 국무부는 모든 비자를 개별 사안별로 심사한다는 원칙만 밝혔다</li></ul></div></details>
+
+  <nav class="pager"><a class="prev" href="20261029-pm-03.html"><span>← 이전 뉴스</span>내란특검, 윤석열 전 대통령 내란 우두머리 항소심에서 사형 구형</a><a class="next" href="20261029-pm-05.html"><span>다음 뉴스 →</span>스페인 톨레도 인근 고속열차 추돌로 최소 68명 사망, 한국인 탑승객 중 2명 부상</a></nav>
+  <details class="sources"><summary>원문 기사 18건 · 각 언론사 링크</summary><ul><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261028179151001" target="_blank" rel="noopener">정청래 이어 與국방위원장 美비자발급 거부당해…정부 &quot;절차 미종결&quot;(종합)</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261028_0003845384" target="_blank" rel="noopener">진성준 국방위원장 &quot;美 비자 발급 거부, 강력 유감 표해&quot;</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261028_0003845513" target="_blank" rel="noopener">외교부 &quot;진성준 국방위원장 美비자 심사 절차 현재 종결 아냐&quot;</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/politics/assembly/2026/10/28/ZHBUXVI2QJCGVJVJYA3ALYBBYI/" target="_blank" rel="noopener">與 진성준 국방위원장도 美 비자발급 거부당해</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Politics/article/all/20261028/134927626/1" target="_blank" rel="noopener">‘반미 전과’ 與진성준 국방위원장, 美비자 발급 거부당해</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/politics_general/1284699.html" target="_blank" rel="noopener">미국, 정청래 이어 진성준 국방위원장 비자 발급도 거부</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/politics/politics_general/1284671.html" target="_blank" rel="noopener">미국행 비자 거부당한 진성준 국방위원장 “한-미 동맹 훼손 처사”</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026102818570004283" target="_blank" rel="noopener">정청래 美 비자 발급 &#x27;보류&#x27; 이어 진성준은 &#x27;거부&#x27;-정치ㅣ한국일보</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/2026102817597" target="_blank" rel="noopener">&quot;한미 관계 심각한 위기&quot;…미국 비자 거부에 보수 맹폭</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8698103" target="_blank" rel="noopener">외교부, 진성준 ‘비자 발급 거부’에 “미측과 긴밀히 협의”</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6598799" target="_blank" rel="noopener">진성준 국방위원장, 미국 비자 거부…&quot;한미동맹 신뢰 훼손&quot;</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0101_202610282211240750" target="_blank" rel="noopener">미, 진성준 국방위원장 비자도 발급 거부...&quot;강력한 유감&quot;</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261029163500504" target="_blank" rel="noopener">국회의원 비자 거부 속출에 SCM은 내년으로…한미관계 &#x27;난기류&#x27;</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/politics/assembly/2026/10/29/72KJHP5HARAERAB4OA4Q75F7SU/" target="_blank" rel="noopener">진성준 美 비자 거부에 국힘 “한미 관계 아작나”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1284763.html" target="_blank" rel="noopener">미 국무부, 진성준 국방위원장 비자 거부에 “모든 비자 개별 심사”</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202610291419001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">조현 “미국, 국회의원 비자 발급 지연 바람직하지 않아…신속 발급 요청”</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/202610293549i" target="_blank" rel="noopener">진성준 美 비자 거부에 與 내부 &quot;국회 차원 항의&quot; vs &quot;확대해석 경계&quot;</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/202610293615H" target="_blank" rel="noopener">정청래·진성준 비자 거부 논란…국정원 &quot;한·미 갈등 탓 아냐&quot; [종합]</a></li></ul></details>
+  <footer>뉴스밸런스 · 요약과 관점 정리는 AI가 기사 본문을 읽고 쓴 자동 초안</footer>
+</div>
+<script type="application/json" id="tips">{}</script>
+<script>
+  // 밑줄 친 용어: 누르면 짧은 설명 창, 다시 누르거나 바깥을 누르거나 Esc면 닫힘
+  (() => {
+    const tips = JSON.parse(document.getElementById('tips').textContent);
+    const tip = document.createElement('div');
+    tip.className = 'tip'; tip.setAttribute('role', 'dialog'); tip.hidden = true;
+    document.body.appendChild(tip);
+    let opener = null;
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; return n; };
+    function closeTip() { tip.hidden = true; if (opener) opener.setAttribute('aria-expanded', 'false'); opener = null; }
+    document.querySelectorAll('.term').forEach(b => b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if (opener === b) return closeTip();
+      closeTip();
+      const d = tips[b.dataset.tip];
+      const head = el('div', 'tip-head', '');
+      head.append(el('b', '', d.term), el('span', 'tip-tier', d.tier));
+      const parts = [head, el('p', 'tip-def', d.def)];
+      if (d.detail) parts.push(el('p', 'tip-detail', d.detail));  // 필수 용어만 2~3문장 설명이 있음
+      parts.push(el('p', 'tip-ctx', '이 기사에서 — ' + d.ctx));
+      tip.replaceChildren(...parts);
+      tip.hidden = false; opener = b; b.setAttribute('aria-expanded', 'true');
+      const r = b.getBoundingClientRect();
+      tip.style.left = Math.max(16, Math.min(r.left, innerWidth - tip.offsetWidth - 16)) + scrollX + 'px';
+      tip.style.top = r.bottom + scrollY + 6 + 'px';
+    }));
+    document.addEventListener('click', ev => { if (!tip.hidden && !tip.contains(ev.target)) closeTip(); });
+    document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>미국 중간선거 3일 실시, 민주당 상·하원 모두 다수당 차지 예측 · 뉴스밸런스</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7EFE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+  /* ==========================================================================
+     Editorial Minutes — 잡지 지면풍 회의록 스타일시트
+     핵심 원칙
+     - 색은 전부 CSS 변수(:root)로 선언 → 다크모드는 아래쪽에서 변수만 재정의
+     - 발언자/섹션마다 --hue, --hue-soft 색을 배정해 시각적으로 구분
+     - 곡률은 3px 정도로만 (뉴스레터형처럼 각지지도, 카드형처럼 둥글지도 않음)
+     - 원본은 Pretendard 서브셋을 폰트 파일로 직접 내장했으나, 템플릿에서는
+       용량 문제로 CDN 링크로 대체함 (오프라인이 꼭 필요하면 폰트를 다시 내장)
+     ========================================================================== */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #191C22;
+    --muted: #5C626E;
+    --faint: #8A909C;
+    --rule: #E3E6EB;
+    --rule-strong: #C9CEd6;
+    --accent: #2E5D62;
+    --accent-soft: #E4EDEC;
+    --flag: #8C5312;
+    --flag-soft: #F6ECDF;
+
+    /* 섹션/발언자 컬러 팔레트 — 필요하면 색을 더 추가하거나 값만 바꿔도 됨 */
+    --teal: #1F6A6E;      --teal-soft: #DCEDEC;
+    --indigo: #3D4E9E;    --indigo-soft: #E3E7F7;
+    --plum: #7A3F73;      --plum-soft: #F1E4EF;
+    --moss: #4A6B2A;      --moss-soft: #E6EEDC;
+    --clay: #9A4B2C;      --clay-soft: #F7E6DE;
+    --shadow: 0 1px 2px rgba(25, 28, 34, .05), 0 8px 24px -16px rgba(25, 28, 34, .25);
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+
+  /* 시스템이 다크모드면 자동 전환 (사용자가 명시적으로 라이트를 고르지 않은 경우) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+      --rule: #282C34; --rule-strong: #3A404A;
+      --accent: #83B7B2; --accent-soft: #1E2A2B;
+      --flag: #D6A354; --flag-soft: #2A2318;
+      --teal: #7FBDB9; --teal-soft: #16292A;
+      --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+      --plum: #D19BC9; --plum-soft: #2B1E29;
+      --moss: #A8C482; --moss-soft: #1E2618;
+      --clay: #E0997A; --clay-soft: #2E1D16;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    }
+  }
+  /* 사용자가 명시적으로 dark를 고른 경우(data-theme="dark") */
+  :root[data-theme="dark"] {
+    --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+    --rule: #282C34; --rule-strong: #3A404A;
+    --accent: #83B7B2; --accent-soft: #1E2A2B;
+    --flag: #D6A354; --flag-soft: #2A2318;
+    --teal: #7FBDB9; --teal-soft: #16292A;
+    --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+    --plum: #D19BC9; --plum-soft: #2B1E29;
+    --moss: #A8C482; --moss-soft: #1E2618;
+    --clay: #E0997A; --clay-soft: #2E1D16;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.72; letter-spacing: -.011em;
+    word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 50rem; margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 4vw, 2.5rem) 6rem;
+    display: flex; flex-direction: column; gap: 3.25rem;
+  }
+
+  /* 상단 마스트헤드: 라벨 + 제목 + 부제 + 참여자 롤콜 + 그라디언트 바 */
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+  .kicker { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+  .masthead::after {
+    content: ""; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal) 0 20%, var(--indigo) 20% 40%, var(--plum) 40% 60%, var(--moss) 60% 80%, var(--clay) 80% 100%);
+  }
+  h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.15; font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -.035em; }
+  .standfirst { margin: 0; color: var(--muted); font-size: 1.02rem; max-width: 38rem; }
+  .roster { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding-top: .3rem; }
+  .roster .roster-label { border: none; background: none; padding: 0 .25rem 0 0; font-weight: 600; font-size: .78rem; color: var(--ink); }
+  .roster span {
+    font-weight: 500; font-size: .8rem; font-family: var(--mono); padding: .2rem .55rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--muted); background: var(--surface);
+  }
+
+  /* 섹션: --hue 변수로 색을 지정. section.s-xxx 클래스로 색 배정 */
+  section { display: flex; flex-direction: column; gap: 1.15rem; --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  section.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  section.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  section.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  section.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  /* 섹션끼리는 .page의 기본 gap(3.25rem)보다 더 띄워서, 마스트헤드/footer 여백과 구분되게 함.
+     필요하면 margin-top 값만 조절 — 0으로 두면 다른 요소와 동일한 간격으로 돌아감 */
+  section + section { margin-top: 2rem; }
+
+  h2 {
+    font-size: 1.32rem; letter-spacing: -.025em; font-weight: 700; margin: 0;
+    padding-bottom: .75rem; border-bottom: 2px solid var(--hue);
+    display: flex; align-items: center; gap: .65rem;
+  }
+  h2 .num {
+    font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .05em;
+    color: var(--surface); background: var(--hue); border-radius: 3px; padding: .22rem .45rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  ul ul { margin-top: .5rem; padding-left: 1.1rem; }
+  li::marker { color: var(--faint); }
+  strong { font-weight: 600; }
+
+  /* 결론/요약 강조 박스 */
+  .lede {
+    background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--hue);
+    border-radius: 3px; padding: 1.4rem 1.6rem; box-shadow: var(--shadow);
+  }
+
+  /* 발언자 카드: 좌측 고정 이름/역할 라벨 + 우측 괘선 본문 */
+  .speakers { display: flex; flex-direction: column; gap: 1.6rem; }
+  .speaker {
+    display: grid; --hue: var(--teal); --hue-soft: var(--teal-soft);
+    grid-template-columns: 8.5rem 1fr; gap: 1.5rem; align-items: start;
+  }
+  .speaker.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .speaker.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  .speaker.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  .speaker.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  .speaker > header { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: .25rem; padding-top: .35rem; }
+  .speaker h3 { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.3; letter-spacing: -.02em; }
+  .speaker .role {
+    font-size: .72rem; font-weight: 600; color: var(--hue); background: var(--hue-soft);
+    border-radius: 3px; padding: .12rem .4rem; align-self: flex-start;
+  }
+  .speaker .body { border-left: 2px solid var(--hue-soft); padding-left: 1.5rem; }
+  @media (max-width: 40rem) {
+    .speaker { grid-template-columns: 1fr; gap: .7rem; }
+    .speaker > header { position: static; flex-direction: row; align-items: baseline; gap: .6rem; }
+    .speaker .body { border-left: 2px solid var(--rule); padding-left: 1rem; }
+  }
+
+  /* 검증 필요 등 짧은 라벨 플래그 */
+  .flag {
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; color: var(--flag);
+    background: var(--flag-soft); border-radius: 2px; padding: .1rem .38rem; white-space: nowrap;
+  }
+
+  h4 { margin: 1.1rem 0 0; font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  h4:first-child { margin-top: 0; }
+
+  /* 역할분담표 등 표 */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead { background: var(--hue-soft); }
+  thead th { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 500; border-bottom: 1px solid var(--rule-strong); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.n { font-family: var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; width: 2.5rem; }
+  td.who { white-space: nowrap; font-weight: 700; color: var(--hue); }
+  td.what { color: var(--muted); line-height: 1.6; }
+
+  /* 공지/마감 안내 박스 */
+  .notice { background: var(--hue-soft); border-left: 4px solid var(--hue); border-radius: 3px; padding: .9rem 1.1rem; font-size: .93rem; color: var(--ink); }
+
+  /* 미해결/확인 필요 항목 리스트 */
+  .open { list-style: none; padding: 0; gap: 0; }
+  .open li { display: grid; grid-template-columns: 1.4rem 1fr; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .open li:first-child { border-top: 1px solid var(--rule); }
+  .open .idx { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--hue); font-variant-numeric: tabular-nums; }
+  .open .note { display: block; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+
+  footer { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .04em; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+</style>
+<style>
+  .page.news { max-width: 44rem; gap: 1.5rem; }
+  .news, .s-teal { --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  .s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .s-plum { --hue: var(--plum); --hue-soft: var(--plum-soft); }
+  .s-moss { --hue: var(--moss); --hue-soft: var(--moss-soft); }
+  .s-clay { --hue: var(--clay); --hue-soft: var(--clay-soft); }
+  .crumbs { display: flex; align-items: center; justify-content: space-between; gap: .8rem; font-size: .85rem; color: var(--muted); }
+  .crumbs a { font-weight: 600; color: var(--accent); text-decoration: none; padding: .4rem 0; }
+  .n-head { display: flex; flex-direction: column; gap: .6rem; padding-bottom: 1rem; border-bottom: 3px solid var(--hue); }
+  .n-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .8rem; font-size: .8rem; color: var(--muted); }
+  .n-cat { display: inline-flex; align-items: center; gap: .3rem; font-weight: 700; color: var(--hue); }
+  .n-cat svg { width: 1rem; height: 1rem; }
+  .n-head h1 { font-size: clamp(1.35rem, 5vw, 1.9rem); line-height: 1.35; letter-spacing: -.03em; }
+  .orig { margin: 0; font-size: .82rem; color: var(--faint); }
+  .meter { display: inline-flex; gap: 2px; vertical-align: middle; margin-right: .25rem; }
+  .meter i { width: .9rem; height: .38rem; border-radius: 1px; background: var(--rule-strong); }
+  .meter.lv3 i.on { background: var(--flag); }
+  .meter.lv2 i.on { background: var(--clay); }
+  .meter.lv1 i.on { background: var(--faint); }
+  .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
+  .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
+  .block { display: flex; flex-direction: column; gap: .75rem; }
+  .block h2 { font-size: 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--hue); }
+  .stance-q { margin: 0; font-size: .95rem; font-weight: 600; }
+  .stance-q span { display: block; font-size: .72rem; font-weight: 500; color: var(--faint); letter-spacing: .08em; }
+  .note { margin: 0; font-size: .9rem; color: var(--muted); }
+  .sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .side { --side: var(--indigo); --side-soft: var(--indigo-soft); background: var(--side-soft); border-left: 3px solid var(--side);
+    border-radius: 3px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .3rem; }
+  .side-con { --side: var(--clay); --side-soft: var(--clay-soft); }
+  .side p { margin: 0; }
+  .side-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--side); font-weight: 600; }
+  .side-pos { font-weight: 700; line-height: 1.5; }
+  .side-outlets { font-size: .85rem; font-weight: 600; color: var(--side); }
+  .side-focus { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  /* 펼치기: 손가락으로 누르기 쉬운 넓은 막대 */
+  .fold { background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; }
+  .fold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .6rem 1rem;
+    font-size: .95rem; font-weight: 700; }
+  .fold summary::-webkit-details-marker { display: none; }
+  .fold summary small { font-family: var(--mono); font-size: .72rem; font-weight: 500; color: var(--faint); }
+  .fold summary::after { content: "펼치기 ▾"; margin-left: auto; font-size: .78rem; font-weight: 600; color: var(--accent); }
+  .fold[open] summary::after { content: "접기 ▴"; }
+  .fold[open] summary { border-bottom: 1px solid var(--rule); }
+  .fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .fold-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .7rem; }
+  .grp { display: flex; flex-direction: column; gap: .2rem; padding-left: .8rem; border-left: 2px solid var(--rule-strong); }
+  .grp b { font-size: .92rem; }
+  .grp .who { font-size: .82rem; font-weight: 600; color: var(--hue); }
+  .grp .what { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  .facts { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .5rem; font-size: .95rem; }
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .pager a { display: flex; flex-direction: column; gap: .15rem; padding: .7rem .85rem; border: 1px solid var(--rule); border-radius: 5px;
+    background: var(--surface); color: var(--ink); text-decoration: none; font-size: .85rem; line-height: 1.45; }
+  .pager a span { font-size: .72rem; color: var(--faint); }
+  .pager a.next { text-align: right; grid-column: 2; }
+  .sources { font-size: .8rem; color: var(--muted); }
+  .sources summary { cursor: pointer; padding: .4rem 0; }
+  .sources ul { list-style: none; padding: .4rem 0 0; margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .sources .outlet { display: inline-block; min-width: 4.6rem; font-weight: 600; }
+  .sources a { color: var(--muted); }
+  a, button, summary { -webkit-tap-highlight-color: transparent; }
+  @media (max-width: 600px) {
+    .page.news { gap: 1.15rem; padding: 1rem max(16px, env(safe-area-inset-right)) 3rem max(16px, env(safe-area-inset-left)); }
+    .lede { padding: 1rem 1.05rem; }
+    .lede p { font-size: .98rem; }
+    .sides { grid-template-columns: 1fr; }
+    .fold-body { padding: .8rem .85rem .9rem; }
+  }
+
+  /* 누를 수 있다는 게 바로 보이게: 연한 파스텔 형광펜(버터색) + 점선 밑줄. 찬반 색(초록·보라)과 겹치지 않는 색 */
+  .term { --mark: #FBEDC2; --mark-on: #F5DC93;
+    font: inherit; color: inherit; background: var(--mark); border: 0; padding: 0 .18em; margin: 0 .02em; cursor: pointer; border-radius: 6px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    text-decoration: underline dotted var(--hue); text-decoration-thickness: 1.5px; text-underline-offset: .22em; }
+  .term:hover, .term[aria-expanded="true"] { background: var(--mark-on); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .term { --mark: #4A3E22; --mark-on: #635230; } }
+  :root[data-theme="dark"] .term { --mark: #4A3E22; --mark-on: #635230; }
+  .term:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .term-hint { font-weight: 400; color: var(--faint); margin-left: .6rem; letter-spacing: 0; text-transform: none; }
+  .tip { position: absolute; z-index: 20; width: min(21rem, calc(100vw - 32px)); display: flex; flex-direction: column; gap: .35rem;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px;
+    padding: .75rem .9rem; box-shadow: 0 6px 24px rgba(0, 0, 0, .16); font-size: .88rem; line-height: 1.55; }
+  .tip[hidden] { display: none; }
+  .tip p { margin: 0; }
+  .tip-head { display: flex; align-items: baseline; gap: .5rem; }
+  .tip-tier { font-size: .72rem; color: var(--muted); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0 .35rem; }
+  .tip-def { font-weight: 600; }
+  .tip-detail { font-size: .84rem; }
+  .tip-ctx { color: var(--muted); padding-top: .35rem; border-top: 1px dashed var(--rule); }
+
+  :root {
+    --bg: #F7EFE2; --surface: #FFFAF2; --ink: #3D2B1F; --muted: #7B6250; --faint: #A89079;
+    --rule: #EBDDC9; --rule-strong: #DCC5A7; --accent: #8A5A33; --accent-soft: #F2E3CF;
+    --flag: #B65A35; --flag-soft: #F7E2D5;
+    /* 분야 색: 이름은 템플릿 그대로 두고 값만 따뜻한 색으로 (indigo=갈색, clay=캐러멜, moss=올리브, plum=로즈우드, teal=세이지) */
+    --teal: #5E8473; --teal-soft: #E2ECE3;
+    --indigo: #8A5A33; --indigo-soft: #F2E3CF;
+    --plum: #A35F78; --plum-soft: #F6E3E8;
+    --moss: #7A8A3C; --moss-soft: #EEF0D9;
+    --clay: #C27237; --clay-soft: #F9E6D3;
+    --shadow: 0 2px 4px rgba(110, 70, 30, .06), 0 10px 24px -14px rgba(110, 70, 30, .35);
+    --round: "Jua", var(--sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+      --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+      --flag: #E4906A; --flag-soft: #3A2219;
+      --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+      --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+      --clay: #F0A877; --clay-soft: #3A2516;
+      --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+    --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+    --flag: #E4906A; --flag-soft: #3A2219;
+    --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+    --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+    --clay: #F0A877; --clay-soft: #3A2516;
+    --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+  }
+  body { background: var(--bg); }
+
+  /* 둥근 글꼴: 제목·키워드·섹션 이름 */
+  h1, .t-key, .t-sub, .day-head h2, .block h2, .fold summary, .d-label b, .side-tag, .lede .label, .ed-tag, .brand { font-family: var(--round); font-weight: 400; }
+  h1 { letter-spacing: -.01em; }
+  .t-key, .t-sub { letter-spacing: 0; }
+  .kicker { font-family: var(--sans); font-weight: 600; letter-spacing: .04em; text-transform: none; color: var(--accent); }
+  .brand { display: inline-flex; align-items: center; gap: .45rem; }
+  .brand svg { width: 1em; height: 1em; filter: drop-shadow(0 2px 3px rgba(110, 70, 30, .2)); }
+  .masthead::after { height: 6px; border-radius: 999px; }
+
+  /* 동글동글: 모서리를 크게, 작은 표시는 알약 모양 */
+  .card { border-radius: 22px; border-width: 1.5px; }
+  .thumb { margin: 7px 7px 0; border-radius: 16px; border-bottom: 0; }
+  .t-num, .ed-tag, .scroll-btn, .full, .crumbs a { border-radius: 999px; }
+  .meter i { border-radius: 999px; }
+  .date-group { border-radius: 16px; padding: 3px; gap: 2px; border-width: 1.5px; }
+  .d-label { border-bottom: 0; text-align: center; padding: .2rem .4rem .1rem; }
+  .dates button, .ed-none { border-radius: 11px; justify-content: center; gap: .35rem; }
+  .dates button + button, .dates button + .ed-none, .ed-none + button { border-top: 0; }
+  .lede { border: 0; border-radius: 22px; }
+  .lede .label { display: inline-block; font-size: .85rem; letter-spacing: 0; color: var(--hue); background: var(--hue-soft);
+    border-radius: 999px; padding: .15rem .7rem; }
+  .lede .term-hint { font-family: var(--sans); font-size: .72rem; }
+  .side { border-left: 0; border-radius: 18px; }
+  /* 찬반 색: 정치 성향을 떠올리게 하는 파랑·빨강은 쓰지 않고 파스텔 초록(찬성)·보라(반대)로 구분 */
+  .side-pro { --side: #4F7D4A; --side-soft: #E2F0DC; }
+  .side-con { --side: #75589E; --side-soft: #ECE4F6; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+    :root:not([data-theme="light"]) .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  }
+  :root[data-theme="dark"] .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+  :root[data-theme="dark"] .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  .side-tag { align-self: flex-start; font-size: .82rem; letter-spacing: 0; color: var(--surface); background: var(--side);
+    border-radius: 999px; padding: .05rem .65rem; }
+  .fold { border-radius: 20px; border-width: 1.5px; }
+  .fold summary { font-size: 1.02rem; }
+  .fold[open] summary { border-bottom: 1.5px dashed var(--rule); }
+  .grp { border-left: 0; background: var(--bg); border-radius: 14px; padding: .6rem .85rem; }
+  .pager a { border-radius: 18px; }
+  .tip { border-radius: 16px; }
+  .term { border-radius: 6px; }
+  .n-head { border-bottom: 3px dotted var(--hue); }
+  .crumbs a { background: var(--surface); border: 1.5px solid var(--rule); padding: .35rem .85rem; }
+  .full { display: inline-block; background: var(--surface); border: 1.5px solid var(--rule-strong); padding: .4rem 1rem; }
+  footer { border-top: 1.5px dashed var(--rule-strong); }
+  @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
+  @media (max-width: 600px) { .full { display: block; } }
+</style>
+</head>
+<body>
+<div class="page news s-teal">
+  <nav class="crumbs"><a href="../index.html#e-20261104-pm">← 목록으로</a><span>11월 4일 오후판 · 5/5</span></nav>
+  <header class="n-head">
+    <div class="n-meta">
+      <span class="n-cat"><svg aria-hidden="true" focusable="false" class=""
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" />
+</svg>국제</span>
+      <span>언론사 15곳</span>
+      <span><span class="meter lv1" aria-hidden="true"><i class="on"></i><i class=""></i><i class=""></i></span>관점 차이 낮음</span>
+    </div>
+    <h1>미국 중간선거 3일 실시, 민주당 상·하원 모두 다수당 차지 예측</h1>
+    <p class="orig">대표 원제목 — 트럼프 정치 운명 가를 美 중간선거, 동부 지역부터 투표 개시</p>
+  </header>
+
+  <section class="lede"><div class="label">중립 수정본 · <span class="term-hint">밑줄 친 말을 누르면 뜻이 나옵니다</span></div><p><button type="button" class="term" data-tip="g-177/05" aria-expanded="false">미국 중간선거</button>가 3일(현지시간) 치러져 <button type="button" class="term" data-tip="g-179/05" aria-expanded="false">하원</button> 435석 전체와 <button type="button" class="term" data-tip="g-178/05" aria-expanded="false">상원</button> 35석, <button type="button" class="term" data-tip="g-219/05" aria-expanded="false">주지사</button> 36명을 새로 뽑았다. CNN·NBC 등 주요 방송사는 같은 날 오후 10시를 조금 넘겨 민주당이 하원 <button type="button" class="term" data-tip="g-181/05" aria-expanded="false">다수당</button>이 된다고 예측했고, 이어 상원에서도 민주당이 과반을 확보한다고 전했다. <button type="button" class="term" data-tip="g-13/05" aria-expanded="false">야당</button>이 상·하원을 한꺼번에 가져가는 것은 2006년 이후 20년 만이며, NBC는 민주당이 하원에서 최소 244석을 얻을 것으로 내다봤다. <button type="button" class="term" data-tip="g-81/05" aria-expanded="false">도널드 트럼프</button> 대통령은 뉴욕타임스 인터뷰에서 &quot;결과를 전적으로 수용할 의향이 있다&quot;고 했고, 민주당이 보낼 법안에는 <button type="button" class="term" data-tip="g-180/05" aria-expanded="false">거부권</button>을 쓰겠다는 뜻도 밝혔다. <button type="button" class="term" data-tip="g-241/05" aria-expanded="false">출구조사</button>에서는 응답자의 43%가 트럼프 대통령에 반대하려고 투표했다고 답했고, 경제와 생활비 부담이 주요 쟁점으로 꼽혔다.</p></section>
+
+  <section class="block">
+    <h2>찬반 입장</h2>
+    <p class="note">찬반이 갈리는 쟁점이 없는 이슈입니다. 언론사마다 무엇에 초점을 뒀는지만 정리했습니다.</p>
+  </section>
+  <details class="fold" open><summary>언론사별 보도 초점 <small>4갈래</small></summary><div class="fold-body"><div class="grp"><b>개표 결과·의석 전망 속보 중심</b><span class="who">연합뉴스, 뉴시스, JTBC, YTN</span><span class="what">방송사 예측 시각, 경합주별 득표율, 상·하원 예상 의석수와 탄핵·의회 조사 가능성 등 결과 자체를 숫자 중심으로 전함</span></div><div class="grp"><b>트럼프 발언·패배 책임 설명 중심</b><span class="who">중앙일보, 한국경제, KBS, 노컷뉴스</span><span class="what">트럼프 대통령의 결과 수용·거부권 발언과 &quot;투표용지에 없었다&quot;는 주장, 이란전쟁을 패배 원인 중 하나로 인정한 대목을 중심으로 전함</span></div><div class="grp"><b>출구조사·표심 원인 분석</b><span class="who">한겨레, SBS, 매일경제, 동아일보</span><span class="what">출구조사 수치(반대 투표 43%·지지 16%), 생활비·물가 불만, &#x27;샤이 트럼프&#x27; 미발현, 텍사스 등 보수 지역 이변의 배경을 분석함</span></div><div class="grp"><b>한국 통상·안보 등 후속 파장 중심</b><span class="who">경향신문, 한국일보, 조선일보</span><span class="what">의회 권력 교체가 관세·핵추진잠수함·전시작전통제권 등 한국 관련 현안과 트럼프 행정부 국정에 미칠 영향을 전망함</span></div></div></details>
+  <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>3일(현지시간) 하원 435석 전체, 상원 35석, 주지사 36명을 뽑는 중간선거가 치러졌다</li><li>CNN·NBC 등은 민주당이 하원 다수당(218석 이상)을 차지하고 상원에서도 과반을 확보한다고 예측했으며, 야당의 상·하원 동시 탈환은 2006년 이후 20년 만이다</li><li>텍사스·캔자스·오하이오·아이오와·사우스캐롤라이나 등 공화당 강세 지역에서도 민주당 후보가 앞서거나 당선이 예측됐다</li><li>트럼프 대통령은 뉴욕타임스 인터뷰에서 결과를 &quot;전적으로 수용&quot;하고 민주당과 협력하겠다고 했으나, 민주당 법안에는 거부권을 행사하겠다는 입장도 밝혔다</li><li>출구조사에서 응답자의 43%는 트럼프 대통령에 반대하려고, 16%는 지지하려고 투표했다고 답했고 트럼프 대통령 국정 지지율은 38%로 조사됐다</li></ul></div></details>
+
+  <nav class="pager"><a class="prev" href="20261104-pm-04.html"><span>← 이전 뉴스</span>이재명 대통령 &quot;주요 지역 실거래가 떨어져&quot; 발언에 서울 아파트 90주 연속 상승 통계 논쟁</a></nav>
+  <details class="sources"><summary>원문 기사 59건 · 각 언론사 링크</summary><ul><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261103026600071" target="_blank" rel="noopener">트럼프 정치 운명 가를 美 중간선거, 동부 지역부터 투표 개시</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261104001000071" target="_blank" rel="noopener">[美중간선거] 트럼프 정부 사상최대 감시단 파견…野주지사 주방위군 동원</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261103_0003853348" target="_blank" rel="noopener">[美중간선거]하원 민주 압승할듯…이란戰등 전방위 조사, 탄핵도 가시권</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261103_0003853560" target="_blank" rel="noopener">[美중간선거]예측시장은 민주당 압승 무게…&quot;상원 76%·하원 94%&quot;</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261103_0003853517" target="_blank" rel="noopener">[美중간선거] 메인·뉴욕·인디애나 투표 시작…내일 오전 9시부터 마감·개표</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/international/us/2026/11/04/WJZYJGK2I5CNXFVBM23JH5T63U/" target="_blank" rel="noopener">트럼프 2년 ‘운명의 날’</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611032151015/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=kh_world" target="_blank" rel="noopener">미국은 다시 트럼프를 선택할까</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611032141005/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=kh_world" target="_blank" rel="noopener">격전지 ‘민주당 우세’로 격차 확대…‘샤이 트럼프’ 결집하나</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8703028" target="_blank" rel="noopener">트럼프 운명의 날…조기 레임덕으로 가나?</a></li><li><span class="outlet">SBS</span> <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008829056&amp;plink=RSSLINK&amp;cooper=RSSREADER" target="_blank" rel="noopener">&quot;하원서 지고 상원마저 위태&quot; 예측…참패 시 돌발 행동?</a></li><li><span class="outlet">SBS</span> <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008829208&amp;plink=RSSLINK&amp;cooper=RSSREADER" target="_blank" rel="noopener">트럼프 정부 &#x27;운명의 날&#x27;…미국 중간 선거 시작</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0104_202611032248272255" target="_blank" rel="noopener">미 중간선거 승리, 초경합 7곳서 갈린다</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0104_202611032159325966" target="_blank" rel="noopener">미 중간선거 현장 투표 진행중...내일 낮 하원 다수당 윤곽 나올듯</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0104_202611032248400701" target="_blank" rel="noopener">민주당이 상·하원 탈환할까?...4가지 시나리오</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261104091552071" target="_blank" rel="noopener">美 덮친 &#x27;블루쓰나미&#x27;…민주, 하원에 상원까지 의회권력 장악(종합2보)</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261104010400071" target="_blank" rel="noopener">[美중간선거] 민주당에 넘어간 하원 권력…한미관계 영향은</a></li><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261104149900704" target="_blank" rel="noopener">[영상] 美민주, 하원에 상원까지 의회권력 장악…트럼프, 레임덕 빠지나</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261104_0003854469" target="_blank" rel="noopener">트럼프 &quot;중간선거 결과 수용…민주당과 협력 준비돼 있어&quot;</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261104_0003854355" target="_blank" rel="noopener">[美중간선거] 트럼프 심판론에 생활고까지…&#x27;블루 쓰나미&#x27; 현실화</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261104_0003854553" target="_blank" rel="noopener">트럼프 &#x27;독주&#x27; 끝나나…민주당 상원 탈환에 애플·메타·인텔 &#x27;긴장&#x27;</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261104_0003854749" target="_blank" rel="noopener">[美중간선거]캔자스 텍사스 미시간마저…공화, 상원 6개 경합주 완패</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/international/us/2026/11/04/7YT2HBSNWVAWTOACKRJLAA3KBQ/" target="_blank" rel="noopener">“美민주, 20년 만에 상·하원 모두 승리”</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/international/international_general/2026/11/04/47XLUF4SOVDCZD3AVWDT7CHDTA/" target="_blank" rel="noopener">의회 잃은 트럼프, 남은 2년 ‘마이웨이’… 한국 관세·원잠·조선 불확실성 커져</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/international/us/2026/11/04/7BL3XSLSRFDZJNT5NPWEZ7N6TM/" target="_blank" rel="noopener">트럼프 “내가 투표 용지에 없었다… 선거 결과 수용 의향“</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/economy/tech_it/2026/11/04/HPN3DJCC3NDBJHCT3AD6W4VBAE/" target="_blank" rel="noopener">美 민주, 의회 장악하면 AI 정책 어떤 영향?... 빅테크 CEO 줄소환 가능성</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/international/international_general/2026/11/04/M2HZ7CNCZFAMJFC3IF3YYGEZ6I/" target="_blank" rel="noopener">공화당 텃밭 텍사스 뒤집은 신학생… 탈라리코, 38년 만에 민주당 상원의원 당선</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25475694" target="_blank" rel="noopener">트럼프, 참패 인정하면서 남탓…“이란전쟁이 원인” 불만 폭발</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25475657" target="_blank" rel="noopener">미국 ‘블루 쓰나미’ 덮쳤다…“민주당 상·하원 동시 과반 확률 95%”</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261104/134964411/2" target="_blank" rel="noopener">“민주당이 美의회 장악하면 뭐가 달라지나”…재계가 예상하는 7가지 변화</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261104/134962841/2" target="_blank" rel="noopener">美 출구조사 “트럼프 반대 표명하려 투표” 43%</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261104/134965375/2" target="_blank" rel="noopener">94년 美 ‘보수의 심장’을 저격한 민주 ‘기독교 좌파’</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261104/134963892/2" target="_blank" rel="noopener">美민주 상·하원 동시 탈환 유력…텍사스 등 공화 텃밭서도 우세</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261104/134963745/2" target="_blank" rel="noopener">트럼프 “선거 결과 받아들인다…민주당과 협력할 것”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1285719.html" target="_blank" rel="noopener">트럼프, 중간선거 참패에 “선거 결과 수용, 민주당과 협력”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1285720.html" target="_blank" rel="noopener">미 민주당 상·하원 동시 탈환…역사적 ‘블루 웨이브’, 트럼프 심판했다</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1285717.html" target="_blank" rel="noopener">미 민주, ‘트럼프 텃밭’ 텍사스까지 뒤집어…38년만 이변</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1285721.html" target="_blank" rel="noopener">미 유권자 43% “트럼프 반대하려 투표”…‘지지 투표’ 응답은 16%뿐</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611041624001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=economy_news" target="_blank" rel="noopener">[미 중간선거]‘공화당 패배’ 중간선거 결과에도 트럼프 통상 정책 바뀔 가능성 작다…한국 정부 과제는?</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611041656001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=politic_news" target="_blank" rel="noopener">중간선거 이후 트럼프 외교정책 “기조 유지” 핵잠·전작권은 까다로워질 수도</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202611041635001/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=kh_world" target="_blank" rel="noopener">[미 중간선거] 트럼프 대선 승리 이끈 ‘다인종 노동계급 연합’ 2년 만에 붕괴···“강력한 정치적 자산 스스로 무너뜨려”</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110415290002706" target="_blank" rel="noopener">&#x27;예산·감시 권한&#x27; 쥔 미 의회… 韓 안보·통상 셈법도 대격변-국제ㅣ한국일보</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026110414410002284" target="_blank" rel="noopener">&quot;장보기가 두렵다&quot; 88% 민심 폭발… 美 상·하원 덮친 &#x27;블루 쓰나미&#x27;-국제ㅣ한국일보</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/world/12196307" target="_blank" rel="noopener">트럼프 “민주당과 협력하겠다”…美언론, 민주 상하원 승리 예측</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/world/12196346" target="_blank" rel="noopener">“난 대통령이 싫다”…여론조사서 드러나지 않던 표심 美 중간선거서 확인</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/world/12196097" target="_blank" rel="noopener">[속보] 美 중간선거 유권자 출구조사…트럼프 반대 43%·지지투표 16%</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/world/12196245" target="_blank" rel="noopener">[속보] 美 민주당, 하원 다수당 탈환 전망…NBC “244석 확보할 듯”</a></li><li><span class="outlet">한국경제</span> <a href="https://www.hankyung.com/article/202611045449i" target="_blank" rel="noopener">트럼프 &quot;선거 결과 받아들인다&quot;…측근들 &quot;패배 원인은 이란전&quot;</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8703681" target="_blank" rel="noopener">트럼프 “중간선거 결과 전적 수용 의향…민주당과 협력”</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8703666" target="_blank" rel="noopener">‘블루 쓰나미’ 현실되나…민주 4년 만에 하원 탈환·상원도 우세</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8703620" target="_blank" rel="noopener">‘20년 만의 탈환’ 이뤄질까?…“트럼프 업셋”에 공화당 텃밭 ‘흔들’ [뉴스in뉴스]</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8703798" target="_blank" rel="noopener">“민주당, 미 상원과 하원 모두 장악…‘새로운 견제 시대’ 열렸다” AP [지금뉴스]</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8703786" target="_blank" rel="noopener">트럼프 “선거 결과 수용”…이란 전쟁 ‘패배 원인 일부’ 인정</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6602139" target="_blank" rel="noopener">트럼프 &quot;중간선거 패배 수용…민주당과 협력할 것&quot;</a></li><li><span class="outlet">SBS</span> <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008830274&amp;plink=RSSLINK&amp;cooper=RSSREADER" target="_blank" rel="noopener">&#x27;샤이 트럼프&#x27;가 아니라 &#x27;앵그리 트럼프&#x27; 표심 두드러졌다</a></li><li><span class="outlet">SBS</span> <a href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008830368&amp;plink=RSSLINK&amp;cooper=RSSREADER" target="_blank" rel="noopener">&#x27;보수 아성&#x27; 텍사스서 36년 만에 민주당 주지사 당선</a></li><li><span class="outlet">JTBC</span> <a href="https://news.jtbc.co.kr/article/NB12326447" target="_blank" rel="noopener">하원 따낸 민주…‘상원 경합지’ 7곳 중 5곳에서도 승리 예측</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0104_202611041638027644" target="_blank" rel="noopener">민주당 &#x27;탄핵 카드&#x27; 만지작...트럼프 3번째 소추 당하나</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0104_202611041538182688" target="_blank" rel="noopener">민주당, 미 중간선거서 상·하원 과반 탈환</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0104_202611040820317151" target="_blank" rel="noopener">&quot;미국 유권자 4분의 3, 트럼프 국정에 분노...변화 원해&quot;</a></li></ul></details>
+  <footer>뉴스밸런스 · 요약과 관점 정리는 AI가 기사 본문을 읽고 쓴 자동 초안</footer>
+</div>
+<script type="application/json" id="tips">{"g-177/05": {"term": "중간선거", "tier": "필수", "def": "미국 대통령 임기 중간(2년째)에 치르는 연방 의회 선거", "detail": "하원의원 전원과 상원의원 3분의 1 정도를 새로 뽑는다. 대통령을 직접 뽑는 선거는 아니지만 현 대통령에 대한 평가 성격이 커서 결과에 따라 대통령이 의회에서 법을 통과시키기 쉬워지거나 어려워진다.", "ctx": "미국 대통령 임기 중간(2년 뒤)에 열리는 의회·주지사 선거다. 이번에는 대통령에 대한 평가 성격이 컸다."}, "g-179/05": {"term": "하원", "tier": "상황", "def": "미국 의회의 한 축. 인구에 비례해 435명을 뽑고 임기 2년", "detail": "", "ctx": "미국 의회의 한 축으로 435석 전체를 새로 뽑았고, 민주당이 다수당이 된다고 예측됐다."}, "g-178/05": {"term": "상원", "tier": "상황", "def": "미국 의회의 한 축. 주마다 2명씩 뽑아 모두 100명", "detail": "", "ctx": "미국 의회의 다른 한 축으로 이번에 35석을 새로 뽑았고, 민주당이 과반을 얻는다고 전해졌다."}, "g-219/05": {"term": "주지사", "tier": "상황", "def": "미국 각 주의 행정 책임자. 주민이 직접 뽑는다", "detail": "", "ctx": "이번 선거에서 미국 주지사 36명도 함께 뽑았다."}, "g-181/05": {"term": "다수당", "tier": "상황", "def": "의회에서 의석을 가장 많이 가진 정당", "detail": "", "ctx": "하원에서 218석 이상을 차지해 의사 결정을 주도하게 되는 정당으로 민주당이 예측됐다."}, "g-13/05": {"term": "야당", "tier": "필수", "def": "대통령이 속하지 않은 정당", "detail": "2026년 10월 28일 기준 가장 큰 야당은 국민의힘이다. 기사 제목의 '野'는 야당을 줄여 쓴 한자다.", "ctx": "미국에서 대통령 소속이 아닌 민주당이 상·하원을 함께 가져가는 것은 2006년 이후 20년 만이라고 전해졌다."}, "g-81/05": {"term": "트럼프", "tier": "인물", "def": "미국 대통령", "detail": "", "ctx": "현직 미국 대통령으로 이번 중간선거가 그에 대한 평가로 여겨졌고, 결과를 받아들이겠다고 밝혔다."}, "g-180/05": {"term": "거부권", "tier": "필수", "def": "대통령이 의회가 통과시킨 법안을 되돌려 보내는 권한", "detail": "미국에서는 의회가 법안을 통과시켜도 대통령이 서명을 거부하면 법이 되지 못한다. 의회가 상·하원 모두 3분의 2 이상 찬성으로 다시 의결해야 거부권을 넘을 수 있어, 의회 다수당이 대통령과 다르면 이 권한이 자주 쓰인다.", "ctx": "트럼프 대통령이 민주당이 보낼 법안에는 이 권한을 쓰겠다는 뜻을 밝혔다."}, "g-241/05": {"term": "출구조사", "tier": "상황", "def": "투표를 마치고 나온 사람에게 누구를 찍었는지 묻는 조사", "detail": "", "ctx": "응답자의 43%가 트럼프 대통령에 반대하려고 투표했다고 답한 결과가 이 조사에서 나왔다."}}</script>
+<script>
+  // 밑줄 친 용어: 누르면 짧은 설명 창, 다시 누르거나 바깥을 누르거나 Esc면 닫힘
+  (() => {
+    const tips = JSON.parse(document.getElementById('tips').textContent);
+    const tip = document.createElement('div');
+    tip.className = 'tip'; tip.setAttribute('role', 'dialog'); tip.hidden = true;
+    document.body.appendChild(tip);
+    let opener = null;
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; return n; };
+    function closeTip() { tip.hidden = true; if (opener) opener.setAttribute('aria-expanded', 'false'); opener = null; }
+    document.querySelectorAll('.term').forEach(b => b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if (opener === b) return closeTip();
+      closeTip();
+      const d = tips[b.dataset.tip];
+      const head = el('div', 'tip-head', '');
+      head.append(el('b', '', d.term), el('span', 'tip-tier', d.tier));
+      const parts = [head, el('p', 'tip-def', d.def)];
+      if (d.detail) parts.push(el('p', 'tip-detail', d.detail));  // 필수 용어만 2~3문장 설명이 있음
+      parts.push(el('p', 'tip-ctx', '이 기사에서 — ' + d.ctx));
+      tip.replaceChildren(...parts);
+      tip.hidden = false; opener = b; b.setAttribute('aria-expanded', 'true');
+      const r = b.getBoundingClientRect();
+      tip.style.left = Math.max(16, Math.min(r.left, innerWidth - tip.offsetWidth - 16)) + scrollX + 'px';
+      tip.style.top = r.bottom + scrollY + 6 + 'px';
+    }));
+    document.addEventListener('click', ev => { if (!tip.hidden && !tip.contains(ev.target)) closeTip(); });
+    document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
+  })();
+</script>
+</body>
+</html>

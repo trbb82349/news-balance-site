@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>룰라 브라질 대통령, 결선서 역전해 4선…보우소나루 출국 금지, 트럼프 &quot;조작된 선거&quot; 발언 · 뉴스밸런스</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7EFE2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
+<style>
+  /* ==========================================================================
+     Editorial Minutes — 잡지 지면풍 회의록 스타일시트
+     핵심 원칙
+     - 색은 전부 CSS 변수(:root)로 선언 → 다크모드는 아래쪽에서 변수만 재정의
+     - 발언자/섹션마다 --hue, --hue-soft 색을 배정해 시각적으로 구분
+     - 곡률은 3px 정도로만 (뉴스레터형처럼 각지지도, 카드형처럼 둥글지도 않음)
+     - 원본은 Pretendard 서브셋을 폰트 파일로 직접 내장했으나, 템플릿에서는
+       용량 문제로 CDN 링크로 대체함 (오프라인이 꼭 필요하면 폰트를 다시 내장)
+     ========================================================================== */
+  :root {
+    --bg: #F6F7F9;
+    --surface: #FFFFFF;
+    --ink: #191C22;
+    --muted: #5C626E;
+    --faint: #8A909C;
+    --rule: #E3E6EB;
+    --rule-strong: #C9CEd6;
+    --accent: #2E5D62;
+    --accent-soft: #E4EDEC;
+    --flag: #8C5312;
+    --flag-soft: #F6ECDF;
+
+    /* 섹션/발언자 컬러 팔레트 — 필요하면 색을 더 추가하거나 값만 바꿔도 됨 */
+    --teal: #1F6A6E;      --teal-soft: #DCEDEC;
+    --indigo: #3D4E9E;    --indigo-soft: #E3E7F7;
+    --plum: #7A3F73;      --plum-soft: #F1E4EF;
+    --moss: #4A6B2A;      --moss-soft: #E6EEDC;
+    --clay: #9A4B2C;      --clay-soft: #F7E6DE;
+    --shadow: 0 1px 2px rgba(25, 28, 34, .05), 0 8px 24px -16px rgba(25, 28, 34, .25);
+
+    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+
+  /* 시스템이 다크모드면 자동 전환 (사용자가 명시적으로 라이트를 고르지 않은 경우) */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+      --rule: #282C34; --rule-strong: #3A404A;
+      --accent: #83B7B2; --accent-soft: #1E2A2B;
+      --flag: #D6A354; --flag-soft: #2A2318;
+      --teal: #7FBDB9; --teal-soft: #16292A;
+      --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+      --plum: #D19BC9; --plum-soft: #2B1E29;
+      --moss: #A8C482; --moss-soft: #1E2618;
+      --clay: #E0997A; --clay-soft: #2E1D16;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+    }
+  }
+  /* 사용자가 명시적으로 dark를 고른 경우(data-theme="dark") */
+  :root[data-theme="dark"] {
+    --bg: #131519; --surface: #1A1D23; --ink: #E7E9ED; --muted: #9BA2AD; --faint: #767D89;
+    --rule: #282C34; --rule-strong: #3A404A;
+    --accent: #83B7B2; --accent-soft: #1E2A2B;
+    --flag: #D6A354; --flag-soft: #2A2318;
+    --teal: #7FBDB9; --teal-soft: #16292A;
+    --indigo: #9AA9EE; --indigo-soft: #1B1F33;
+    --plum: #D19BC9; --plum-soft: #2B1E29;
+    --moss: #A8C482; --moss-soft: #1E2618;
+    --clay: #E0997A; --clay-soft: #2E1D16;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -16px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.72; letter-spacing: -.011em;
+    word-break: keep-all; -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 50rem; margin: 0 auto;
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.1rem, 4vw, 2.5rem) 6rem;
+    display: flex; flex-direction: column; gap: 3.25rem;
+  }
+
+  /* 상단 마스트헤드: 라벨 + 제목 + 부제 + 참여자 롤콜 + 그라디언트 바 */
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+  .kicker { font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--teal); }
+  .masthead::after {
+    content: ""; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal) 0 20%, var(--indigo) 20% 40%, var(--plum) 40% 60%, var(--moss) 60% 80%, var(--clay) 80% 100%);
+  }
+  h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); line-height: 1.15; font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -.035em; }
+  .standfirst { margin: 0; color: var(--muted); font-size: 1.02rem; max-width: 38rem; }
+  .roster { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding-top: .3rem; }
+  .roster .roster-label { border: none; background: none; padding: 0 .25rem 0 0; font-weight: 600; font-size: .78rem; color: var(--ink); }
+  .roster span {
+    font-weight: 500; font-size: .8rem; font-family: var(--mono); padding: .2rem .55rem;
+    border: 1px solid var(--rule); border-radius: 2px; color: var(--muted); background: var(--surface);
+  }
+
+  /* 섹션: --hue 변수로 색을 지정. section.s-xxx 클래스로 색 배정 */
+  section { display: flex; flex-direction: column; gap: 1.15rem; --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  section.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  section.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  section.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  section.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  /* 섹션끼리는 .page의 기본 gap(3.25rem)보다 더 띄워서, 마스트헤드/footer 여백과 구분되게 함.
+     필요하면 margin-top 값만 조절 — 0으로 두면 다른 요소와 동일한 간격으로 돌아감 */
+  section + section { margin-top: 2rem; }
+
+  h2 {
+    font-size: 1.32rem; letter-spacing: -.025em; font-weight: 700; margin: 0;
+    padding-bottom: .75rem; border-bottom: 2px solid var(--hue);
+    display: flex; align-items: center; gap: .65rem;
+  }
+  h2 .num {
+    font-family: var(--mono); font-size: .7rem; font-weight: 500; letter-spacing: .05em;
+    color: var(--surface); background: var(--hue); border-radius: 3px; padding: .22rem .45rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .5rem; }
+  ul ul { margin-top: .5rem; padding-left: 1.1rem; }
+  li::marker { color: var(--faint); }
+  strong { font-weight: 600; }
+
+  /* 결론/요약 강조 박스 */
+  .lede {
+    background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--hue);
+    border-radius: 3px; padding: 1.4rem 1.6rem; box-shadow: var(--shadow);
+  }
+
+  /* 발언자 카드: 좌측 고정 이름/역할 라벨 + 우측 괘선 본문 */
+  .speakers { display: flex; flex-direction: column; gap: 1.6rem; }
+  .speaker {
+    display: grid; --hue: var(--teal); --hue-soft: var(--teal-soft);
+    grid-template-columns: 8.5rem 1fr; gap: 1.5rem; align-items: start;
+  }
+  .speaker.s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .speaker.s-plum   { --hue: var(--plum);   --hue-soft: var(--plum-soft); }
+  .speaker.s-moss   { --hue: var(--moss);   --hue-soft: var(--moss-soft); }
+  .speaker.s-clay   { --hue: var(--clay);   --hue-soft: var(--clay-soft); }
+  .speaker > header { position: sticky; top: 1.5rem; display: flex; flex-direction: column; gap: .25rem; padding-top: .35rem; }
+  .speaker h3 { margin: 0; font-size: 1.08rem; font-weight: 700; line-height: 1.3; letter-spacing: -.02em; }
+  .speaker .role {
+    font-size: .72rem; font-weight: 600; color: var(--hue); background: var(--hue-soft);
+    border-radius: 3px; padding: .12rem .4rem; align-self: flex-start;
+  }
+  .speaker .body { border-left: 2px solid var(--hue-soft); padding-left: 1.5rem; }
+  @media (max-width: 40rem) {
+    .speaker { grid-template-columns: 1fr; gap: .7rem; }
+    .speaker > header { position: static; flex-direction: row; align-items: baseline; gap: .6rem; }
+    .speaker .body { border-left: 2px solid var(--rule); padding-left: 1rem; }
+  }
+
+  /* 검증 필요 등 짧은 라벨 플래그 */
+  .flag {
+    font-family: var(--mono); font-size: .68rem; letter-spacing: .06em; color: var(--flag);
+    background: var(--flag-soft); border-radius: 2px; padding: .1rem .38rem; white-space: nowrap;
+  }
+
+  h4 { margin: 1.1rem 0 0; font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+  h4:first-child { margin-top: 0; }
+
+  /* 역할분담표 등 표 */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 3px; background: var(--surface); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead { background: var(--hue-soft); }
+  thead th { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); font-weight: 500; border-bottom: 1px solid var(--rule-strong); }
+  tbody tr:last-child td { border-bottom: none; }
+  td.n { font-family: var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; width: 2.5rem; }
+  td.who { white-space: nowrap; font-weight: 700; color: var(--hue); }
+  td.what { color: var(--muted); line-height: 1.6; }
+
+  /* 공지/마감 안내 박스 */
+  .notice { background: var(--hue-soft); border-left: 4px solid var(--hue); border-radius: 3px; padding: .9rem 1.1rem; font-size: .93rem; color: var(--ink); }
+
+  /* 미해결/확인 필요 항목 리스트 */
+  .open { list-style: none; padding: 0; gap: 0; }
+  .open li { display: grid; grid-template-columns: 1.4rem 1fr; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .open li:first-child { border-top: 1px solid var(--rule); }
+  .open .idx { font-family: var(--mono); font-size: .75rem; font-weight: 600; color: var(--hue); font-variant-numeric: tabular-nums; }
+  .open .note { display: block; color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+
+  footer { font-family: var(--mono); font-size: .72rem; color: var(--faint); letter-spacing: .04em; border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+</style>
+<style>
+  .page.news { max-width: 44rem; gap: 1.5rem; }
+  .news, .s-teal { --hue: var(--teal); --hue-soft: var(--teal-soft); }
+  .s-indigo { --hue: var(--indigo); --hue-soft: var(--indigo-soft); }
+  .s-plum { --hue: var(--plum); --hue-soft: var(--plum-soft); }
+  .s-moss { --hue: var(--moss); --hue-soft: var(--moss-soft); }
+  .s-clay { --hue: var(--clay); --hue-soft: var(--clay-soft); }
+  .crumbs { display: flex; align-items: center; justify-content: space-between; gap: .8rem; font-size: .85rem; color: var(--muted); }
+  .crumbs a { font-weight: 600; color: var(--accent); text-decoration: none; padding: .4rem 0; }
+  .n-head { display: flex; flex-direction: column; gap: .6rem; padding-bottom: 1rem; border-bottom: 3px solid var(--hue); }
+  .n-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .8rem; font-size: .8rem; color: var(--muted); }
+  .n-cat { display: inline-flex; align-items: center; gap: .3rem; font-weight: 700; color: var(--hue); }
+  .n-cat svg { width: 1rem; height: 1rem; }
+  .n-head h1 { font-size: clamp(1.35rem, 5vw, 1.9rem); line-height: 1.35; letter-spacing: -.03em; }
+  .orig { margin: 0; font-size: .82rem; color: var(--faint); }
+  .meter { display: inline-flex; gap: 2px; vertical-align: middle; margin-right: .25rem; }
+  .meter i { width: .9rem; height: .38rem; border-radius: 1px; background: var(--rule-strong); }
+  .meter.lv3 i.on { background: var(--flag); }
+  .meter.lv2 i.on { background: var(--clay); }
+  .meter.lv1 i.on { background: var(--faint); }
+  .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
+  .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
+  .block { display: flex; flex-direction: column; gap: .75rem; }
+  .block h2 { font-size: 1.1rem; padding-bottom: .5rem; border-bottom: 2px solid var(--hue); }
+  .stance-q { margin: 0; font-size: .95rem; font-weight: 600; }
+  .stance-q span { display: block; font-size: .72rem; font-weight: 500; color: var(--faint); letter-spacing: .08em; }
+  .note { margin: 0; font-size: .9rem; color: var(--muted); }
+  .sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .side { --side: var(--indigo); --side-soft: var(--indigo-soft); background: var(--side-soft); border-left: 3px solid var(--side);
+    border-radius: 3px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .3rem; }
+  .side-con { --side: var(--clay); --side-soft: var(--clay-soft); }
+  .side p { margin: 0; }
+  .side-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--side); font-weight: 600; }
+  .side-pos { font-weight: 700; line-height: 1.5; }
+  .side-outlets { font-size: .85rem; font-weight: 600; color: var(--side); }
+  .side-focus { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  /* 펼치기: 손가락으로 누르기 쉬운 넓은 막대 */
+  .fold { background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; }
+  .fold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 3rem; padding: .6rem 1rem;
+    font-size: .95rem; font-weight: 700; }
+  .fold summary::-webkit-details-marker { display: none; }
+  .fold summary small { font-family: var(--mono); font-size: .72rem; font-weight: 500; color: var(--faint); }
+  .fold summary::after { content: "펼치기 ▾"; margin-left: auto; font-size: .78rem; font-weight: 600; color: var(--accent); }
+  .fold[open] summary::after { content: "접기 ▴"; }
+  .fold[open] summary { border-bottom: 1px solid var(--rule); }
+  .fold summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .fold-body { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .7rem; }
+  .grp { display: flex; flex-direction: column; gap: .2rem; padding-left: .8rem; border-left: 2px solid var(--rule-strong); }
+  .grp b { font-size: .92rem; }
+  .grp .who { font-size: .82rem; font-weight: 600; color: var(--hue); }
+  .grp .what { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+  .facts { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .5rem; font-size: .95rem; }
+  .pager { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  .pager a { display: flex; flex-direction: column; gap: .15rem; padding: .7rem .85rem; border: 1px solid var(--rule); border-radius: 5px;
+    background: var(--surface); color: var(--ink); text-decoration: none; font-size: .85rem; line-height: 1.45; }
+  .pager a span { font-size: .72rem; color: var(--faint); }
+  .pager a.next { text-align: right; grid-column: 2; }
+  .sources { font-size: .8rem; color: var(--muted); }
+  .sources summary { cursor: pointer; padding: .4rem 0; }
+  .sources ul { list-style: none; padding: .4rem 0 0; margin: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .sources .outlet { display: inline-block; min-width: 4.6rem; font-weight: 600; }
+  .sources a { color: var(--muted); }
+  a, button, summary { -webkit-tap-highlight-color: transparent; }
+  @media (max-width: 600px) {
+    .page.news { gap: 1.15rem; padding: 1rem max(16px, env(safe-area-inset-right)) 3rem max(16px, env(safe-area-inset-left)); }
+    .lede { padding: 1rem 1.05rem; }
+    .lede p { font-size: .98rem; }
+    .sides { grid-template-columns: 1fr; }
+    .fold-body { padding: .8rem .85rem .9rem; }
+  }
+
+  /* 누를 수 있다는 게 바로 보이게: 연한 파스텔 형광펜(버터색) + 점선 밑줄. 찬반 색(초록·보라)과 겹치지 않는 색 */
+  .term { --mark: #FBEDC2; --mark-on: #F5DC93;
+    font: inherit; color: inherit; background: var(--mark); border: 0; padding: 0 .18em; margin: 0 .02em; cursor: pointer; border-radius: 6px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    text-decoration: underline dotted var(--hue); text-decoration-thickness: 1.5px; text-underline-offset: .22em; }
+  .term:hover, .term[aria-expanded="true"] { background: var(--mark-on); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .term { --mark: #4A3E22; --mark-on: #635230; } }
+  :root[data-theme="dark"] .term { --mark: #4A3E22; --mark-on: #635230; }
+  .term:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .term-hint { font-weight: 400; color: var(--faint); margin-left: .6rem; letter-spacing: 0; text-transform: none; }
+  .tip { position: absolute; z-index: 20; width: min(21rem, calc(100vw - 32px)); display: flex; flex-direction: column; gap: .35rem;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: 4px;
+    padding: .75rem .9rem; box-shadow: 0 6px 24px rgba(0, 0, 0, .16); font-size: .88rem; line-height: 1.55; }
+  .tip[hidden] { display: none; }
+  .tip p { margin: 0; }
+  .tip-head { display: flex; align-items: baseline; gap: .5rem; }
+  .tip-tier { font-size: .72rem; color: var(--muted); border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0 .35rem; }
+  .tip-def { font-weight: 600; }
+  .tip-detail { font-size: .84rem; }
+  .tip-ctx { color: var(--muted); padding-top: .35rem; border-top: 1px dashed var(--rule); }
+
+  :root {
+    --bg: #F7EFE2; --surface: #FFFAF2; --ink: #3D2B1F; --muted: #7B6250; --faint: #A89079;
+    --rule: #EBDDC9; --rule-strong: #DCC5A7; --accent: #8A5A33; --accent-soft: #F2E3CF;
+    --flag: #B65A35; --flag-soft: #F7E2D5;
+    /* 분야 색: 이름은 템플릿 그대로 두고 값만 따뜻한 색으로 (indigo=갈색, clay=캐러멜, moss=올리브, plum=로즈우드, teal=세이지) */
+    --teal: #5E8473; --teal-soft: #E2ECE3;
+    --indigo: #8A5A33; --indigo-soft: #F2E3CF;
+    --plum: #A35F78; --plum-soft: #F6E3E8;
+    --moss: #7A8A3C; --moss-soft: #EEF0D9;
+    --clay: #C27237; --clay-soft: #F9E6D3;
+    --shadow: 0 2px 4px rgba(110, 70, 30, .06), 0 10px 24px -14px rgba(110, 70, 30, .35);
+    --round: "Jua", var(--sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+      --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+      --flag: #E4906A; --flag-soft: #3A2219;
+      --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+      --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+      --clay: #F0A877; --clay-soft: #3A2516;
+      --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1712; --surface: #2A2019; --ink: #F2E7D8; --muted: #C4AE97; --faint: #8E7A66;
+    --rule: #3A2D23; --rule-strong: #52412F; --accent: #E0AE76; --accent-soft: #3A2A1B;
+    --flag: #E4906A; --flag-soft: #3A2219;
+    --teal: #93BBA8; --teal-soft: #1E2B25; --indigo: #E0AE76; --indigo-soft: #3A2A1B;
+    --plum: #E2A2B8; --plum-soft: #35212A; --moss: #BFCB86; --moss-soft: #262A17;
+    --clay: #F0A877; --clay-soft: #3A2516;
+    --shadow: 0 2px 4px rgba(0, 0, 0, .35), 0 10px 24px -14px rgba(0, 0, 0, .7);
+  }
+  body { background: var(--bg); }
+
+  /* 둥근 글꼴: 제목·키워드·섹션 이름 */
+  h1, .t-key, .t-sub, .day-head h2, .block h2, .fold summary, .d-label b, .side-tag, .lede .label, .ed-tag, .brand { font-family: var(--round); font-weight: 400; }
+  h1 { letter-spacing: -.01em; }
+  .t-key, .t-sub { letter-spacing: 0; }
+  .kicker { font-family: var(--sans); font-weight: 600; letter-spacing: .04em; text-transform: none; color: var(--accent); }
+  .brand { display: inline-flex; align-items: center; gap: .45rem; }
+  .brand svg { width: 1em; height: 1em; filter: drop-shadow(0 2px 3px rgba(110, 70, 30, .2)); }
+  .masthead::after { height: 6px; border-radius: 999px; }
+
+  /* 동글동글: 모서리를 크게, 작은 표시는 알약 모양 */
+  .card { border-radius: 22px; border-width: 1.5px; }
+  .thumb { margin: 7px 7px 0; border-radius: 16px; border-bottom: 0; }
+  .t-num, .ed-tag, .scroll-btn, .full, .crumbs a { border-radius: 999px; }
+  .meter i { border-radius: 999px; }
+  .date-group { border-radius: 16px; padding: 3px; gap: 2px; border-width: 1.5px; }
+  .d-label { border-bottom: 0; text-align: center; padding: .2rem .4rem .1rem; }
+  .dates button, .ed-none { border-radius: 11px; justify-content: center; gap: .35rem; }
+  .dates button + button, .dates button + .ed-none, .ed-none + button { border-top: 0; }
+  .lede { border: 0; border-radius: 22px; }
+  .lede .label { display: inline-block; font-size: .85rem; letter-spacing: 0; color: var(--hue); background: var(--hue-soft);
+    border-radius: 999px; padding: .15rem .7rem; }
+  .lede .term-hint { font-family: var(--sans); font-size: .72rem; }
+  .side { border-left: 0; border-radius: 18px; }
+  /* 찬반 색: 정치 성향을 떠올리게 하는 파랑·빨강은 쓰지 않고 파스텔 초록(찬성)·보라(반대)로 구분 */
+  .side-pro { --side: #4F7D4A; --side-soft: #E2F0DC; }
+  .side-con { --side: #75589E; --side-soft: #ECE4F6; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+    :root:not([data-theme="light"]) .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  }
+  :root[data-theme="dark"] .side-pro { --side: #A9D39C; --side-soft: #24301F; }
+  :root[data-theme="dark"] .side-con { --side: #C9B5EA; --side-soft: #2D2538; }
+  .side-tag { align-self: flex-start; font-size: .82rem; letter-spacing: 0; color: var(--surface); background: var(--side);
+    border-radius: 999px; padding: .05rem .65rem; }
+  .fold { border-radius: 20px; border-width: 1.5px; }
+  .fold summary { font-size: 1.02rem; }
+  .fold[open] summary { border-bottom: 1.5px dashed var(--rule); }
+  .grp { border-left: 0; background: var(--bg); border-radius: 14px; padding: .6rem .85rem; }
+  .pager a { border-radius: 18px; }
+  .tip { border-radius: 16px; }
+  .term { border-radius: 6px; }
+  .n-head { border-bottom: 3px dotted var(--hue); }
+  .crumbs a { background: var(--surface); border: 1.5px solid var(--rule); padding: .35rem .85rem; }
+  .full { display: inline-block; background: var(--surface); border: 1.5px solid var(--rule-strong); padding: .4rem 1rem; }
+  footer { border-top: 1.5px dashed var(--rule-strong); }
+  @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
+  @media (max-width: 600px) { .full { display: block; } }
+</style>
+</head>
+<body>
+<div class="page news s-teal">
+  <nav class="crumbs"><a href="../index.html#e-20261027-pm">← 목록으로</a><span>10월 27일 오후판 · 3/3</span></nav>
+  <header class="n-head">
+    <div class="n-meta">
+      <span class="n-cat"><svg aria-hidden="true" focusable="false" class=""
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  <path d="M2 12h20" />
+</svg>국제</span>
+      <span>언론사 12곳</span>
+      <span><span class="meter lv2" aria-hidden="true"><i class="on"></i><i class="on"></i><i class=""></i></span>관점 차이 보통</span>
+    </div>
+    <h1>룰라 브라질 대통령, 결선서 역전해 4선…보우소나루 출국 금지, 트럼프 &quot;조작된 선거&quot; 발언</h1>
+    <p class="orig">대표 원제목 — [인&amp;아웃] &#x27;오뚝이&#x27; 룰라 브라질 대통령</p>
+  </header>
+
+  <section class="lede"><div class="label">중립 수정본 · <span class="term-hint">밑줄 친 말을 누르면 뜻이 나옵니다</span></div><p>브라질 대선 <button type="button" class="term" data-tip="g-63/03" aria-expanded="false">결선투표</button>가 25일 치러져 <button type="button" class="term" data-tip="g-79/03" aria-expanded="false">루이스 이나시우 룰라 다시우바</button> 대통령이 약 51.79%를 얻어 48.21%의 <button type="button" class="term" data-tip="g-80/03" aria-expanded="false">플라비우 보우소나루</button> 상원의원을 약 443만 표 차로 이기고 4선에 성공했다. 1차 투표에서는 보우소나루 의원이 앞섰고, 1차 투표 1위 후보가 결선에서 진 것은 1989년 직선제 부활 이후 처음이라고 전해졌다. <button type="button" class="term" data-tip="g-65/03" aria-expanded="false">연방대법원</button>이 투표 마감을 2시간 연장하자 보우소나루 의원은 <button type="button" class="term" data-tip="g-64/03" aria-expanded="false">선거 무효</button>를 주장했으나, 소속 정당인 <button type="button" class="term" data-tip="g-70/03" aria-expanded="false">자유당</button>은 26일 결과를 인정한다고 밝혔다. 같은 날 연방대법관은 <button type="button" class="term" data-tip="g-68/03" aria-expanded="false">자금세탁</button> 의혹 수사와 관련해 보우소나루 의원의 여권을 <button type="button" class="term" data-tip="g-67/03" aria-expanded="false">압수</button>하고 출국을 금지했고, 보우소나루 의원은 이에 반발했다. <button type="button" class="term" data-tip="g-81/03" aria-expanded="false">도널드 트럼프</button> 미국 대통령은 26일 기자들에게 &quot;또 하나의 조작된 선거처럼 보였다&quot;고 말했지만 구체적 근거는 제시하지 않았다.</p></section>
+
+  <section class="block">
+    <h2>찬반 입장</h2>
+    <p class="note">찬반 형식을 쓰기 전 자료라 언론사별 초점만 있습니다.</p>
+  </section>
+  <details class="fold" open><summary>언론사별 보도 초점 <small>7개</small></summary><div class="fold-body"><div class="grp"><b>연합뉴스</b><span class="who"></span><span class="what">룰라 대통령의 생애와 &#x27;오뚝이&#x27; 서사를 중심으로 한 해설. 중남미 &#x27;블루타이드&#x27;와 미중 구도, 갈라진 민심 속 통치 과제를 짚음.</span></div><div class="grp"><b>한겨레·경향신문</b><span class="who"></span><span class="what">청년·저소득층·북동부 결집, 투표율 상승, 디지털 선거운동 등 역전의 원인 분석에 비중. 투표 연장은 보우소나루 캠프도 일부 지역 연장을 요청했다는 점과 선거법원의 &#x27;달라진 것 없다&#x27;는 입장을 함께 전함. 경향신문은 연장 결정에도 투표하지 못한 유권자의 호소도 소개.</span></div><div class="grp"><b>동아일보</b><span class="who"></span><span class="what">결선 결과와 &#x27;블루타이드&#x27; 한풀 꺾임, 자유당의 의회 다수와 트럼프 행정부와의 껄끄러운 관계 등 부담을 함께 전함. 출국 금지 기사에서는 보우소나루 의원의 &#x27;정치적 박해&#x27; 주장을 병기.</span></div><div class="grp"><b>매일경제·조선일보·중앙일보</b><span class="who"></span><span class="what">헤알화·증시·국채 급락 등 금융시장 반응과 재정 우려에 비중. 조선일보는 출국 금지를 &#x27;룰라 측의 정치적 보복이 시작됐다는 평가&#x27;와 함께 소개했고, 중앙일보는 투표 연장 시간의 표(약 3만 4천 표)가 격차를 뒤집기 어렵다는 점을 불복 철회 배경으로 설명.</span></div><div class="grp"><b>뉴시스·한국일보</b><span class="who"></span><span class="what">BBC·NYT를 인용해 왓츠앱 채널 &#x27;룰라의 군대&#x27;(팔로워 1080만 명)를 역전의 한 요인으로 부각하면서, 표에 미친 직접 효과는 가려내기 어렵고 현장 선거운동과 결합됐다는 전문가 지적을 덧붙임.</span></div><div class="grp"><b>KBS</b><span class="who"></span><span class="what">지지자 환호와 룰라 대통령의 &quot;브라질은 누구의 뒷마당도 아니다&quot; 연설을 인용해 미국을 겨냥한 발언으로 받아들여졌다고 전함. 트럼프 발언은 근거 제시가 없었다고 명시.</span></div><div class="grp"><b>노컷뉴스·YTN</b><span class="who"></span><span class="what">보우소나루 출국 금지와 그의 반발(&#x27;내가 이겼어도 이랬겠느냐&#x27;)을 중심으로 전하며 브라질 정국의 혼란·양극화 격화를 전망. 노컷뉴스는 트럼프 발언을 패배에 대한 실망감의 거친 표현으로 해석.</span></div></div></details>
+  <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>25일 결선에서 룰라 대통령이 51.79%, 보우소나루 의원이 48.21%를 얻었다(브라질 선거법원 집계).</li><li>1차 투표에서는 보우소나루 의원이 앞섰으나 결선에서 룰라 대통령이 뒤집었다.</li><li>연방대법원이 투표 마감 시간을 오후 5시에서 7시로 연장했고, 보우소나루 의원은 이를 문제 삼아 선거 무효를 주장했다가 자유당이 26일 결과를 인정했다.</li><li>연방대법관이 26일 보우소나루 의원의 여권을 압수하고 출국을 금지했다(자금세탁 의혹 수사 관련).</li><li>트럼프 대통령은 26일 브라질 대선이 &quot;조작된 선거처럼 보였다&quot;고 말했으나 근거는 밝히지 않았고, 직접 조치에는 선을 그었다.</li></ul></div></details>
+
+  <nav class="pager"><a class="prev" href="20261027-pm-02.html"><span>← 이전 뉴스</span>대법원, 김건희 여사 추가 구속영장 심문…구속 만료 나흘 앞두고 특검·변호인 공방</a></nav>
+  <details class="sources"><summary>원문 기사 21건 · 각 언론사 링크</summary><ul><li><span class="outlet">연합뉴스</span> <a href="https://www.yna.co.kr/view/AKR20261026087700546" target="_blank" rel="noopener">[인&amp;아웃] &#x27;오뚝이&#x27; 룰라 브라질 대통령</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261027_0003841984" target="_blank" rel="noopener">트럼프, 룰라 당선에 브라질 대선 조작 주장…&quot;부패하고 끔찍&quot;</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261027/134913318/2" target="_blank" rel="noopener">룰라, 중남미 ‘블루타이드’ 제동… 브라질 대통령 4선</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261027/134913788/1" target="_blank" rel="noopener">트럼프, 룰라 당선에 브라질 대선 조작 주장…“부패하고 끔찍”</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1284210.html" target="_blank" rel="noopener">룰라의 ‘역전승’ 뒤엔 청년·빈곤층·북동부 결집이 있었다</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1284207.html" target="_blank" rel="noopener">브라질 대선 ‘투표 시간 연장’ 후폭풍…보우소나루 ‘선거무효’ 주장</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202610262125015/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=kh_world" target="_blank" rel="noopener">사상 초유 투표 연장에…보우소나루 “선거 무효” 불복</a></li><li><span class="outlet">경향신문</span> <a href="https://www.khan.co.kr/article/202610262125005/?utm_source=khan_rss&amp;utm_medium=rss&amp;utm_campaign=kh_world" target="_blank" rel="noopener">지지층 ‘막판 결집’ 뒤집기…친트럼프 ‘블루타이드’ 끊었다</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026102622340000359" target="_blank" rel="noopener">브라질 대선, 룰라의 역전승-사회ㅣ한국일보</a></li><li><span class="outlet">매일경제</span> <a href="https://www.mk.co.kr/news/world/12186039" target="_blank" rel="noopener">&#x27;블루타이드&#x27; 제동 건 룰라, 野와 협치 난관 … 금융시장 출렁</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8695651" target="_blank" rel="noopener">룰라 브라질 대통령 4선 성공…‘블루타이드’ 제동</a></li><li><span class="outlet">KBS</span> <a href="https://news.kbs.co.kr/news/view.do?ncd=8695857" target="_blank" rel="noopener">트럼프, ‘우파 패배’ 브라질 대선에 “조작된 부패 선거”</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6597436" target="_blank" rel="noopener">트럼프, 룰라 승리 브라질 대선에 &quot;조작된 선거&quot;</a></li><li><span class="outlet">뉴시스</span> <a href="https://www.newsis.com/view/NISX20261027_0003843416" target="_blank" rel="noopener">룰라 역전승 뒤 &#x27;왓츠앱 군대’…팔로워 1080만명 모았다</a></li><li><span class="outlet">조선일보</span> <a href="https://www.chosun.com/international/international_general/2026/10/27/X46MBDQ2EZBGZGB7X5Z6E3R6SQ/" target="_blank" rel="noopener">룰라 당선되자 보우소나루는 여권 뺏기고 증시는 폭락… 트럼프는 “조작된 선거”</a></li><li><span class="outlet">중앙일보</span> <a href="https://www.joongang.co.kr/article/25473268" target="_blank" rel="noopener">패배 하루만에 출국금지 당한 보우소나루…브라질 증시는 14% 급락</a></li><li><span class="outlet">동아일보</span> <a href="https://www.donga.com/news/Inter/article/all/20261027/134915924/2" target="_blank" rel="noopener">대선 패배 하루만에…브라질 대법, 보우소나루 출국 금지</a></li><li><span class="outlet">한겨레</span> <a href="https://www.hani.co.kr/arti/international/america/1284342.html" target="_blank" rel="noopener">뒤집을 방법 없는 443만표차 대패…보우소나루, 하루 만에 ‘결과 승복’</a></li><li><span class="outlet">한국일보</span> <a href="https://www.hankookilbo.com/news/article/A2026102709510004595" target="_blank" rel="noopener">룰라 역전 비결은 &#x27;왓츠앱 군대&#x27;… 채널 하나가 판세 뒤집어-국제ㅣ한국일보</a></li><li><span class="outlet">노컷뉴스</span> <a href="https://www.nocutnews.co.kr/news/6597785" target="_blank" rel="noopener">패배 하루 만에 출국 금지…벼랑 끝 몰린 브라질 보우소나루</a></li><li><span class="outlet">YTN</span> <a href="https://www.ytn.co.kr/_ln/0104_202610271354328814" target="_blank" rel="noopener">대선 패배 하루 만에...브라질 대법원, 보우소나루 출국 금지</a></li></ul></details>
+  <footer>뉴스밸런스 · 요약과 관점 정리는 AI가 기사 본문을 읽고 쓴 자동 초안</footer>
+</div>
+<script type="application/json" id="tips">{"g-63/03": {"term": "결선투표", "tier": "필수", "def": "절반을 넘게 얻은 후보가 없을 때 1·2위가 다시 겨루는 투표", "detail": "후보가 여럿이면 한 후보가 절반을 넘기 어렵다. 그래서 1차 투표에서 절반을 넘게 얻은 사람이 없으면, 가장 많이 얻은 두 사람만 다시 투표한다. 브라질 대통령 선거가 이 방식이고, 1차에서 1위였던 후보가 결선에서 뒤집히기도 한다.", "ctx": "브라질 대선 결선투표가 25일 치러져 룰라 대통령이 51.79%로 48.21%의 보우소나루 의원을 이겼다. 1차 1위 후보가 결선에서 진 것은 1989년 직선제 부활 이후 처음이라고 전해졌다."}, "g-79/03": {"term": "룰라", "tier": "인물", "def": "브라질 대통령. 이번 결선에서 이겨 4선에 성공했다", "detail": "", "ctx": "결선에서 51.79%를 얻어 4선에 성공했다. KBS는 '브라질은 누구의 뒷마당도 아니다'라는 연설이 미국을 겨냥한 발언으로 받아들여졌다고 전했다."}, "g-80/03": {"term": "보우소나루", "tier": "인물", "def": "브라질 상원의원. 결선에서 졌고 출국 금지를 당했다", "detail": "", "ctx": "결선 뒤 선거 무효를 주장했으나 자유당이 결과를 인정했다. 연방대법관이 여권을 압수하고 출국을 금지하자 '내가 이겼어도 이랬겠느냐'며 반발했다(노컷뉴스·YTN)."}, "g-65/03": {"term": "연방대법원", "tier": "상황", "def": "브라질에서 가장 높은 법원", "detail": "", "ctx": "투표 마감을 오후 5시에서 7시로 연장했고, 연방대법관이 26일 보우소나루 의원의 여권을 압수하고 출국을 금지했다."}, "g-64/03": {"term": "선거 무효", "tier": "상황", "def": "선거에 문제가 있어 그 결과의 효력을 없던 것으로 하는 것", "detail": "", "ctx": "연방대법원이 투표 마감을 2시간 연장하자 보우소나루 의원이 선거 무효를 주장했다. 소속 정당인 자유당은 26일 결과를 인정한다고 밝혔다. 선거 무효는 보우소나루 의원 쪽의 주장이다."}, "g-70/03": {"term": "자유당", "tier": "상황", "def": "브라질의 정당. 보우소나루 의원이 속한 당", "detail": "", "ctx": "보우소나루 의원이 선거 무효를 주장했으나 자유당은 26일 결과를 인정한다고 밝혔다. 동아일보는 자유당이 의회에서 다수라는 점이 룰라 대통령에게 부담이라고 전했다."}, "g-68/03": {"term": "자금세탁", "tier": "상황", "def": "불법으로 번 돈의 출처를 숨겨 정상적인 돈처럼 보이게 하는 것", "detail": "", "ctx": "자금세탁 의혹 수사와 관련해 연방대법관이 보우소나루 의원의 여권을 압수하고 출국을 금지했다."}, "g-67/03": {"term": "압수", "tier": "상황", "def": "수사나 재판에서 증거가 될 물건을 강제로 가져가 보관하는 것", "detail": "", "ctx": "연방대법관이 보우소나루 의원의 여권을 압수해 출국을 막았다."}, "g-81/03": {"term": "트럼프", "tier": "인물", "def": "미국 대통령", "detail": "", "ctx": "26일 기자들에게 브라질 대선이 '또 하나의 조작된 선거처럼 보였다'고 말했지만 구체적 근거는 제시하지 않았고 직접 조치에는 선을 그었다."}}</script>
+<script>
+  // 밑줄 친 용어: 누르면 짧은 설명 창, 다시 누르거나 바깥을 누르거나 Esc면 닫힘
+  (() => {
+    const tips = JSON.parse(document.getElementById('tips').textContent);
+    const tip = document.createElement('div');
+    tip.className = 'tip'; tip.setAttribute('role', 'dialog'); tip.hidden = true;
+    document.body.appendChild(tip);
+    let opener = null;
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; n.textContent = text; return n; };
+    function closeTip() { tip.hidden = true; if (opener) opener.setAttribute('aria-expanded', 'false'); opener = null; }
+    document.querySelectorAll('.term').forEach(b => b.addEventListener('click', ev => {
+      ev.stopPropagation();
+      if (opener === b) return closeTip();
+      closeTip();
+      const d = tips[b.dataset.tip];
+      const head = el('div', 'tip-head', '');
+      head.append(el('b', '', d.term), el('span', 'tip-tier', d.tier));
+      const parts = [head, el('p', 'tip-def', d.def)];
+      if (d.detail) parts.push(el('p', 'tip-detail', d.detail));  // 필수 용어만 2~3문장 설명이 있음
+      parts.push(el('p', 'tip-ctx', '이 기사에서 — ' + d.ctx));
+      tip.replaceChildren(...parts);
+      tip.hidden = false; opener = b; b.setAttribute('aria-expanded', 'true');
+      const r = b.getBoundingClientRect();
+      tip.style.left = Math.max(16, Math.min(r.left, innerWidth - tip.offsetWidth - 16)) + scrollX + 'px';
+      tip.style.top = r.bottom + scrollY + 6 + 'px';
+    }));
+    document.addEventListener('click', ev => { if (!tip.hidden && !tip.contains(ev.target)) closeTip(); });
+    document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
+  })();
+</script>
+</body>
+</html>

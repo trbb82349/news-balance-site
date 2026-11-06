@@ -208,8 +208,8 @@
   .meter.lv3 i.on { background: var(--flag); }
   .meter.lv2 i.on { background: var(--clay); }
   .meter.lv1 i.on { background: var(--faint); }
-  .news-illustration { width: min(100%, 360px); margin: 0 auto; }
-  .news-illustration img { display: block; width: 100%; height: auto; border-radius: 14px; }
+  .news-illustration { width: min(100%, 360px); margin: 0 auto; container-type: inline-size; }
+  .news-illustration .thumb { position: relative; margin: 0; aspect-ratio: 16/9; overflow: hidden; border-radius: 14px; }
   .news-illustration figcaption { margin-top: .35rem; text-align: right; font-size: .7rem; color: var(--muted); }
   .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
   .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
@@ -366,6 +366,20 @@
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
 
+  .card { container-type: inline-size; }
+  .thumb.ai-thumb { padding: 0; border-bottom: 0; background: #eef4fc; color: #152748; display: block; }
+  .ai-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ai-wash { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.58) 27%,transparent 52%); }
+  .ai-caption { position: absolute; left: 5%; top: 18%; width: 38%; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .ai-category { font: 600 clamp(10px,2.5cqw,13px)/1.3 var(--sans); color: #59667f; }
+  .ai-key { font: 400 clamp(18px,5.25cqw,29px)/1.3 var(--round); letter-spacing: 0; color: #152748; word-break: keep-all; overflow-wrap: anywhere; text-wrap: balance; }
+  .ai-subkey { font: 400 clamp(12px,3.1cqw,17px)/1.35 var(--round); letter-spacing: 0; padding: 7px 10px; border-radius: 7px; color: white; background: #2459ca; word-break: keep-all; }
+  .s-plum .ai-subkey { background: #7851bd; } .s-teal .ai-subkey { background: #087a85; } .s-clay .ai-subkey { background: #b53c52; }
+  .ai-label,.ai-person { position: absolute; background: rgba(255,255,255,.94); color: #58657a; font: 400 10px/1.3 var(--sans); padding: 4px 7px; border-radius: 6px; }
+  .ai-label { bottom: 7px; right: 7px; } .ai-person { top: 6%; right: 4%; border-radius: 20px; }
+  .thumbnail-notice { font: 400 .72rem/1.6 var(--sans); color: var(--muted); margin: 0; padding-top: .35rem; border-top: 1px solid var(--rule); }
+  @media(max-width:640px) { .ai-caption { top: 12%; gap: 6px; } }
+
   .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
          --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
@@ -449,7 +463,14 @@
     <p class="orig">대표 원제목 — 뉴욕증시, AI 인프라 규제 우려에 하락 출발</p>
   </header>
 
-  <figure class="news-illustration"><img src="../assets/thumbnails/20261106-pm/c330479803a1d8d91aeff320.webp" alt="데이터센터 서버와 반도체 칩, 하락 곡선으로 AI 규제 우려와 증시 하락을 표현한 일러스트."><figcaption>AI 생성 일러스트 · 실제 현장 사진이 아닙니다</figcaption></figure>
+  <figure class="news-illustration"><div class="thumb ai-thumb">
+      <img src="../assets/thumbnails/20261106-pm/c330479803a1d8d91aeff320.webp" alt="데이터센터 서버와 반도체 칩, 하락 곡선으로 AI 규제 우려와 증시 하락을 표현한 일러스트." loading="lazy" width="960" height="540">
+      <div class="ai-wash"></div><div class="ai-caption">
+        <span class="ai-category">경제·산업</span><strong class="ai-key">데이터센터 규제</strong>
+        <span class="ai-subkey">코스피 이틀 11%↓</span></div>
+      
+      <span class="ai-label" title="뉴스 맥락을 표현한 창작 일러스트이며 실제 현장·표정의 사진이 아닙니다.">AI 생성 일러스트</span>
+    </div><figcaption>AI 생성 일러스트 · 실제 현장 사진이 아닙니다</figcaption></figure>
   <section class="lede"><div class="label">중립 수정본 · <span class="term-hint">밑줄 친 말을 누르면 뜻이 나옵니다</span></div><p><button type="button" class="term" data-tip="g-177/04" aria-expanded="false">미국 중간선거</button>에서 <button type="button" class="term" data-tip="g-157/04" aria-expanded="false">민주당</button>이 상·<button type="button" class="term" data-tip="g-179/04" aria-expanded="false">하원</button>을 모두 차지하고 <button type="button" class="term" data-tip="g-302/04" aria-expanded="false">데이터센터</button> 규제를 내건 후보들이 <button type="button" class="term" data-tip="g-219/04" aria-expanded="false">주지사</button> 선거에서 당선되면서 AI 데이터센터 규제 강화와 투자 지연 우려가 커졌다. 5일 <button type="button" class="term" data-tip="g-298/04" aria-expanded="false">코스피</button>는 5.28% 내린 5383.80, <button type="button" class="term" data-tip="g-299/04" aria-expanded="false">코스닥</button>은 5.11% 내린 678.41로 마감했고 두 시장에서 <button type="button" class="term" data-tip="g-300/04" aria-expanded="false">매도 사이드카</button>가 발동됐다. 5일(현지시간) 뉴욕증시에서는 <button type="button" class="term" data-tip="g-304/04" aria-expanded="false">나스닥</button>이 장중 4% 넘게 떨어졌고 엔비디아 등 반도체·AI 관련주가 크게 내렸다. 6일 코스피는 개장 3분 만에 <button type="button" class="term" data-tip="g-303/04" aria-expanded="false">서킷브레이커</button>가 발동되며 장중 5천선이 무너졌다가 6.02% 내린 5059.69로 마감해 이틀간 약 11% 하락했다. 일부 증권사 연구원은 반도체 수요가 급감할 가능성은 낮고 영향이 단기에 그칠 수 있다고 &quot;전망&quot;했다.</p></section>
 
   <section class="block">

@@ -208,8 +208,8 @@
   .meter.lv3 i.on { background: var(--flag); }
   .meter.lv2 i.on { background: var(--clay); }
   .meter.lv1 i.on { background: var(--faint); }
-  .news-illustration { width: min(100%, 360px); margin: 0 auto; }
-  .news-illustration img { display: block; width: 100%; height: auto; border-radius: 14px; }
+  .news-illustration { width: min(100%, 360px); margin: 0 auto; container-type: inline-size; }
+  .news-illustration .thumb { position: relative; margin: 0; aspect-ratio: 16/9; overflow: hidden; border-radius: 14px; }
   .news-illustration figcaption { margin-top: .35rem; text-align: right; font-size: .7rem; color: var(--muted); }
   .lede .label { font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; color: var(--hue); margin-bottom: .45rem; }
   .lede p { margin: 0; font-size: 1.02rem; line-height: 1.8; }
@@ -366,6 +366,20 @@
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
 
+  .card { container-type: inline-size; }
+  .thumb.ai-thumb { padding: 0; border-bottom: 0; background: #eef4fc; color: #152748; display: block; }
+  .ai-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .ai-wash { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.58) 27%,transparent 52%); }
+  .ai-caption { position: absolute; left: 5%; top: 18%; width: 38%; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .ai-category { font: 600 clamp(10px,2.5cqw,13px)/1.3 var(--sans); color: #59667f; }
+  .ai-key { font: 400 clamp(18px,5.25cqw,29px)/1.3 var(--round); letter-spacing: 0; color: #152748; word-break: keep-all; overflow-wrap: anywhere; text-wrap: balance; }
+  .ai-subkey { font: 400 clamp(12px,3.1cqw,17px)/1.35 var(--round); letter-spacing: 0; padding: 7px 10px; border-radius: 7px; color: white; background: #2459ca; word-break: keep-all; }
+  .s-plum .ai-subkey { background: #7851bd; } .s-teal .ai-subkey { background: #087a85; } .s-clay .ai-subkey { background: #b53c52; }
+  .ai-label,.ai-person { position: absolute; background: rgba(255,255,255,.94); color: #58657a; font: 400 10px/1.3 var(--sans); padding: 4px 7px; border-radius: 6px; }
+  .ai-label { bottom: 7px; right: 7px; } .ai-person { top: 6%; right: 4%; border-radius: 20px; }
+  .thumbnail-notice { font: 400 .72rem/1.6 var(--sans); color: var(--muted); margin: 0; padding-top: .35rem; border-top: 1px solid var(--rule); }
+  @media(max-width:640px) { .ai-caption { top: 12%; gap: 6px; } }
+
   .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
          --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
@@ -453,7 +467,14 @@
     <p class="orig">대표 원제목 — 신임 법무장관에 이용철 방사청장 지명…靑 정무수석 최인호(종합)</p>
   </header>
 
-  <figure class="news-illustration"><img src="../assets/thumbnails/20261106-pm/d4b4052f7dfb8df0f76cc1c1.webp" alt="정부 건물 앞 저울·계산기·말풍선이 그려진 인사 서류와 돋보기로 주요 공직 지명과 검증을 상징한 일러스트."><figcaption>AI 생성 일러스트 · 실제 현장 사진이 아닙니다</figcaption></figure>
+  <figure class="news-illustration"><div class="thumb ai-thumb">
+      <img src="../assets/thumbnails/20261106-pm/d4b4052f7dfb8df0f76cc1c1.webp" alt="정부 건물 앞 저울·계산기·말풍선이 그려진 인사 서류와 돋보기로 주요 공직 지명과 검증을 상징한 일러스트." loading="lazy" width="960" height="540">
+      <div class="ai-wash"></div><div class="ai-caption">
+        <span class="ai-category">국내 정치</span><strong class="ai-key">이용철 법무장관</strong>
+        <span class="ai-subkey">성남라인 논란</span></div>
+      
+      <span class="ai-label" title="뉴스 맥락을 표현한 창작 일러스트이며 실제 현장·표정의 사진이 아닙니다.">AI 생성 일러스트</span>
+    </div><figcaption>AI 생성 일러스트 · 실제 현장 사진이 아닙니다</figcaption></figure>
   <section class="lede"><div class="label">중립 수정본 · <span class="term-hint">밑줄 친 말을 누르면 뜻이 나옵니다</span></div><p>이재명 대통령이 6일 공석인 <button type="button" class="term" data-tip="g-305/02" aria-expanded="false">법무부 장관</button> 후보자로 <button type="button" class="term" data-tip="g-316/02" aria-expanded="false">이용철</button> <button type="button" class="term" data-tip="g-306/02" aria-expanded="false">방위사업청장</button>을 지명했고, <button type="button" class="term" data-tip="g-307/02" aria-expanded="false">국세청장</button> 후보자로 <button type="button" class="term" data-tip="g-317/02" aria-expanded="false">안덕수</button> 서울지방국세청장, 청와대 <button type="button" class="term" data-tip="g-97/02" aria-expanded="false">정무수석</button>으로 <button type="button" class="term" data-tip="g-318/02" aria-expanded="false">최인호</button> 주택도시보증공사(HUG) 사장을 발탁했다. <button type="button" class="term" data-tip="g-239/02" aria-expanded="false">임광현</button> 대통령 <button type="button" class="term" data-tip="g-232/02" aria-expanded="false">비서실장</button>은 이 후보자를 &quot;<button type="button" class="term" data-tip="g-308/02" aria-expanded="false">민변</button> 출신으로 인권 보호와 민주적 가치 증진에 힘써 온 변호사&quot;로 소개하며 새 형사사법체계를 안착시킬 적임자라고 설명했다. 이 후보자는 이 대통령의 성남시장 인수위원과 성남산업진흥재단 대표를 지낸 이력이 있고, 과거 <button type="button" class="term" data-tip="g-310/02" aria-expanded="false">대장동 개발 의혹</button> 관련 인물의 채용 과정에 참여했다는 의혹이 제기된 바 있다. 임 실장은 이에 대해 &quot;검증 때 감안이 됐고 <button type="button" class="term" data-tip="g-24/02" aria-expanded="false">청문회</button>에서 본인이 소명할 것&quot;이라고 밝혔다. <button type="button" class="term" data-tip="g-156/02" aria-expanded="false">국민의힘</button>은 이번 지명을 &quot;<button type="button" class="term" data-tip="g-309/02" aria-expanded="false">성남 라인</button>&quot; 인사라고 비판했다.</p></section>
 
   <section class="block">

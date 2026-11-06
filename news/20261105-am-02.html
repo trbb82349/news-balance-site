@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -402,6 +457,7 @@
     <p class="stance-q"><span>쟁점</span>이재명 대통령의 집값 발언을 다룬 일부 보도는 사실과 다르다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">대통령은 서울 전체가 아닌 강남·서초·송파 등 주요 지역 하락만 말했으므로 &#x27;폭락&#x27;·&#x27;강남만 맞았다&#x27;는 보도는 가짜뉴스다</p><p class="side-outlets">연합뉴스, 뉴시스, 매일경제, YTN</p><p class="side-focus">제목과 첫 문단에서 &#x27;가짜뉴스&#x27;·&#x27;2차 가짜뉴스&#x27; 등 대통령의 반박을 앞세우고 평가 없이 대통령의 설명과 근거 수치를 중심으로 전함</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">대통령의 해명에도 서울 대부분 지역은 오르고 있어 집값 하락 발언은 현실과 맞지 않는다</p><p class="side-outlets">조선일보</p><p class="side-focus">제목에서 &quot;강남 3구만 서울인가&quot;라는 야당 반응을 앞세우고, 장동혁 대표·김재섭 의원의 비판과 서울 90주 상승 통계를 함께 실음</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>3곳</small></summary><div class="fold-body"><div class="grp"><b>시장 통계로 확인</b><span class="who">한겨레, 경향신문</span><span class="what">강남권 하락과 비강남권 상승이 엇갈리는 주간 통계, 공공·민간 집값 통계의 차이 등 시장 데이터를 중심으로 짚음</span></div><div class="grp"><b>발언 해석을 둘러싼 충돌 소개</b><span class="who">SBS</span><span class="what">&#x27;서울의 주요 지역은…&#x27;이라는 대통령 발언의 해석을 놓고 다시 충돌이 벌어졌다는 점을 제목에서 전함</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>이 대통령은 3일 국무회의에서 주요 지역의 실제 거래 가격이 놀라울 정도로 떨어지고 있다며, 아닌 지역도 있다고 언급했다</li><li>이 대통령은 4일 X에 &quot;집값 폭락 중&quot;이라는 직접 인용과 &quot;강남만 맞았다&quot;는 제목을 가짜뉴스라고 지적하고, 자신은 강남·서초·송파만 말했다고 밝혔다</li><li>관련 기사 제목은 이 대통령의 지적 뒤 수정됐고, 이 대통령은 다른 기사에 대해서도 &quot;2차 가짜뉴스&quot;라며 시정을 요구했다</li><li>한국부동산원 통계상 서울 아파트값은 90주 연속 상승 중이나 주간 상승폭은 0.09%로 줄었고 강남·서초구는 12주 연속 하락했다</li><li>국민의힘은 &quot;강남 3구만 서울인가&quot;라는 취지로 이 대통령의 해명을 비판했다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261105-am-01.html"><span>← 이전 뉴스</span>조작기소 특검법안, 공소취소 관련 조항 삭제한 채 법사위 통과…국민의힘 퇴장, 5일 본회의 처리 추진</a><a class="next" href="20261105-am-03.html"><span>다음 뉴스 →</span>윤석열 전 대통령 공직선거법 위반 항소심, 1심과 같은 징역 1년 6개월 집행유예 3년 선고</a></nav>
@@ -439,5 +495,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

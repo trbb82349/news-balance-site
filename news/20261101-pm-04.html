@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -406,6 +461,7 @@
     <p class="note">찬반이 갈리는 쟁점이 없는 이슈입니다. 언론사마다 무엇에 초점을 뒀는지만 정리했습니다.</p>
   </section>
   <details class="fold" open><summary>언론사별 보도 초점 <small>4갈래</small></summary><div class="fold-body"><div class="grp"><b>해킹 순간의 대응 과정 중심</b><span class="who">연합뉴스, 조선일보, 동아일보, 매일경제</span><span class="what">월스트리트저널·블룸버그를 인용해 경영진 약 100명의 긴급 화상회의, 스테이블코인 동결 요청, 해커의 이더리움 전환·대출 플랫폼 활용을 시간순으로 전하고 조선일보는 북한 해킹 능력도 함께 다룸</span></div><div class="grp"><b>FBI 발표와 트럼프 발언 전달 중심</b><span class="who">뉴시스, 한국경제, 노컷뉴스, JTBC, 한겨레</span><span class="what">FBI 발표문(첫 공식 확인, 지갑 주소 공개)과 트럼프의 ‘북한이면 대화’ 발언을 중심으로 전하고, 한국경제는 현금화 경로, 한겨레는 추가 침해 지점과 보전 현황을 덧붙임</span></div><div class="grp"><b>북한 해킹의 규모·외화벌이·기법 배경 중심</b><span class="who">YTN, 경향신문, SBS</span><span class="what">북한의 해킹이 외화벌이 수단으로 자리 잡은 경위와 올해 해킹 피해 중 북한 비중, 사전 리허설·세탁 수법, AI 활용 가능성을 분석 인용으로 다룸</span></div><div class="grp"><b>북미 대화·금융시장 파급 전망 중심</b><span class="who">KBS, 한국일보</span><span class="what">KBS는 사건이 북미 대화 재개에 미칠 영향을, 한국일보는 비트코인·금융주 하락과 국내 금융권의 보안·보상 부담을 중심으로 전함</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>바이낸스에서 29일 약 63억 달러(약 8조 4천억 원) 상당의 가상자산이 무단 인출됐고, 업계 역대 최대 규모의 해킹으로 전해졌다</li><li>바이낸스는 엔지니어의 해킹된 노트북과 거래 승인 시스템의 허점이 악용됐다고 설명했고, 자금 대부분이 20분 안팎에 빠져나갔다</li><li>FBI가 31일 북한 해킹조직 ‘트레이더트레이터’를 배후로 공식 지목했고, 탈취 자산을 주로 이더리움으로 바꾸는 정황과 추가 자금세탁 가능성을 밝혔다</li><li>약 30억 달러가 동결됐고, 바이낸스는 자체 자금·이용자 보호기금 등으로 탈취액의 90~95%를 보전했다고 밝혔다</li><li>트럼프 대통령은 “북한인지는 모르지만 만약 그렇다면 북한과 이 문제에 대해 이야기할 것”이라고 말했다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261101-pm-03.html"><span>← 이전 뉴스</span>루비오 美국무장관, 트럼프의 김정은 회담 의향 재확인하며 일정은 없다고 밝히고 한국 의원 비자 문제는 양자 협의로 풀겠다고 말해</a><a class="next" href="20261101-pm-05.html"><span>다음 뉴스 →</span>참사 후 첫 주말 핼러윈, 이태원 3만여 명·홍대 12만여 명 몰렸으나 큰 사고 없어</a></nav>
@@ -443,5 +499,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

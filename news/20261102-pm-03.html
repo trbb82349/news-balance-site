@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -397,6 +452,7 @@
     <p class="stance-q"><span>쟁점</span>미국이 진성준 위원장의 비자 발급을 거부한 것은 부당하다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">동맹국 국회 국방위원장에 대한 비자 거부와 지연은 상호 존중·신뢰 원칙에 맞지 않는다(진 위원장 주장)</p><p class="side-outlets">연합뉴스, 뉴시스, 조선일보, 중앙일보, 매일경제, 노컷뉴스</p><p class="side-focus">진 위원장의 출국 발언(&#x27;대단히 유감&#x27;, &#x27;동맹 길들이기&#x27; 언급, 국격·국회 권위)을 제목과 첫 문단에 앞세움. 평가 없이 진 위원장 설명을 중심으로 전했고, 중앙일보·조선일보는 1991년 전력과 루비오 발언의 연관 해석을, 매일경제는 정청래 의원 비자 보류와 미국의 비자 심사 기조를 배경으로 덧붙임</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">미국이 과거 행동을 이유로 심사한 사안이며 공개 논쟁보다 양국 협의로 풀 일이다(루비오 장관 설명)</p><p class="side-outlets">한국경제, SBS</p><p class="side-focus">루비오 장관의 &#x27;수십 년(약 20년) 전 행동&#x27; 발언을 제목에 앞세우고 국가보안법 전력과 연결해 전함. SBS는 미국이 비자 심사 규정을 적용했다는 설명과 공개 여론전에 끌려가지 않겠다는 해석을 함께 실음</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>1곳</small></summary><div class="fold-body"><div class="grp"><b>루비오 발언과 여야 공방 병렬</b><span class="who">동아일보</span><span class="what">루비오 장관 발언을 제목으로 삼고, 국민의힘 &#x27;외교적 망신&#x27; 논평과 민주당 &#x27;반국익적 자해&#x27; 반박, 정청래 의원 사례를 함께 전함</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>진 위원장은 10월 28일 미국 측으로부터 비자 발급 거부를 통보받았고, 31일 관용(A-2) 비자를 발급받아 11월 1일 방미단과 함께 출국했다</li><li>방미단은 진 위원장과 김병주·임종득·천하람 의원 등으로 구성돼 5일까지 하와이의 미군 태평양(인도태평양)사령부 등을 방문할 예정이다</li><li>루비오 국무장관은 31일(현지시간) 기자회견에서 &#x27;수십 년 전 행동과 관련된 이슈&#x27;로 안다며 양국 협의로 풀겠다고 말했다</li><li>진 위원장은 출국 전 &#x27;대단히 유감&#x27;이라고 밝히고, 상호 존중과 신뢰 원칙에 부합하는지 문제의식이 있다고 말했다</li><li>진 위원장은 1991년 국가보안법 위반으로 징역 3년·자격정지 3년을 선고받았고, 미국 요청으로 과거 판결문 영문 번역본 등을 추가 제출한 것으로 알려졌다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261102-pm-02.html"><span>← 이전 뉴스</span>국민의힘 장동혁 대표, MBN 출연해 박근혜 전 대통령 오찬 발언 전하고 연임 도전 가능성·한동훈 복당 선긋기 언급</a><a class="next" href="20261102-pm-04.html"><span>다음 뉴스 →</span>일본 GMO 인터넷 그룹, 고객정보 유출 배후에 북한 연계 해커 가능성 보고…해커 100만달러 요구에 같은 금액 현상금</a></nav>
@@ -434,5 +490,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

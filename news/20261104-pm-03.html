@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -401,6 +456,7 @@
     <p class="stance-q"><span>쟁점</span>윤석열 전 대통령의 선거법 위반 2심 유죄 판결은 타당하다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">재판부가 두 발언을 모두 허위로 본 것은 당연한 판단이며, 국민의힘은 397억원을 반환해야 한다</p><p class="side-outlets">한국경제, YTN</p><p class="side-focus">민주당·조국혁신당·진보당의 &quot;당연한 판단&quot;·&quot;즉각 반환&quot; 촉구 논평을 제목과 본문 중심으로 전함</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">판결에 부당한 점이 많아 대법원에서 다시 다퉈야 한다</p><p class="side-outlets">매일경제, JTBC</p><p class="side-focus">윤 전 대통령 측의 &quot;부당한 점 많다, 상고해 다툴 것&quot; 입장을 제목·첫 문단에 앞세움(JTBC는 특검의 &quot;납득할 수 있는 판결&quot; 평가를 함께 전함)</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>11곳</small></summary><div class="fold-body"><div class="grp"><b>재판부 판단 근거·판결 요지 중심</b><span class="who">뉴시스, 조선일보, KBS, SBS, 노컷뉴스, 경향신문, 한겨레, 한국일보</span><span class="what">두 발언을 허위로 본 이유, 양형 사유, 확정 시 397억원 반환 규정과 상고 계획을 판결문 위주로 정리함</span></div><div class="grp"><b>판결과 여야 반응을 함께 전달</b><span class="who">연합뉴스, 동아일보</span><span class="what">판결 내용과 함께 민주당의 반환 촉구, 국민의힘의 &quot;상급심 지켜볼 것&quot;·&quot;이 대통령 재판도 재개돼야&quot; 반응, 반환 방안 논의를 나란히 실음</span></div><div class="grp"><b>대법원 판례 법리 비교</b><span class="who">중앙일보</span><span class="what">2심이 지난해 5월 이재명 대통령 파기환송 판결의 법리를 따랐고, 윤 측이 내세운 2020년 판례와 어떻게 달랐는지를 해설함</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>서울고법 형사2-1부(재판장 백승엽)가 4일 윤 전 대통령의 항소를 기각하고 징역 1년 6개월, 집행유예 3년을 선고했다</li><li>2021년 12월 관훈클럽 토론회의 &#x27;변호사 소개한 적 없다&#x27;는 발언과 2022년 1월 &#x27;전성배씨를 김 여사와 함께 만난 적 없다&#x27;는 취지의 발언을 모두 허위사실 공표로 인정했다</li><li>재판부는 두 사안이 후보자의 도덕성·공정성과 비선 영향 가능성을 판단할 중요한 정보였다고 설명했다</li><li>벌금 100만원 이상의 형이 확정되면 당선이 무효가 되고 국민의힘은 선거비용 약 397억원을 <button type="button" class="term" data-tip="g-139/03" aria-expanded="false">선관위</button>에 반환해야 한다</li><li>윤 전 대통령 측은 선고 직후 &quot;부당한 점이 많다&quot;며 <button type="button" class="term" data-tip="g-49/03" aria-expanded="false">대법원</button>에 상고하겠다고 밝혔고, <button type="button" class="term" data-tip="g-58/03" aria-expanded="false">특검팀</button>은 &quot;국민들이 납득할 수 있는 판결&quot;이라고 했다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261104-pm-02.html"><span>← 이전 뉴스</span>김민석 민주당 대표, 신천지 연합 의혹 근거 없었다며 의총서 사과…정청래 전 대표는 공개 사과 요구</a><a class="next" href="20261104-pm-04.html"><span>다음 뉴스 →</span>이재명 대통령 &quot;주요 지역 실거래가 떨어져&quot; 발언에 서울 아파트 90주 연속 상승 통계 논쟁</a></nav>
@@ -438,5 +494,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

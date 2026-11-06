@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -402,6 +457,7 @@
     <p class="stance-q"><span>쟁점</span>김민석 대표는 신천지 3자 비밀연합 의혹 제기에 대해 공개적으로 책임져야 한다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">비공개 의총 사과로는 부족하며 당원 앞에 공개 사과하고 책임 방안을 밝혀야 한다(정청래 의원 주장)</p><p class="side-outlets">조선일보, 동아일보</p><p class="side-focus">제목과 첫 문단에 정청래 의원의 ‘책임져야’ 요구를 함께 올리고, ‘결과적으로 정청래는 무죄’, ‘숨어서 사과’ 등 발언을 길게 인용(동아일보는 김 대표가 의혹을 제기한 경위와 7월·지난달 발언도 정리)</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">김 대표가 의총에서 사과했고 보고는 종료됐으며, 공개 방식 등은 최고위에서 논의한다는 설명(김성회 원내대변인 전달)</p><p class="side-outlets">뉴시스, KBS, YTN, 노컷뉴스</p><p class="side-focus">평가 없이 원내대변인 브리핑 내용(사과 발언, 보고 취소, 특정 지역 가입 주장 사실무근, 수사 의뢰 의견 없음, 공개 안 함)을 중심으로 전함. 정청래 의원의 반응은 싣지 않거나 비중이 작음(노컷뉴스는 본문이 수집되지 않아 제목 기준)</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>8곳</small></summary><div class="fold-body"><div class="grp"><b>김 대표 사과와 정청래 요구를 함께 전함</b><span class="who">연합뉴스, 한국일보, 중앙일보</span><span class="what">김 대표의 사과 발언과 보고 취소, 정청래 의원의 공개 사과 요구를 비슷한 비중으로 싣고 특검법 당론 채택도 함께 정리</span></div><div class="grp"><b>합당론·계파 갈등·국회 일정 각도</b><span class="who">한겨레, 경향신문, 매일경제, JTBC, SBS</span><span class="what">신천지 의혹과 조국혁신당 합당 시한을 둘러싼 정청래·김민석 갈등, 지도부 반응, 국정조사·쟁점법안·필리버스터 등 국회 일정 전망을 중심으로 다룸</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>민주당은 3일 의원총회에서 김민석 대표의 신천지 의혹 관련 사과가 있었고, 예정됐던 박선원 단장의 조사 결과 보고는 하지 않았다고 밝혔다(김성회 원내대변인)</li><li>김 대표는 “조사 결과 3자 비밀연합의 증거는 없었다”, “본의 아니게 피해를 입은 분들께 죄송하다”고 말했다고 전해졌다</li><li>정청래 의원은 공개 사과와 책임을 요구했다</li><li>민주당은 조작기소 특검법안을 당론으로 채택하고 5일 본회의 처리를 목표로 했다</li><li>조희대 대법원장 국정조사는 원내에서 의견을 더 수렴하기로 해 5일 본회의 보고는 하지 않기로 했다</li></ul></div></details>
 
   <nav class="pager"><a class="next" href="20261103-pm-02.html"><span>다음 뉴스 →</span>대통령 “주요 지역 실거래가 놀라울 정도로 하락” 발언에 오세훈 서울시장 “서울 아파트값 90주 연속 상승” 반박</a></nav>
@@ -439,5 +495,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

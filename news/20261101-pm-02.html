@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -402,6 +457,7 @@
     <p class="stance-q"><span>쟁점</span>다문화가정 지원·우대 제도의 불합리한 부분은 시정해야 한다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">지원은 유지하되 역차별이나 불합리가 있는 부분은 폐지 검토를 포함해 바로잡아야 한다</p><p class="side-outlets">연합뉴스, 뉴시스, 중앙일보, 동아일보, 한국일보, SBS, 조선일보</p><p class="side-focus">대통령 X 글의 주장(시정은 차별이 아니라는 취지, 콩 비유, 사회안전매트)을 제목과 본문 중심으로 길게 인용해 전함. 평가 없이 대통령 설명만 전한 기사가 대부분이며 조선일보는 31일 글과 28~30일 경과를 전함</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">우대 제도 폐지·시정 검토는 다문화가정에 대한 차별과 혐오를 조장할 수 있다</p><p class="side-outlets">이 입장을 앞세운 언론사 없음</p><p class="side-focus">이 입장(진보 진영 일각의 우려)을 중심으로 실은 언론사는 없고, 대통령 반박 기사 안에서 한두 문장으로만 언급됨</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>3곳</small></summary><div class="fold-body"><div class="grp"><b>여권 내 SNS 소통 방식 우려를 함께 전함</b><span class="who">KBS, YTN</span><span class="what">대통령 반박 글과 함께 진보 진영의 우려, 여당 대변인·의원의 소통 방식 보완·신중론, 청송·영양 방문 등 소통 행보를 다룸</span></div><div class="grp"><b>복지정책 공정성 논쟁으로 확장한다는 해석</b><span class="who">한겨레</span><span class="what">대통령 글을 전하며 다문화 지원 문제를 복지정책 전반의 공정성·사회적 신뢰 문제로 넓히고 있는 것으로 보인다고 해석함</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>이 대통령이 지난달 28일 X에서 에펨코리아 게시물을 인용해 공공 산후조리원 등 다문화가정 우대 제도의 폐지 필요성을 검토하겠다고 밝혔다</li><li>이후 진보 진영 일각에서 다문화가정 지원 축소와 혐오 조장 우려가 제기됐고, 대통령은 이튿날부터 연일 X에 반박 글을 올렸다</li><li>대통령은 31일 “다문화가정 지원이 필요한 것은 맞지만 역차별을 낳는 잘못된 구체적 정책까지 정당화할 이유는 될 수 없다”고 썼다</li><li>1일 ‘호남에서 콩이면 영남에서도 콩이어야’ 글에서 “문제가 있다면 시정하자는 것은 다문화가정을 배제하거나 차별하는 조치일 수 없다”고 밝혔다</li><li>대통령은 불합리한 부분을 방치하면 “극우적 혐오 선동과 극단적 여론 분열의 먹잇감이 될 것”이라고 주장했다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261101-pm-01.html"><span>← 이전 뉴스</span>이 대통령 ‘돼지 눈에는 돼지만’ 발언 뒤 해외 순방을 둘러싼 여야·정부 공방 확산</a><a class="next" href="20261101-pm-03.html"><span>다음 뉴스 →</span>루비오 美국무장관, 트럼프의 김정은 회담 의향 재확인하며 일정은 없다고 밝히고 한국 의원 비자 문제는 양자 협의로 풀겠다고 말해</a></nav>
@@ -439,5 +495,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

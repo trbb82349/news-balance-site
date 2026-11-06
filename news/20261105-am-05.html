@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -399,6 +454,7 @@
     <p class="stance-q"><span>쟁점</span>이번 미국 중간선거 결과는 트럼프 대통령에 대한 유권자의 심판이다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">고물가·전쟁·이민 정책에 대한 분노가 트럼프 대통령 심판으로 이어졌다</p><p class="side-outlets">한겨레, 경향신문, 한국일보, 한국경제, 매일경제, 노컷뉴스, JTBC</p><p class="side-focus">제목과 첫 문단에서 &#x27;심판&#x27;·&#x27;분노&#x27;·&#x27;정권 심판&#x27;을 앞세우고, 출구조사·물가·전쟁 피로감 등 민심 이반의 근거를 중심으로 실음</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">트럼프 대통령은 자신이 투표용지에 없었기 때문에 패배했다고 설명했다</p><p class="side-outlets">이 입장을 앞세운 언론사 없음</p><p class="side-focus">이 설명은 트럼프 대통령의 발언으로 여러 기사에 인용됐을 뿐, 이를 중심 주장으로 실은 언론사는 없음</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>7곳</small></summary><div class="fold-body"><div class="grp"><b>선거 결과·의회 구도·인물 정리</b><span class="who">연합뉴스, 조선일보, 중앙일보</span><span class="what">의석 수와 주지사 판세, 이후 의회 대치 전망, 제프리스 하원의장 가능성 등 결과와 인물 소개를 중심으로 전함</span></div><div class="grp"><b>트럼프 대통령 반응과 거부권 중심</b><span class="who">동아일보, KBS, SBS, YTN</span><span class="what">백악관 분위기, &#x27;남 탓&#x27; 발언, 거부권 모자 게시, 남은 임기의 국정 운영 전망과 민주당의 견제 카드를 중심으로 전함</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>3일 치러진 중간선거에서 민주당이 상원·하원을 동시에 탈환했고, 야당이 양원을 함께 되찾은 것은 2006년 이후 20년 만이다</li><li>AP통신 집계로 4일 오전 기준 민주당은 상원 54석, 하원 228석을 확보했다</li><li>텍사스·캔자스·사우스캐롤라이나 등 공화당 강세 지역에서도 민주당이 상원 의석을 얻었고, 주지사 선거에서도 텍사스·오하이오·조지아·아이오와를 가져왔다</li><li>트럼프 대통령은 NYT 인터뷰에서 결과 수용과 민주당과의 협력 의사를 밝혔지만, 트루스소셜에 &quot;내가 투표용지에 없었다&quot;고 쓰고 거부권 행사를 언급했다</li><li>고물가, 이란 전쟁, 강경 이민 정책에 대한 불만이 선거 결과의 배경으로 거론됐고, 하킴 제프리스 원내대표가 첫 흑인 하원의장이 될 가능성이 전해졌다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261105-am-04.html"><span>← 이전 뉴스</span>신촌 세브란스병원 진료실에서 50대 여성이 정신건강의학과 교수에게 흉기를 휘둘러 현행범 체포</a></nav>
@@ -436,5 +492,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -401,6 +456,7 @@
     <p class="note">찬반 형식을 쓰기 전 자료라 언론사별 초점만 있습니다.</p>
   </section>
   <details class="fold" open><summary>언론사별 보도 초점 <small>6개</small></summary><div class="fold-body"><div class="grp"><b>뉴시스·한국경제·경향신문·SBS</b><span class="who"></span><span class="what">특검보와 변호인단의 발언을 나란히 전하는 방식으로, 두 쪽의 주장이 거의 같은 비중으로 소개됨. 변호인단의 &#x27;정치권이 탄핵을 거론하며 사법부를 겁박한다&#x27;는 비판도 전함(뉴시스·한국경제·경향신문).</span></div><div class="grp"><b>연합뉴스</b><span class="who"></span><span class="what">김 여사가 15분가량 직접 발언한 내용(&#x27;성의로 받았다가 반환했다&#x27;)과 발부·기각 시 구속 기간 변화를 자세히 설명. 유정화 변호사의 &quot;법리대로면 석방, 현실 정치를 고려하면 연장&quot; 발언도 소개.</span></div><div class="grp"><b>중앙일보</b><span class="who"></span><span class="what">김 여사의 &quot;윤석열 대통령이 얼마나 깨끗한 사람인데 나에게 인사를 맡기겠나&quot;라는 혐의 부인 발언을 제목에 올리고, 저혈압·불안장애 치료 등 건강 상태를 함께 전함.</span></div><div class="grp"><b>YTN</b><span class="who"></span><span class="what">결과가 정치권 분위기를 좌우한다는 점에 주목해, 석방 여부와 조희대 대법원장 탄핵을 연계해 보는 범여권의 시각과 민주당 박성준 수석대변인의 &#x27;석방용 시간 끌기&#x27; 의구심을 인용.</span></div><div class="grp"><b>한겨레·한국일보·KBS</b><span class="who"></span><span class="what">구속 기간 제도와 사건 경과를 풀어 설명하는 데 비중. 한국일보는 전원합의체 합의기일 경과를, KBS는 김 여사 측이 26일 제출한 의견서 내용을 전함.</span></div><div class="grp"><b>JTBC</b><span class="who"></span><span class="what">심문 결과를 전한 유일한 기사로, 영장 발부를 보도하면서 김 여사가 정신과 약물 복용과 건강 악화를 호소했으나 받아들여지지 않았다고 전함.</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>대법원 2부 오경미 대법관이 27일 오후 2시 30분 대법원 1호 법정에서 비공개로 심문을 진행했고, 김 여사는 화상으로 참여했다.</li><li>3대 의혹 사건의 구속 기간은 31일 만료되며, 이 사건은 대법원 전원합의체에서 심리 중이라 선고가 나오지 않았다.</li><li>특검은 15일 매관매직 사건(2심 징역 5년)으로 추가 구속영장을 발부해 달라고 요청했고, 도주·증거인멸 우려를 주장했다.</li><li>김 여사 측은 별건 구속이며 도주·증거인멸 우려가 없다고 주장했고, 김 여사는 건강 악화를 이유로 치료를 호소했다.</li><li>영장이 발부되면 구속이 이어지고, 발부되지 않으면 구속 만료로 석방될 수 있는 상황이었다.</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261027-pm-01.html"><span>← 이전 뉴스</span>민주당, 의원총회에서 조희대 대법원장 국정조사 실시 결정…국민의힘 &quot;사법부 탄압&quot; 반발</a><a class="next" href="20261027-pm-03.html"><span>다음 뉴스 →</span>룰라 브라질 대통령, 결선서 역전해 4선…보우소나루 출국 금지, 트럼프 &quot;조작된 선거&quot; 발언</a></nav>
@@ -438,5 +494,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

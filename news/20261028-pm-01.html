@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -402,6 +457,7 @@
     <p class="note">찬반 형식을 쓰기 전 자료라 언론사별 초점만 있습니다.</p>
   </section>
   <details class="fold" open><summary>언론사별 보도 초점 <small>8개</small></summary><div class="fold-body"><div class="grp"><b>조선일보</b><span class="who"></span><span class="what">&#x27;강행 예고&#x27; 표현. 작년 &#x27;조희대 없는 청문회&#x27;를 다시 꺼내며 &#x27;선 국조, 후 탄핵&#x27;으로 기조를 바꾼 배경과 야당의 &#x27;망신주기&#x27; 비판을 함께 다룸.</span></div><div class="grp"><b>매일경제</b><span class="who"></span><span class="what">&#x27;강행&#x27; 표현. 국민의힘 반발과 &#x27;사법부 판결 기류&#x27;를 의식한 결정이라는 분석을 덧붙임.</span></div><div class="grp"><b>경향신문</b><span class="who"></span><span class="what">&#x27;추진&#x27; 표현. 의총에서 공개 반대는 없었지만 &#x27;민생이 앞서야 한다&#x27;는 당내 우려를 비중 있게 다룸.</span></div><div class="grp"><b>한국일보</b><span class="who"></span><span class="what">탄핵 역풍과 지지층 반발 사이의 &#x27;절충안&#x27;이라는 정치적 속사정, 갤럽 탄핵 찬반(34% 대 39%)과 실효성 회의론에 초점.</span></div><div class="grp"><b>한겨레</b><span class="who"></span><span class="what">김민석 대표의 &#x27;디테일이 충분히 전달되지 않아 국정조사를 택했다&#x27;는 설명을 중심으로 전함.</span></div><div class="grp"><b>뉴시스</b><span class="who"></span><span class="what">국조 사유와 함께 &#x27;탄핵으로 가는 절차&#x27;라는 당내 발언, 조국혁신당의 &#x27;탄핵 동시 추진&#x27; 요구를 소개.</span></div><div class="grp"><b>KBS·JTBC</b><span class="who"></span><span class="what">민주당 계산(명분·여론 확보, 사퇴 압박)과 국민의힘 &#x27;장외 투쟁&#x27;·&#x27;이지메 정치&#x27; 반발을 양쪽 인용으로 나란히 보도.</span></div><div class="grp"><b>노컷뉴스</b><span class="who"></span><span class="what">외통위 국감 소식과 묶은 라디오형 정리 기사로, &#x27;탄핵 논의는 아직&#x27;이라는 민주당 입장을 전함.</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>민주당은 27일 의원총회에서 조희대 대법원장 국정조사 추진에 의견을 모았다(<button type="button" class="term" data-tip="g-46/01" aria-expanded="false">전은수</button> <button type="button" class="term" data-tip="g-16/01" aria-expanded="false">원내대변인</button>).</li><li>국정조사 요구서는 11월 5일 본회의 보고가 목표다.</li><li>조사 대상으로 대법관 후보자 재제청 거부, 국감 증인 선서 거부, 업무추진비 의혹이 거론됐다.</li><li>현직 대법원장 대상 국정조사는 <button type="button" class="term" data-tip="g-22/01" aria-expanded="false">헌정사상</button> 처음이다.</li><li>국민의힘은 &#x27;사법부 탄압·삼권분립 위반&#x27;이라며 반발했고, 조 대법원장은 입장을 밝히지 않았다.</li></ul></div></details>
 
   <nav class="pager"><a class="next" href="20261028-pm-02.html"><span>다음 뉴스 →</span>선관위 특검, 올림픽공원서 6·3 지방선거 투표지 247만 장 공개검증 착수</a></nav>
@@ -439,5 +495,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

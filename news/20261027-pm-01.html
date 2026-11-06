@@ -362,6 +362,61 @@
   footer { border-top: 1.5px dashed var(--rule-strong); }
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
+
+  .cmt { --p2: #4F7D4A; --p1: #9DBF94; --o: #A9A39A; --n: #D9D2C7; --c1: #B7A3D3; --c2: #75589E;
+         --pro-bg: #F1F8EE; --con-bg: #F6F1FB; --oth-bg: #F4EFE8; --seg-ink: #FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; } }
+  :root[data-theme="dark"] .cmt {
+    --p2: #A9D39C; --p1: #5E7A56; --o: #6E665D; --n: #4A4239; --c1: #6F5F8C; --c2: #C9B5EA;
+    --pro-bg: #1F271B; --con-bg: #262030; --oth-bg: #2A231D; --seg-ink: #17120E; }
+  .cmt h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; }
+  .c-meta { font-family: var(--sans); font-size: .74rem; color: var(--faint); font-weight: 500; }
+  .c-head { margin: 0; padding: .75rem 1rem; border-radius: 16px; background: var(--accent-soft); color: var(--ink);
+            font-family: var(--round); font-size: 1.08rem; line-height: 1.5; border-left: 5px solid var(--accent); }
+  .c-bar { display: flex; gap: 2px; height: 2rem; margin-top: .2rem; }
+  .c-seg { all: unset; box-sizing: border-box; cursor: pointer; min-width: 4px; display: flex; align-items: center; justify-content: center;
+           font-size: .72rem; font-weight: 700; color: var(--seg-ink); font-variant-numeric: tabular-nums; }
+  .c-seg:first-child { border-radius: 10px 0 0 10px; } .c-seg:last-child { border-radius: 0 10px 10px 0; } .c-seg:only-child { border-radius: 10px; }
+  .c-seg:hover, .c-seg:focus-visible, .c-seg.on { box-shadow: inset 0 0 0 2px var(--ink); }
+  .c-p2 { background: var(--p2); } .c-p1 { background: var(--p1); } .c-c1 { background: var(--c1); } .c-c2 { background: var(--c2); }
+  .c-o { background: var(--o); } .c-seg.c-o, .c-seg.c-n { color: var(--ink); }
+  .c-n { background: repeating-linear-gradient(45deg, var(--n) 0 5px, var(--o) 5px 6px); }
+  .c-tip { margin: .1rem 0 0; font-size: .8rem; color: var(--muted); min-height: 1.2em; }
+  .c-legend { display: flex; flex-wrap: wrap; gap: .25rem .9rem; font-size: .82rem; color: var(--muted); }
+  .c-legend i { display: inline-block; width: .75rem; height: .75rem; border-radius: 4px; margin-right: .3rem; vertical-align: -.05rem; }
+  .c-ratio { margin: 0; font-size: .9rem; }
+  .t-pro { color: var(--p2); } .t-con { color: var(--c2); }
+  .c-sides { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .7rem; }
+  .c-box { border-radius: 18px; padding: .8rem .95rem; display: flex; flex-direction: column; gap: .45rem; border: 1.5px dashed transparent; }
+  .c-pro { background: var(--pro-bg); border-color: color-mix(in srgb, var(--p2) 35%, transparent); }
+  .c-con { background: var(--con-bg); border-color: color-mix(in srgb, var(--c2) 35%, transparent); }
+  .c-oth { background: var(--oth-bg); border-color: var(--rule-strong); }
+  .c-box-h { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; }
+  .c-box-h b { font-family: var(--round); font-weight: 400; font-size: 1rem; }
+  .c-pro .c-box-h b { color: var(--p2); } .c-con .c-box-h b { color: var(--c2); }
+  .c-box-h span { font-size: .78rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .c-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+  .c-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .5rem; align-items: start; }
+  .c-emo { width: 1.6rem; height: 1.6rem; display: block; }
+  .c-txt { font-size: .92rem; line-height: 1.5; }
+  .c-txt small { display: block; font-size: .74rem; color: var(--faint); }
+  .c-str { display: inline-block; margin-left: .35rem; font-size: .68rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px;
+           background: var(--surface); color: var(--muted); vertical-align: .1rem; }
+  .c-rest .c-txt { color: var(--muted); }
+  .c-empty { margin: 0; font-size: .88rem; color: var(--muted); }
+  .c-more summary { cursor: pointer; list-style: none; font-size: .82rem; font-weight: 700; color: var(--accent); padding: .3rem 0; }
+  .c-more summary::-webkit-details-marker { display: none; }
+  .c-more summary::after { content: " ▾"; } .c-more[open] summary::after { content: " ▴"; }
+  .c-more summary small { color: var(--faint); font-weight: 500; }
+  .c-more .c-list { margin-top: .4rem; }
+  .c-note { margin: 0; font-size: .84rem; color: var(--muted); line-height: 1.6; }
+  .c-ch { display: grid; grid-template-columns: 4.6rem 1fr; gap: .2rem .7rem; align-items: center; }
+  .c-ch .c-bar { height: 1.1rem; margin: 0; } .c-ch .c-seg { font-size: 0; }
+  .c-ch-name { font-size: .85rem; font-weight: 700; grid-row: span 2; }
+  .c-ch-n { font-size: .74rem; color: var(--faint); }
+  @media (max-width: 600px) { .c-sides { grid-template-columns: 1fr; } .c-head { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -402,6 +457,7 @@
     <p class="note">찬반 형식을 쓰기 전 자료라 언론사별 초점만 있습니다.</p>
   </section>
   <details class="fold" open><summary>언론사별 보도 초점 <small>8개</small></summary><div class="fold-body"><div class="grp"><b>연합뉴스·SBS·매일경제</b><span class="who"></span><span class="what">결정 사실과 일정을 먼저 전한 뒤, 탄핵 대신 국정조사를 택한 배경(중도층 역풍 우려, 오세훈 시장 2심 무죄, 김건희 여사 구속 만료)을 &#x27;분석이 나온다&#x27;는 형태로 소개.</span></div><div class="grp"><b>조선일보</b><span class="who"></span><span class="what">&#x27;밀어붙였다&#x27;는 제목으로 전하며, 김민석 대표가 탄핵을 시사했다가 국정조사로 선회한 과정에 초점. 별도 기사에서는 민주당이 민생보다 탄핵·특검에 몰두한다는 지적을 비중 있게 다룸.</span></div><div class="grp"><b>중앙일보</b><span class="who"></span><span class="what">결정 보도와 함께 국민의힘 박충권 수석대변인의 &#x27;판결 불복&#x27; 논평을 길게 전함. 별도 기사에서는 대법원 와인 구매비 의혹 등 민주당의 공세가 힘을 잃었다는 국민의힘 쪽 시각과 갤럽 탄핵 찬반(34% 대 39%)을 부각.</span></div><div class="grp"><b>한국경제</b><span class="who"></span><span class="what">오세훈 시장 무죄 이후 강성 지지층 압박과 정청래·송영길 의원의 탄핵안 서명을 중심으로, 김 대표가 국정조사로 여론을 살피려 한다는 해석을 전함.</span></div><div class="grp"><b>경향신문·한겨레</b><span class="who"></span><span class="what">경향신문은 오세훈 판결을 &#x27;법원의 정치화&#x27;라 비판한 민주당 지도부 발언과 국정조사가 탄핵 기각 위험 때문에 대안으로 검토된 점에 주목. 한겨레는 전 원내대변인의 설명, 특히 김건희 영장이 나오지 않으면 대법원과 대법원장에 책임을 묻겠다는 취지의 발언을 전함.</span></div><div class="grp"><b>동아일보·노컷뉴스</b><span class="who"></span><span class="what">정점식 원내대표의 &quot;탄핵보다 더 비열하고 악질적&quot;이라는 발언을 제목에 올려 국민의힘 반발을 앞세움. 동아일보는 민주당 김현정 의원의 &quot;탄핵 얘기는 나오지 않았다&quot;는 전언도 소개.</span></div><div class="grp"><b>뉴시스</b><span class="who"></span><span class="what">국정조사 결정, 국민의힘의 &#x27;사법부 노예화&#x27; 규탄, 장동혁 대표의 &#x27;탄핵 불씨용&#x27; 주장을 각각 별도 기사로 전해 국민의힘 입장의 비중이 큼.</span></div><div class="grp"><b>KBS·JTBC</b><span class="who"></span><span class="what">KBS는 전 원내대변인의 질의응답(탄핵은 헌재 인용 가능성까지 고려해야 한다는 설명)을 중심으로 전함. JTBC는 &#x27;탄핵보다 낮은 수위에서 자진 사퇴를 압박하려는 것으로 보인다&#x27;는 해석과, 민주당 내 실효성 우려(주요 증인 불출석 가능성)를 함께 소개.</span></div></div></details>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>민주당은 27일 의원총회에서 조희대 대법원장 국정조사를 실시하기로 의견을 모았다(전은수 원내대변인 브리핑).</li><li>국정조사 요구 안건은 11월 5일 본회의에서 다루는 것이 목표이며, 세부 일정은 정해지지 않았다.</li><li>대법관 후보자 재제청 거부, 국감 증인 선서 거부, 업무추진비 집행 의혹 등이 조사 사유로 언급됐다.</li><li><button type="button" class="term" data-tip="g-45/01" aria-expanded="false">한병도</button> 원내대표는 같은 날 &quot;정치 개입 논란과 권한 남용 의혹을 국민 앞에 밝혀야 한다&quot;고 말했다.</li><li>국민의힘은 정점식 원내대표 등을 내세워 &quot;사법부 탄압·삼권분립 위반&quot;이라며 반발했다.</li></ul></div></details>
 
   <nav class="pager"><a class="next" href="20261027-pm-02.html"><span>다음 뉴스 →</span>대법원, 김건희 여사 추가 구속영장 심문…구속 만료 나흘 앞두고 특검·변호인 공방</a></nav>
@@ -439,5 +495,6 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
+
 </body>
 </html>

@@ -8,6 +8,9 @@
 <meta name="theme-color" content="#1E1712" media="(prefers-color-scheme: dark)">
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="여러 언론사 기사를 같은 사건끼리 묶어 중립 요약과 관점 차이를 붙인 하루 뉴스 정리">
+<script>
+  try { if (!location.hash && !sessionStorage.getItem('nb-entered')) document.documentElement.classList.add('show-intro'); } catch (e) {}
+</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&display=swap">
 <style>
@@ -401,8 +404,61 @@
   @media (hover: hover) { .card:hover { transform: translateY(-3px) rotate(-.3deg); } }
   @media (max-width: 600px) { .full { display: block; } }
 </style>
+<style>
+  .intro { display: none; }
+  html.show-intro body { overflow: hidden; }
+  html.show-intro .intro { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: clamp(1.5rem, 5vh, 2.6rem); padding: 2rem max(16px, env(safe-area-inset-right)) calc(2rem + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    overflow-y: auto; background: var(--bg); box-shadow: 0 12px 30px -10px rgba(110, 70, 30, .35); transition: transform .6s cubic-bezier(.7, 0, .3, 1); }
+  .intro.leaving { transform: translateY(-100%); }
+  .intro-head { display: flex; flex-direction: column; align-items: center; gap: .5rem; text-align: center; }
+  .intro-title { margin: 0; font-family: var(--round); font-size: clamp(3rem, 13vw, 5.6rem); line-height: 1.1; color: var(--ink); }
+  /* 제목 릴레이 통통: 한 바퀴 3.5초 중 앞부분에서만 튀고 쉬었다가 다시. 글자마다 0.1초씩 늦게 출발 */
+  .intro-title span { display: inline-block; transform-origin: 50% 100%;
+    animation: nb-hop 3.5s cubic-bezier(.3, 0, .3, 1) calc(.35s + var(--i) * .1s) infinite both; }
+  @keyframes nb-hop {
+    0%, 22%, 100% { transform: translateY(0) scale(1, 1); }
+    6% { transform: translateY(-.24em) scale(.96, 1.05); }
+    12% { transform: translateY(0) scale(1.08, .9); }
+    16% { transform: translateY(-.06em) scale(.99, 1.02); }
+  }
+  .intro-tagline { margin: 0; font-family: var(--round); font-size: clamp(1.1rem, 4.4vw, 1.45rem); color: var(--accent); }
+  .intro-desc { margin: .4rem 0 0; max-width: 44rem; display: flex; flex-direction: column; gap: .3rem;
+    font-size: clamp(.82rem, 3.4vw, .92rem); line-height: 1.6; color: var(--muted); text-wrap: balance; word-break: keep-all; }
+  .intro-char { width: min(52vw, 14rem, 30vh); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
+    background: var(--accent-soft); border: 1px solid var(--rule-strong); box-shadow: var(--shadow); }
+  .intro-char svg { width: 58%; height: 58%; filter: drop-shadow(0 4px 6px rgba(110, 70, 30, .2)); }
+  .intro-char.has-char { background: none; border: 0; box-shadow: none; }
+  .intro-char.has-char svg { width: 100%; height: 100%; }
+  .intro-go { cursor: pointer; font-family: var(--round); font-size: 1.3rem; color: var(--surface); background: var(--accent);
+    border: 0; border-radius: 999px; padding: .85rem 2.4rem; box-shadow: var(--shadow); transition: transform .15s, filter .15s; }
+  .intro-go:hover { transform: translateY(-2px); filter: brightness(1.08); }
+  .intro-go:active { transform: translateY(0); }
+  .intro-go:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) { html.show-intro .intro { transition: none; } .intro-title span { animation: none; } }
+</style>
 </head>
 <body>
+<section class="intro" aria-label="뉴스밸런스 시작 화면">
+  <div class="intro-head">
+    <p class="intro-title"><span style="--i:0">뉴</span><span style="--i:1">스</span><span style="--i:2">밸</span><span style="--i:3">런</span><span style="--i:4">스</span></p>
+    <p class="intro-tagline">같은 뉴스, 다른 시선, 쉬운 말로</p>
+    <p class="intro-desc"><span>여러 언론사의 하루 기사를 같은 사건끼리 묶어, 언론사마다 무엇을 앞세웠는지 나란히 보여 드려요.</span>
+      <span>낯선 용어에는 밑줄이 있어요. 누르면 쉬운 뜻과 이 기사에서의 의미를 알려 드려요.</span>
+      <span>매일 오전판·오후판으로 새로 정리합니다.</span></p>
+  </div>
+  <div class="intro-char" aria-hidden="true"><svg aria-hidden="true" focusable="false" class="" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.949 11.75H23.969C24.389 11.75 24.719 11.41 24.719 11C24.719 10.59 24.379 10.25 23.969 10.25H19.949C19.569 10.25 19.219 10.07 18.999 9.76999L16.629 6.51999C16.4584 6.2948 16.1854 6.19068 15.9243 6.22353C15.6985 6.22945 15.4794 6.33695 15.339 6.52999L12.969 9.76999C12.749 10.07 12.389 10.25 12.019 10.25H7.99902C7.58902 10.25 7.24902 10.59 7.24902 11C7.24902 11.41 7.58902 11.75 7.99902 11.75H12.019C12.869 11.75 13.679 11.34 14.179 10.66L15.9877 8.1874L17.789 10.65C18.289 11.34 19.099 11.75 19.949 11.75Z" fill="#9B9B9B"/>
+<path d="M15.249 4H16.749V28H15.249V4ZM13.0391 20.73C13.1291 20.88 13.2991 20.96 13.4591 20.96C13.5491 20.96 13.6391 20.94 13.6991 20.88C13.9291 20.73 13.9991 20.42 13.8491 20.19L8.47739 11.8516C8.41545 11.646 8.22717 11.5 7.99907 11.5C7.83813 11.5 7.54907 11.77 7.54907 11.77L2.15907 20.15C2.08907 20.23 2.04907 20.34 2.04907 20.46C2.04907 20.74 2.26907 20.96 2.54907 20.96C2.71907 20.96 2.87907 20.87 2.96907 20.73L7.49902 13.6964V20.8C7.49902 21.08 7.71902 21.3 7.99902 21.3C8.27902 21.3 8.49902 21.08 8.49902 20.8V13.6947L13.0391 20.73ZM29.0391 20.73C29.1291 20.88 29.2991 20.96 29.4591 20.96C29.5491 20.96 29.6391 20.94 29.6991 20.88C29.9291 20.73 29.9991 20.42 29.8491 20.19L24.4774 11.8516C24.4154 11.646 24.2272 11.5 23.9991 11.5C23.8381 11.5 23.64 11.655 23.5491 11.77L18.1591 20.15C18.0891 20.23 18.0491 20.34 18.0491 20.46C18.0491 20.74 18.2691 20.96 18.5491 20.96C18.7191 20.96 18.8791 20.87 18.9691 20.73L23.499 13.6964V20.8C23.499 21.08 23.719 21.3 23.999 21.3C24.279 21.3 24.499 21.08 24.499 20.8V13.6947L29.0391 20.73Z" fill="#D3D3D3"/>
+<path d="M17.5891 3.59C17.5891 4.46813 16.8772 5.18 15.9991 5.18C15.1209 5.18 14.4091 4.46813 14.4091 3.59C14.4091 2.71187 15.1209 2 15.9991 2C16.8772 2 17.5891 2.71187 17.5891 3.59Z" fill="#F9C23C"/>
+<path d="M9.58906 11C9.58906 11.8781 8.87719 12.59 7.99906 12.59C7.12092 12.59 6.40906 11.8781 6.40906 11C6.40906 10.1219 7.12092 9.41 7.99906 9.41C8.87719 9.41 9.58906 10.1219 9.58906 11Z" fill="#F9C23C"/>
+<path d="M2.01904 20.64C1.92904 20.32 2.16904 20 2.50904 20H13.489C13.829 20 14.069 20.32 13.979 20.64C13.239 23.2 10.849 25 7.99904 25C5.14904 25 2.75904 23.2 2.01904 20.64Z" fill="#F9C23C"/>
+<path d="M18.019 20.64C17.929 20.32 18.169 20 18.509 20H29.489C29.829 20 30.069 20.32 29.979 20.64C29.239 23.2 26.849 25 23.999 25C21.149 25 18.759 23.2 18.019 20.64Z" fill="#F9C23C"/>
+<path d="M23.3991 30C23.8791 30 24.1091 29.42 23.7591 29.09C21.7391 27.17 19.0091 26 15.9991 26C12.9891 26 10.2591 27.17 8.23908 29.09C7.88908 29.42 8.11908 30 8.59908 30H23.3991Z" fill="#F9C23C"/>
+<path d="M23.9991 12.59C24.8772 12.59 25.5891 11.8781 25.5891 11C25.5891 10.1219 24.8772 9.41 23.9991 9.41C23.1209 9.41 22.4091 10.1219 22.4091 11C22.4091 11.8781 23.1209 12.59 23.9991 12.59Z" fill="#F9C23C"/>
+</svg></div>
+  <button type="button" class="intro-go">뉴스 들어가기</button>
+</section>
 <div class="page">
   <header class="masthead">
     <div class="kicker">같은 사건, 다른 시선 · 최신 2026.11.06 오후판</div>
@@ -5459,6 +5515,22 @@
   strip.addEventListener('scroll', updateButtons, { passive: true });
   addEventListener('resize', updateButtons);
   updateButtons();
+
+  // 시작 화면: '뉴스 들어가기'를 누르면 위로 걷히고, 이 탭에서는 다시 띄우지 않는다
+  (() => {
+    const intro = document.querySelector('.intro');
+    if (!document.documentElement.classList.contains('show-intro')) { intro.remove(); return; }
+    const go = intro.querySelector('.intro-go');
+    go.focus({ focusVisible: false });  // Enter로 바로 들어갈 수 있게 하되, 테두리는 키보드로 움직일 때만
+    go.addEventListener('click', () => {
+      try { sessionStorage.setItem('nb-entered', '1'); } catch (e) {}
+      const done = () => { document.documentElement.classList.remove('show-intro'); intro.remove(); };
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return done();
+      intro.addEventListener('transitionend', done, { once: true });
+      intro.classList.add('leaving');
+    });
+  })();
+
 </script>
 </body>
 </html>

@@ -709,7 +709,7 @@ document.querySelectorAll('.cmt').forEach(function (sec) {
       <span class="pf-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 1-8 8H5l-3 3V11a9 9 0 0 1 18 0Z"/><path d="M7 10h8M7 14h5"/></svg></span>
       <span><strong>자유게시판</strong><small>서로 다른 생각을 나누는 곳</small></span><span class="pf-arrow" aria-hidden="true">›</span>
     </button>
-    <p class="pf-foot">메모는 나만 · 게시판은 함께</p>
+    <button class="pf-item" type="button" data-pf-open="pf-assistant"><span class="pf-icon" aria-hidden="true">🍮</span><span><strong>푸딩이에게 물어보기</strong><small>용어·뉴스 검색과 쉬운 AI 설명</small></span><span class="pf-arrow" aria-hidden="true">›</span></button><p class="pf-foot">메모는 나만 · 게시판은 함께</p>
   </section>
   <button class="pf-launcher" id="pf-launcher" type="button" aria-label="푸딩 기능 목록 열기" aria-expanded="false" aria-controls="pf-menu">
     <img src="../assets/pudding.webp" alt="" width="102" height="108">
@@ -785,6 +785,47 @@ document.querySelectorAll('.cmt').forEach(function (sec) {
       <div class="nb-challenge" id="nb-report-challenge"></div>
       <div class="nb-actions"><button class="primary" type="submit">신고 보내기</button><button type="button" id="nb-report-cancel">취소</button></div>
     </form>
+  </div>
+</dialog>
+
+<style>
+  #pf-assistant { width: min(590px, calc(100vw - 32px)); }
+  #pf-assistant [hidden] { display:none !important; }
+  .pc-content { display:flex; flex-direction:column; gap:12px; }
+  .pc-intro,.pc-help { color:var(--muted); font-size:12px; line-height:1.7; margin:0; }
+  .pc-types,.pc-shortcuts,.pc-actions { display:flex; flex-wrap:wrap; gap:7px; }
+  .pc-content button,.pc-content select { font:inherit; font-size:12px; color:var(--ink); background:var(--bg); border:1px solid var(--rule-strong); border-radius:10px; padding:8px 11px; cursor:pointer; }
+  .pc-content button:disabled { opacity:.55; cursor:wait; }
+  .pc-content button.primary { background:var(--accent); color:var(--surface); border-color:var(--accent); }
+  .pc-content button:focus-visible,.pc-content select:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  .pc-log { display:flex; flex-direction:column; gap:12px; max-height:40dvh; min-height:100px; overflow:auto; padding:3px; overscroll-behavior:contain; }
+  .pc-bubble { padding:13px 15px; border:1px solid var(--rule); border-radius:15px; background:var(--bg); font-size:13px; line-height:1.8; overflow-wrap:anywhere; }
+  .pc-bubble.user { align-self:flex-end; background:var(--accent-soft); max-width:90%; }
+  .pc-bubble p { margin:0 0 8px; white-space:pre-wrap; }
+  .pc-bubble p:last-child { margin-bottom:0; }
+  .pc-card { padding:11px 0; border-top:1px dashed var(--rule-strong); }
+  .pc-card a { color:var(--accent); font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+  .pc-card small { display:block; color:var(--muted); font-size:11px; }
+  .pc-card p { font-size:12px; margin:5px 0 8px; }
+  #pc-form { display:grid; grid-template-columns:1fr auto; gap:8px; align-items:end; }
+  #pc-query { box-sizing:border-box; min-height:58px; height:58px; max-height:120px; resize:vertical; font-size:14px; }
+  #pc-status { min-height:1.5em; margin:0; color:var(--muted); font-size:12px; }
+  #pc-ai-panel { padding:12px; background:var(--bg); border:1px solid var(--rule); border-radius:12px; }
+  #pc-challenge { min-height:65px; margin:8px 0; }
+  @media(max-width:600px) { .pc-log { max-height:34dvh; } .pc-content { padding:16px !important; } }
+</style>
+<dialog class="pf-window" id="pf-assistant" aria-labelledby="pc-title" aria-describedby="pc-description">
+  <header><div><p class="pf-eyebrow">PUDDING · 뉴스 한 숟갈</p><h2 id="pc-title">푸딩이에게 물어보기</h2></div><button class="pf-x" type="button" data-pf-close aria-label="푸딩 대화창 닫기" autofocus>×</button></header>
+  <div class="pf-content pc-content">
+    <p class="pc-intro" id="pc-description">용어부터 지난 뉴스까지, 한 숟갈씩 찾아드려요 🍮<br>뉴스는 오늘 포함 최근 30일의 게시 자료에서 찾아요.</p>
+    <div class="pc-types"><label for="pc-mode">찾을 자료</label><select id="pc-mode"><option value="auto">용어 + 뉴스</option><option value="terms">용어 뜻</option><option value="news">지난 뉴스</option></select><button type="button" id="pc-current" hidden>지금 읽는 뉴스와 비슷한 소식</button></div>
+    <div class="pc-shortcuts"><button type="button" data-pc-example="국정조사가 뭐야?">국정조사가 뭐야?</button><button type="button" data-pc-example="최근 부동산 뉴스">부동산 뉴스 찾기</button><button type="button" id="pc-clear">대화 비우기</button></div>
+    <div class="pc-log" id="pc-log" role="log" aria-label="푸딩이와의 대화" aria-live="polite"><div class="pc-bubble"><p>궁금한 용어나 뉴스 키워드를 적어주세요. 기본 검색은 AI 한도와 관계없이 이용할 수 있어요.</p></div></div>
+    <p id="pc-status" role="status"></p>
+    <form id="pc-form"><div><label for="pc-query">궁금한 이야기 · 최대 300자</label><textarea id="pc-query" maxlength="300" required placeholder="국정조사가 뭐야? / 최근 부동산 뉴스"></textarea></div><button class="primary" type="submit" id="pc-search">찾아보기</button></form>
+    <div class="pc-actions"><button type="button" id="pc-ai" hidden>찾은 자료를 AI로 쉽게 설명</button></div>
+    <section id="pc-ai-panel" aria-label="AI 설명 요청" hidden><p class="pc-help">이 질문과 선택한 공개 자료를 Cloudflare AI에 보내 설명해요. 개인정보는 적지 말아 주세요. 설명은 틀릴 수 있으니 근거 자료도 함께 확인해 주세요.</p><div id="pc-challenge"></div><div class="pc-actions"><button type="button" id="pc-ai-send" class="primary" disabled>설명 받기</button><button type="button" id="pc-ai-cancel">취소</button></div></section>
+    <p class="pc-help">관련 뉴스는 공통 표현을 바탕으로 찾은 후보예요. 대화는 이 화면에만 남고, 페이지를 새로 열면 초기화돼요.</p>
   </div>
 </dialog>
 
@@ -1062,6 +1103,6 @@ document.querySelectorAll('.cmt').forEach(function (sec) {
   });
   panel.addEventListener('cancel', event => {if (busy) event.preventDefault();});
 })();
-</script>
+</script><script type="application/json" id="pf-assistant-config">{"base": "../", "api": "https://news-balance-board.trbb82349.workers.dev", "sitekey": "0x4AAAAAAF3Q7GHnRkiaU0Gr"}</script><script type="module" src="../assets/assistant_ui.mjs"></script>
 </body>
 </html>

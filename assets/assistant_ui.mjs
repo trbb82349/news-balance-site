@@ -6,10 +6,16 @@ let indexPromise=null,lastRequest=null,searching=false,aiBusy=false,widget=null,
 let aiController=null,aiSequence=0;
 const node=(tag,text,cls)=>{const n=document.createElement(tag);n.textContent=text;if(cls)n.className=cls;return n;};
 const status=text=>{el('pc-status').textContent=text;};
+const scrollConversation=()=>{el('pc-thread').scrollTop=el('pc-thread').scrollHeight;};
+function nextQuestion() {
+  el('pc-query-label').textContent='이어서 질문하기 · 최대 300자';
+  el('pc-query').placeholder='더 궁금한 용어나 뉴스 키워드를 적어주세요';
+  el('pc-query').focus({preventScroll:true});
+}
 function appendBubble(text,user=false) {
   const bubble=node('div','',user?'pc-bubble user':'pc-bubble');bubble.append(node('p',text));log.append(bubble);
   while(log.children.length>16) log.firstElementChild.remove();
-  log.scrollTop=log.scrollHeight;return bubble;
+  return bubble;
 }
 function safeLink(url) {return /^news\/[a-z0-9-]+\.html$/.test(url||'') ? new URL(url,base).href : null;}
 function link(parent,title,url) {const href=safeLink(url);if(!href) return;const a=node('a',title);a.href=href;parent.append(a);}
@@ -40,15 +46,26 @@ async function find(query,mode=el('pc-mode').value,selectedId=null) {
       for(const newsId of (term.newsIds||[]).slice().reverse().slice(0,2)) {const n=index.news.find(n=>n.id===newsId && inRange(n,new Date()));if(n) {const row=node('div','');link(row,'관련 뉴스: '+n.title,n.url);card.append(row);}}
       bubble.append(card);
     }
+    const newsCards=[];
     for(const item of result.news) {
       const card=node('div','','pc-card');link(card,item.title,item.url);card.append(node('small',item.date+' · '+item.category),node('p',item.summary.slice(0,150)+(item.summary.length>150?'…':'')));
       if(item.reason)card.append(node('small',item.reason));
       const actions=node('div','','pc-actions');actions.append(button('비슷한 뉴스',()=>find(item.title+'와 관련된 뉴스','related',item.id)),button('이 뉴스 쉽게 설명',()=>{
         if(aiBusy || searching)return;lastRequest={query:'이 뉴스의 내용을 쉽게 설명해줘',mode:'news',currentId:item.id};startAI();
-      }));card.append(actions);bubble.append(card);
+      }));card.append(actions);card.hidden=newsCards.length>=2;newsCards.push(card);bubble.append(card);
+    }
+    if(newsCards.length>2) {
+      let shown=2;
+      const more=button('',()=>{
+        const first=shown;shown=Math.min(shown+2,newsCards.length);
+        newsCards.slice(first,shown).forEach(card=>{card.hidden=false;});
+        more.textContent=`뉴스 더보기 (${newsCards.length-shown}개 남음)`;more.hidden=shown===newsCards.length;
+        newsCards[first].tabIndex=-1;newsCards[first].focus({preventScroll:true});newsCards[first].scrollIntoView({block:'nearest'});
+      });
+      more.className='pc-more';more.textContent=`뉴스 더보기 (${newsCards.length-shown}개 남음)`;bubble.append(more);
     }
     lastRequest={query,mode,currentId:selectedId};el('pc-ai').hidden=!(result.terms.length||result.news.length)||!config.api;
-    status('뉴스 자료의 최신 게시일: '+index.latestDate);el('pc-query').value='';log.scrollTop=log.scrollHeight;
+    status('뉴스 자료의 최신 게시일: '+index.latestDate);el('pc-query').value='';scrollConversation();nextQuestion();
   } catch(error) {status(error.message);}
   finally {searching=false;el('pc-search').disabled=false;}
 }
@@ -68,6 +85,7 @@ async function captcha() {
 async function startAI() {
   if(aiBusy||searching||!lastRequest)return;
   resetChallenge();el('pc-ai-panel').hidden=false;const sequence=generation;
+  scrollConversation();
   status('사람 확인 후 설명 받기를 눌러주세요.');
   try {
     await captcha();if(sequence!==generation)return;
@@ -88,7 +106,7 @@ el('pc-ai-send').addEventListener('click',async()=>{
     if(!response.ok)throw new Error(data.error||'설명을 만들지 못했어요. 기본 검색을 이용해 주세요.');
     const bubble=appendBubble('🍮 AI가 쉽게 풀어봤어요\n'+data.answer);
     data.sources.forEach((source,i)=>{const row=node('p','');if(source.url)link(row,`[${i+1}] ${source.title}`,source.url);else row.textContent=`[${i+1}] 용어집 · ${source.title}`;bubble.append(row);});
-    bubble.append(node('small','AI 설명은 틀릴 수 있어요. 근거 자료와 함께 확인해 주세요.'));status('설명을 마쳤어요.');resetChallenge();log.scrollTop=log.scrollHeight;
+    bubble.append(node('small','AI 설명은 틀릴 수 있어요. 근거 자료와 함께 확인해 주세요.'));status('설명을 마쳤어요. 이어서 질문해 보세요.');resetChallenge();scrollConversation();nextQuestion();
   } catch(error) {
     if(sequence!==aiSequence)return;
     status(controller.signal.aborted?'설명이 지연되고 있어요. 기본 검색은 이용할 수 있어요.':error.message);

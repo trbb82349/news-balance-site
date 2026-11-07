@@ -829,5 +829,206 @@ document.querySelectorAll('.cmt').forEach(function (sec) {
   });
 });
 </script>
+<!-- 공통 푸딩 메뉴: 개인 메모는 브라우저 저장, 게시판은 준비 중. -->
+<style>
+  html.show-intro .pf-root { visibility: hidden; }
+  body > .page { padding-bottom: 150px; }
+  .pf-root, .pf-window { --pf-shadow: 0 16px 50px #3d2b1f20, 0 2px 8px #3d2b1f0a; color: var(--ink); font-family: inherit; }
+  .pf-root *, .pf-window * { box-sizing: border-box; }
+  .pf-root button, .pf-window button, .pf-window textarea { font: inherit; }
+  .pf-root button, .pf-window button { cursor: pointer; }
+  .pf-root button:focus-visible, .pf-window button:focus-visible, .pf-window textarea:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+  .pf-root [hidden] { display: none !important; }
+  .pf-root { position: fixed; z-index: 60; right: max(24px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); }
+  .pf-launcher { position: relative; display: block; width: 102px; height: 108px; margin-left: auto; padding: 0; border: 0; border-radius: 36px; background: transparent; -webkit-tap-highlight-color: transparent; }
+  .pf-launcher::before { content: ''; position: absolute; width: 62px; height: 9px; bottom: 3px; left: 20px; border-radius: 50%; background: #6f4125; opacity: .13; filter: blur(4px); }
+  .pf-launcher img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 5px 3px #6f41251a); transform-origin: 50% 85%; animation: pf-hop 5s ease-in-out infinite; }
+  .pf-launcher:hover img { animation: none; transform: translateY(-5px) rotate(-5deg); }
+  .pf-launcher[aria-expanded="true"] img { animation: none; transform: rotate(-5deg); }
+  .pf-badge { position: absolute; display: grid; place-items: center; right: 0; bottom: 3px; width: 29px; height: 29px; background: var(--accent); color: var(--surface); border: 3px solid var(--bg); border-radius: 50%; }
+  .pf-badge svg { width: 14px; height: 14px; }
+  .pf-close-mark { display: none; font: 22px/1 sans-serif; }
+  [aria-expanded="true"] .pf-badge svg { display: none; }
+  [aria-expanded="true"] .pf-close-mark { display: block; }
+  .pf-hint { position: absolute; right: 110px; bottom: 35px; width: max-content; margin: 0; padding: 10px 15px; border: 1px solid var(--rule-strong); border-radius: 16px 16px 3px 16px; background: var(--surface); box-shadow: 0 4px 16px #3d2b1f09; font-size: 12px; color: var(--muted); pointer-events: none; }
+  .pf-menu { position: absolute; right: 0; bottom: 124px; width: min(326px, calc(100vw - 32px)); padding: 22px 16px 13px; border: 1px solid var(--rule-strong); border-radius: 24px; background: var(--surface); box-shadow: var(--pf-shadow); animation: pf-appear .2s ease-out; max-height: calc(100dvh - 170px); overflow-y: auto; }
+  .pf-eyebrow { margin: 0 0 6px; color: var(--accent); font-size: 10px; letter-spacing: .12em; font-weight: 700; }
+  .pf-menu h2 { margin: 0; font-family: var(--round, sans-serif); font-size: 23px; font-weight: 400; }
+  .pf-menu header { padding: 0 6px 18px; }
+  .pf-menu header p:last-child { margin: 7px 0 0; font-size: 12px; color: var(--muted); }
+  .pf-item { display: flex; align-items: center; gap: 13px; width: 100%; padding: 14px 12px; margin: 0 0 8px; border: 1px solid var(--rule); border-radius: 16px; background: var(--bg); color: var(--ink); text-align: left; transition: background .15s, transform .15s; }
+  .pf-item:hover { background: var(--accent-soft); transform: translateX(-2px); }
+  .pf-icon { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; border-radius: 13px; background: var(--accent-soft); color: var(--accent); }
+  .pf-icon svg { width: 21px; height: 21px; }
+  .pf-item:nth-of-type(2) .pf-icon { background: var(--teal-soft); color: var(--teal); }
+  .pf-item strong { display: block; font-size: 14px; font-weight: 700; }
+  .pf-item small { display: block; margin-top: 4px; font-size: 11px; color: var(--muted); }
+  .pf-arrow { margin-left: auto; color: var(--faint); font-size: 23px; }
+  .pf-foot { margin: 14px 0 0; text-align: center; color: var(--muted); font-size: 10px; }
+  .pf-window { position: fixed; inset: auto max(24px, env(safe-area-inset-right)) 148px auto; width: min(430px, calc(100vw - 32px)); max-height: calc(100dvh - 180px); margin: 0; padding: 0; overflow: auto; border: 1px solid var(--rule-strong); border-radius: 24px; background: var(--surface); box-shadow: var(--pf-shadow); }
+  .pf-window::backdrop { background: #30211622; }
+  .pf-window[open] { animation: pf-appear .2s ease-out; }
+  .pf-window header { display: flex; justify-content: space-between; align-items: center; padding: 22px 24px 18px; border-bottom: 1px solid var(--rule); }
+  .pf-window h2 { margin: 0; font-family: var(--round, sans-serif); font-weight: 400; font-size: 24px; }
+  .pf-x { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--rule); border-radius: 50%; background: var(--bg); color: var(--muted); font-size: 22px !important; }
+  .pf-content { padding: 22px 24px 24px; }
+  .pf-description { margin: 0 0 18px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+  .pf-window label { display: block; margin-bottom: 9px; font-size: 12px; font-weight: 600; }
+  .pf-window textarea { display: block; resize: vertical; width: 100%; min-height: 175px; max-height: 40vh; padding: 16px; border: 1px solid var(--rule-strong); border-radius: 12px; background: var(--bg); color: var(--ink); font-size: 14px; line-height: 1.9; }
+  .pf-window textarea::placeholder { color: var(--muted); }
+  .pf-form-foot { display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-top: 14px; }
+  .pf-form-foot small { color: var(--muted); font-size: 11px; line-height: 1.6; }
+  .pf-note-status { margin: 12px 0 0; color: var(--teal); font-size: 12px; line-height: 1.6; }
+  .pf-note-status[data-state="error"] { color: var(--flag); }
+  .pf-note-help { margin: 14px 0 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
+  .pf-retry { margin-top: 10px; padding: 9px 12px; border: 1px solid var(--rule-strong); border-radius: 10px; color: var(--accent); background: var(--accent-soft); font-size: 12px !important; }
+  .pf-soon { border: 1px solid var(--rule); border-radius: 10px; background: var(--accent-soft); color: var(--muted); padding: 10px 12px; white-space: nowrap; font-size: 12px !important; cursor: default !important; }
+  .pf-empty { padding: 25px 15px; text-align: center; border: 1px dashed var(--rule-strong); border-radius: 16px; background: var(--bg); }
+  .pf-empty .pf-icon { margin: 0 auto 14px; background: var(--teal-soft); color: var(--teal); width: 50px; height: 50px; }
+  .pf-empty strong { font-size: 15px; }
+  .pf-empty p { margin: 9px auto 0; max-width: 260px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+  @keyframes pf-hop { 0%, 45%, 100% { transform: translateY(0) rotate(0); } 10% { transform: translateY(-6px) rotate(-3deg); } 18% { transform: translateY(0) scale(1.04,.96); } 25% { transform: translateY(-2px) rotate(2deg); } 32% { transform: translateY(0) rotate(0); } }
+  @keyframes pf-appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) {
+    .pf-root { right: max(16px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); }
+    .pf-launcher { width: 84px; height: 90px; }
+    .pf-launcher::before { width: 50px; left: 17px; }
+    .pf-hint { right: 92px; bottom: 29px; font-size: 11px; padding: 9px 12px; }
+    .pf-menu { bottom: 104px; max-height: calc(100dvh - 135px); }
+    .pf-window { right: 16px; bottom: max(120px, calc(env(safe-area-inset-bottom) + 102px)); max-height: calc(100dvh - 150px); }
+    .pf-window header { padding: 18px 20px 15px; }
+    .pf-content { padding: 18px 20px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .pf-root *, .pf-window { animation: none !important; transition: none !important; } }
+</style>
+
+<aside class="pf-root" aria-label="푸딩의 작은 공간">
+  <p class="pf-hint" id="pf-hint">푸딩을 눌러보세요</p>
+  <section class="pf-menu" id="pf-menu" aria-labelledby="pf-menu-title" hidden>
+    <header><p class="pf-eyebrow">YOUR LITTLE SPACE</p><h2 id="pf-menu-title">푸딩의 작은 공간</h2><p>뉴스를 읽고, 생각을 남기는 곳.</p></header>
+    <button class="pf-item" type="button" data-pf-open="pf-notes">
+      <span class="pf-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="15" height="18" rx="2"/><path d="M9 3v18M3 7h4M3 12h4M3 17h4M12 8h5M12 12h5"/></svg></span>
+      <span><strong>나만의 메모장</strong><small>떠오른 생각을 차곡차곡</small></span><span class="pf-arrow" aria-hidden="true">›</span>
+    </button>
+    <button class="pf-item" type="button" data-pf-open="pf-board">
+      <span class="pf-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 1-8 8H5l-3 3V11a9 9 0 0 1 18 0Z"/><path d="M7 10h8M7 14h5"/></svg></span>
+      <span><strong>자유게시판 · 준비 중</strong><small>서로 다른 생각을 나누는 곳</small></span><span class="pf-arrow" aria-hidden="true">›</span>
+    </button>
+    <p class="pf-foot">메모는 내 브라우저에 저장 · 게시판은 준비 중</p>
+  </section>
+  <button class="pf-launcher" id="pf-launcher" type="button" aria-label="푸딩 기능 목록 열기" aria-expanded="false" aria-controls="pf-menu">
+    <img src="../assets/pudding.webp" alt="" width="102" height="108">
+    <span class="pf-badge" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 4h10M3 8h10M3 12h10"/></svg><span class="pf-close-mark">×</span></span>
+  </button>
+</aside>
+
+<dialog class="pf-window" id="pf-notes" aria-labelledby="pf-notes-title" aria-describedby="pf-notes-description">
+  <header><div><p class="pf-eyebrow">MY NOTES · 자동 저장</p><h2 id="pf-notes-title">나만의 메모장</h2></div><button class="pf-x" type="button" data-pf-close aria-label="메모장 닫기" autofocus>×</button></header>
+  <div class="pf-content"><p class="pf-description" id="pf-notes-description">읽다가 떠오른 생각, 기억하고 싶은 한 문장.<br>나만의 공간에 가볍게 적어보세요.</p>
+    <label for="pf-note-text">오늘의 생각 · 최대 2,000자</label><textarea id="pf-note-text" maxlength="2000" placeholder="이 뉴스에 대한 내 생각은…" aria-describedby="pf-note-help" readonly></textarea>
+    <p class="pf-note-status" id="pf-note-status" role="status" aria-live="polite" aria-atomic="true">메모를 불러오는 중이에요.</p>
+    <button class="pf-retry" id="pf-note-retry" type="button" hidden>다시 저장</button>
+    <p class="pf-note-help" id="pf-note-help">같은 기기·브라우저에서 다시 볼 수 있어요. 다른 기기와는 공유되지 않아요.<br>사이트 데이터를 지우거나 시크릿 창을 닫으면 메모가 사라질 수 있어요. 공용 PC에서는 같은 브라우저를 쓰는 사람도 볼 수 있어요.</p>
+  </div>
+</dialog>
+<dialog class="pf-window" id="pf-board" aria-labelledby="pf-board-title" aria-describedby="pf-board-description">
+  <header><div><p class="pf-eyebrow">COMMUNITY · 준비 중</p><h2 id="pf-board-title">자유게시판</h2></div><button class="pf-x" type="button" data-pf-close aria-label="자유게시판 닫기" autofocus>×</button></header>
+  <div class="pf-content"><p class="pf-description" id="pf-board-description">같은 뉴스를 읽어도 생각은 다를 수 있으니까.<br>서로의 이야기를 듣는 공간을 준비하고 있어요.</p>
+    <div class="pf-empty"><span class="pf-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 1-8 8H5l-3 3V11a9 9 0 0 1 18 0Z"/><path d="M7 10h8M7 14h5"/></svg></span><strong>곧, 여기서 만나요</strong><p>의견과 질문을 자유롭게 나누는 공간.<br>게시글과 댓글 기능이 들어올 자리예요.</p></div>
+    <div class="pf-form-foot"><small>아직 글을 작성하거나 공유할 수 없어요.</small><button class="pf-soon" type="button" disabled>글쓰기 준비 중</button></div>
+  </div>
+</dialog>
+<script>
+(() => {
+  const root = document.querySelector('.pf-root');
+  const launcher = document.getElementById('pf-launcher');
+  const menu = document.getElementById('pf-menu');
+  const hint = document.getElementById('pf-hint');
+  const items = [...menu.querySelectorAll('[data-pf-open]')];
+  let visited = false;
+  function setMenu(open, focus = false) {
+    menu.hidden = !open;
+    launcher.setAttribute('aria-expanded', String(open));
+    launcher.setAttribute('aria-label', '푸딩 기능 목록 ' + (open ? '닫기' : '열기'));
+    if (open) visited = true;
+    hint.hidden = visited;
+    if (focus) (open ? items[0] : launcher).focus();
+  }
+  launcher.addEventListener('click', () => setMenu(menu.hidden, true));
+  root.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !menu.hidden) { event.preventDefault(); setMenu(false, true); }
+    if (['ArrowDown', 'ArrowUp'].includes(event.key) && !menu.hidden) {
+      event.preventDefault();
+      const step = event.key === 'ArrowDown' ? 1 : -1;
+      items[(items.indexOf(document.activeElement) + step + items.length) % items.length].focus();
+    }
+  });
+  document.addEventListener('pointerdown', event => { if (!root.contains(event.target) && !menu.hidden) setMenu(false); });
+  document.addEventListener('focusin', event => { if (!root.contains(event.target) && !menu.hidden) setMenu(false); });
+  for (const item of items) {
+    const panel = document.getElementById(item.dataset.pfOpen);
+    item.addEventListener('click', () => { setMenu(false); panel.showModal(); });
+    panel.querySelector('[data-pf-close]').addEventListener('click', () => panel.close());
+    panel.addEventListener('close', () => { setMenu(true); item.focus(); });
+    // 네이티브 dialog가 Esc 닫기와 키보드 초점 가두기를 처리합니다.
+    panel.addEventListener('click', event => {
+      const box = panel.getBoundingClientRect();
+      if (event.target === panel && (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom)) panel.close();
+    });
+  }
+})();
+</script>
+
+<script id="pf-notes-script">
+// 메모 저장 로직은 HTML에 내장되어 별도 서버 없이 실행됩니다.
+(() => {
+  const key = 'news-balance:personal-note:v1';
+  const text = document.getElementById('pf-note-text');
+  const status = document.getElementById('pf-note-status');
+  const retry = document.getElementById('pf-note-retry');
+  let loaded = false;
+  let unsaved = false;
+  function report(message, state) {
+    status.textContent = message;
+    status.dataset.state = state;
+  }
+  function load() {
+    if (unsaved) return; // 저장 실패 중인 입력은 다른 페이지의 저장본으로 덮지 않습니다.
+    try {
+      const saved = localStorage.getItem(key);
+      text.value = saved ?? '';
+      text.readOnly = false;
+      loaded = true;
+      report(saved === null ? '입력하면 이 브라우저에 자동 저장돼요.' : '저장된 메모를 불러왔어요.', saved === null ? 'ready' : 'saved');
+    } catch {
+      // 읽기에 실패한 기존 메모를 빈 입력으로 덮어쓰지 않습니다.
+      loaded = false;
+      text.readOnly = true;
+      report('메모를 불러올 수 없어요. 브라우저의 사이트 저장 허용 설정을 확인한 뒤 새로고침해 주세요.', 'error');
+    }
+  }
+  function save() {
+    if (!loaded) return;
+    unsaved = true;
+    try {
+      // 짧은 메모는 입력 즉시 저장해 창을 바로 닫아도 마지막 입력이 남게 합니다.
+      localStorage.setItem(key, text.value);
+      unsaved = false;
+      report('이 브라우저에 저장됨', 'saved');
+      retry.hidden = true;
+    } catch {
+      report('저장하지 못했어요. 입력한 내용을 복사해 보관하거나 다시 저장해 주세요.', 'error');
+      retry.hidden = false;
+    }
+  }
+  text.addEventListener('input', save);
+  retry.addEventListener('click', save);
+  // 뒤로 가기 캐시와 다른 탭의 저장으로 인한 오래된 내용 덮어쓰기를 막습니다.
+  window.addEventListener('pageshow', load);
+  window.addEventListener('storage', event => { if (event.key === key || event.key === null) load(); });
+  load();
+})();
+
+</script>
 </body>
 </html>

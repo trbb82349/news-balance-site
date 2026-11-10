@@ -478,7 +478,7 @@
     <p class="note">찬반이 갈리는 쟁점이 없는 이슈입니다. 언론사마다 무엇에 초점을 뒀는지만 정리했습니다.</p>
   </section>
   <details class="fold" open><summary>언론사별 보도 초점 <small>3갈래</small></summary><div class="fold-body"><div class="grp"><b>마감 수치·수급 중심</b><span class="who">연합뉴스, KBS, SBS, YTN</span><span class="what">지수 상승 폭과 종목별 등락, 외국인·기관·개인 수급, 환율 등 마감 결과를 전함</span></div><div class="grp"><b>장 초반 사이드카 발동 중심</b><span class="who">JTBC, 노컷뉴스</span><span class="what">사이드카 발동 시각과 조건, 장 초반 지수·종목 상승 폭을 속보 형식으로 전함</span></div><div class="grp"><b>반등 배경·전망 해석 중심</b><span class="who">한겨레, 한국일보</span><span class="what">미국 데이터센터 규제 우려 재평가, 유가 하락 등 반등 원인과 CPI·실적 발표 등 변수를 설명</span></div></div></details>
-  <section class="block cmt"><h2>댓글 반응</h2><p class="note">언론사 유튜브 영상의 댓글 반응은 <strong>21:45~22:00 (한국 시간)</strong> 사이 사이트에 반영될 예정입니다.</p><p class="c-note">최근 분석·사이트 배포 소요 시간을 바탕으로 한 잠정 예상이며, 처리 상황에 따라 늦어질 수 있어요.</p></section>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>코스피는 4.39% 오른 5,239.13, 코스닥은 4.48% 오른 667.61로 4거래일 만에 반등 마감했다</li><li>장 초반 코스피와 코스닥에 매수 사이드카가 잇따라 발동됐다</li><li>삼성전자와 SK하이닉스가 각각 4%대, 6%대 올라 상승을 이끌었다</li><li>외국인이 코스피에서 8거래일 만에 순매수로 돌아섰다</li><li>간밤 미국 필라델피아 반도체지수가 6.86% 급등했다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261110-pm-03.html"><span>← 이전 뉴스</span>정부, 청해부대 작전구역 오만 남방 외해까지 확대안 국무회의 의결…이란은 개입 자제 촉구</a><a class="next" href="20261110-pm-05.html"><span>다음 뉴스 →</span>젠슨 황 엔비디아 CEO, 중국 스파이 의혹 여성과의 불륜 인정…이사회 조사 착수, 주가 장중 8%대 하락</a></nav>
@@ -516,23 +516,7 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
-<script>
-document.querySelectorAll('.cmt').forEach(function (sec) {
-  var tip = sec.querySelector('.c-tip');
-  if (!tip) return;
-  var base = tip.textContent;
-  sec.querySelectorAll('.c-bar').forEach(function (bar) {
-    if (bar.closest('.c-ch')) return;
-    bar.querySelectorAll('.c-seg').forEach(function (s) {
-      function show() { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.toggle('on', o === s); }); tip.textContent = s.dataset.tip; }
-      s.addEventListener('click', show);
-      s.addEventListener('mouseenter', show);
-      s.addEventListener('focus', show);
-    });
-    bar.addEventListener('mouseleave', function () { if (!bar.querySelector('.c-seg:focus')) { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.remove('on'); }); tip.textContent = base; } });
-  });
-});
-</script>
+
 <!-- 공통 푸딩 메뉴: 개인 메모는 브라우저 저장, 게시판은 준비 중. -->
 <style>
   html.show-intro .pf-root { visibility: hidden; }

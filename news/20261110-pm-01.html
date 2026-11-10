@@ -482,7 +482,7 @@
     <p class="stance-q"><span>쟁점</span>조작기소 특검법은 이재명 대통령의 재판을 없애려는 목적의 법이다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">특검법은 대통령 재판을 무력화하는 &#x27;탈옥법&#x27;이며 위헌이다</p><p class="side-outlets">중앙일보, JTBC</p><p class="side-focus">장동혁 대표의 &#x27;탈옥법&#x27;·탄핵 발언과 청와대 앞 규탄 시위, 후보자 관련 야당 의혹 제기를 제목과 첫 문단에 앞세움</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">특검법은 검찰 조작수사·기소의 진상을 밝히기 위한 것이며 공소취소 조항은 삭제됐다</p><p class="side-outlets">이 입장을 앞세운 언론사 없음</p><p class="side-focus">이 입장을 중심으로 실은 언론사는 뚜렷하지 않고, 민주당 반박은 양측 공방 속에서 함께 소개됨</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>9곳</small></summary><div class="fold-body"><div class="grp"><b>여야 공방을 함께 전함</b><span class="who">동아일보, KBS, YTN, 노컷뉴스, SBS</span><span class="what">국민의힘의 규탄·보이콧과 민주당의 반박, 후보자의 해명과 의혹(대장동·친분)을 비슷한 비중으로 전함</span></div><div class="grp"><b>공소취소 지휘 구조·인선·당내 분위기 해설</b><span class="who">한겨레, 경향신문</span><span class="what">법무부 장관의 지휘권 구조, 검찰총장 인선 연기, 국민의힘 내부의 장외투쟁 온도차를 분석</span></div><div class="grp"><b>국회 일정과 장외투쟁 전망</b><span class="who">매일경제, 한국일보</span><span class="what">법사위 한정 보이콧의 배경, 예산 처리 차질 우려, 지방 장외집회 검토 등 향후 일정 중심</span></div></div></details>
-  <section class="block cmt"><h2>댓글 반응</h2><p class="note">언론사 유튜브 영상의 댓글 반응은 <strong>21:45~22:00 (한국 시간)</strong> 사이 사이트에 반영될 예정입니다.</p><p class="c-note">최근 분석·사이트 배포 소요 시간을 바탕으로 한 잠정 예상이며, 처리 상황에 따라 늦어질 수 있어요.</p></section>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>이용철 후보자는 9일 공소취소 여부에 &quot;진상 규명에 집중&quot;하고 나머지는 &quot;법과 원칙&quot;에 따르겠다고 답했다</li><li>이 후보자는 대통령과의 친분이 결격 사유가 아니라고 했고, 대장동 사업 관여 의혹은 부인했다</li><li>조작기소 특검법은 6일 국회 본회의를 통과했고, 공소취소 조항은 수정안에서 빠졌다</li><li>국민의힘은 9일 청와대 앞 현장 최고위와 릴레이 1인 시위를 열고 법사위 예산심사 불참을 선언했다</li><li>민주당은 국민의힘의 <button type="button" class="term" data-tip="g-264/01" aria-expanded="false">보이콧</button>을 민생예산을 볼모로 한 것이라고 비판했다</li></ul></div></details>
 
   <nav class="pager"><a class="next" href="20261110-pm-02.html"><span>다음 뉴스 →</span>청와대, 조작기소 특검법 공포안 10일 아닌 다음 주 국무회의 상정 예정</a></nav>
@@ -520,23 +520,7 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
-<script>
-document.querySelectorAll('.cmt').forEach(function (sec) {
-  var tip = sec.querySelector('.c-tip');
-  if (!tip) return;
-  var base = tip.textContent;
-  sec.querySelectorAll('.c-bar').forEach(function (bar) {
-    if (bar.closest('.c-ch')) return;
-    bar.querySelectorAll('.c-seg').forEach(function (s) {
-      function show() { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.toggle('on', o === s); }); tip.textContent = s.dataset.tip; }
-      s.addEventListener('click', show);
-      s.addEventListener('mouseenter', show);
-      s.addEventListener('focus', show);
-    });
-    bar.addEventListener('mouseleave', function () { if (!bar.querySelector('.c-seg:focus')) { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.remove('on'); }); tip.textContent = base; } });
-  });
-});
-</script>
+
 <!-- 공통 푸딩 메뉴: 개인 메모는 브라우저 저장, 게시판은 준비 중. -->
 <style>
   html.show-intro .pf-root { visibility: hidden; }

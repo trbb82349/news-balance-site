@@ -477,7 +477,7 @@
     <p class="stance-q"><span>쟁점</span>청해부대 작전구역 확대는 호르무즈 우회 파병이다</p><div class="sides"><div class="side side-pro"><p class="side-tag">찬성</p><p class="side-pos">작전구역 확대는 사실상 호르무즈 우회 파병이며 전쟁 개입 위험이 있다</p><p class="side-outlets">노컷뉴스, 한국일보</p><p class="side-focus">&#x27;우회 파병&#x27; 지적과 이란의 경고, 미국 압박 속에 확대가 결정됐다는 점을 앞세우고 국방부 해명은 뒤에 덧붙임</p></div><div class="side side-con"><p class="side-tag">반대</p><p class="side-pos">작전구역 확대는 국민·선박 보호와 해상교통로 안전을 위한 것으로 파병이 아니다</p><p class="side-outlets">조선일보, 한국경제</p><p class="side-focus">국방부의 &#x27;전쟁 절대 불관여&#x27; 입장과 독자 지휘체계, 해적 활동 증가, 오만만 제외 등 정부 설명을 중심으로 실음</p></div></div>
   </section>
   <details class="fold"><summary>중립적 해석·양쪽 함께 전달 <small>7곳</small></summary><div class="fold-body"><div class="grp"><b>이란 반응 중심</b><span class="who">한겨레, 경향신문</span><span class="what">이란 외무부 대변인 발언 전문과 9월 한국어 경고 성명 등 이란의 입장 흐름을 중심으로 전함</span></div><div class="grp"><b>의결 내용·국회 절차·전망 중심</b><span class="who">연합뉴스, 뉴시스, 동아일보, KBS, YTN</span><span class="what">동의안의 구체 내용과 국회 심사 절차, 범여권 반발 속 통과 전망, 호르무즈 기뢰 제거 작전 대비라는 해석을 정리</span></div></div></details>
-  <section class="block cmt"><h2>댓글 반응</h2><p class="note">언론사 유튜브 영상의 댓글 반응은 <strong>21:45~22:00 (한국 시간)</strong> 사이 사이트에 반영될 예정입니다.</p><p class="c-note">최근 분석·사이트 배포 소요 시간을 바탕으로 한 잠정 예상이며, 처리 상황에 따라 늦어질 수 있어요.</p></section>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>청해부대 임무 구역을 아덴만에서 오만 남방 외해까지 확대하는 파견 연장 수정 동의안이 10일 국무회의에서 의결됐다</li><li>해상초계기 1대와 EOD, 무인 소해장비를 추가하고 임무에 &#x27;항행의 자유 회복 지원&#x27;이 들어갔다</li><li>동의안은 국회 동의 절차를 남겨 두고 있고, 국방부는 전쟁에 관여·개입하지 않는다는 원칙을 강조했다</li><li><button type="button" class="term" data-tip="g-438/03" aria-expanded="false">에스마일 바가이</button> 이란 외무부 대변인은 9일 정례 브리핑에서 한국에 역내 군사력 파병 자제를 촉구했다</li><li>조국혁신당·진보당 등 범여권 일부가 &#x27;우회 파병&#x27;이라며 반대하고 있다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261110-pm-02.html"><span>← 이전 뉴스</span>청와대, 조작기소 특검법 공포안 10일 아닌 다음 주 국무회의 상정 예정</a><a class="next" href="20261110-pm-04.html"><span>다음 뉴스 →</span>코스피·코스닥 4%대 상승 마감, 장 초반 매수 사이드카 발동…삼성전자·SK하이닉스 급등</a></nav>
@@ -515,23 +515,7 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
-<script>
-document.querySelectorAll('.cmt').forEach(function (sec) {
-  var tip = sec.querySelector('.c-tip');
-  if (!tip) return;
-  var base = tip.textContent;
-  sec.querySelectorAll('.c-bar').forEach(function (bar) {
-    if (bar.closest('.c-ch')) return;
-    bar.querySelectorAll('.c-seg').forEach(function (s) {
-      function show() { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.toggle('on', o === s); }); tip.textContent = s.dataset.tip; }
-      s.addEventListener('click', show);
-      s.addEventListener('mouseenter', show);
-      s.addEventListener('focus', show);
-    });
-    bar.addEventListener('mouseleave', function () { if (!bar.querySelector('.c-seg:focus')) { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.remove('on'); }); tip.textContent = base; } });
-  });
-});
-</script>
+
 <!-- 공통 푸딩 메뉴: 개인 메모는 브라우저 저장, 게시판은 준비 중. -->
 <style>
   html.show-intro .pf-root { visibility: hidden; }

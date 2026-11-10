@@ -482,7 +482,7 @@
     <p class="note">찬반이 갈리는 쟁점이 없는 이슈입니다. 언론사마다 무엇에 초점을 뒀는지만 정리했습니다.</p>
   </section>
   <details class="fold" open><summary>언론사별 보도 초점 <small>2갈래</small></summary><div class="fold-body"><div class="grp"><b>청와대 설명·17일 심의 전망 전달</b><span class="who">연합뉴스, 뉴시스, 한국일보, 한국경제, 동아일보</span><span class="what">청와대 공지 내용(이송 시점, 긴급성 판단)과 17일 심의 가능성을 사실 위주로 전함(뉴시스는 수사 대상 12건·수사팀 규모 등 법안 내용 추가, 동아일보는 제목에서 &#x27;1주일 여유&#x27;를 짚음)</span></div><div class="grp"><b>법안 배경·정국 쟁점 정리</b><span class="who">매일경제</span><span class="what">특검법 처리 경과와 여야 입장(국민의힘의 위헌 주장 등)을 함께 정리해 설명</span></div></div></details>
-  <section class="block cmt"><h2>댓글 반응</h2><p class="note">언론사 유튜브 영상의 댓글 반응은 <strong>21:45~22:00 (한국 시간)</strong> 사이 사이트에 반영될 예정입니다.</p><p class="c-note">최근 분석·사이트 배포 소요 시간을 바탕으로 한 잠정 예상이며, 처리 상황에 따라 늦어질 수 있어요.</p></section>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>청와대는 <button type="button" class="term" data-tip="g-58/02" aria-expanded="false">특검</button>법 공포안을 10일이 아닌 다음 주 국무회의에 상정할 예정이라고 9일 밝혔다</li><li>법안은 국무회의 개최계획이 정해진 6일 오후에 국회에서 이송됐다</li><li>청와대는 다음 회의 상정이 의무 사항은 아니라고 설명했다</li><li>국무회의가 매주 화요일 열려 17일 심의 가능성이 크다</li><li>법안은 6일 오후 국민의힘 필리버스터 종결 뒤 민주당 주도로 본회의를 통과했다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261110-pm-01.html"><span>← 이전 뉴스</span>이용철 법무장관 후보자 공소취소 질문에 &quot;진상규명 집중&quot;…국민의힘 조작기소 특검법 규탄·법사위 예산심사 보이콧</a><a class="next" href="20261110-pm-03.html"><span>다음 뉴스 →</span>정부, 청해부대 작전구역 오만 남방 외해까지 확대안 국무회의 의결…이란은 개입 자제 촉구</a></nav>
@@ -520,23 +520,7 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
-<script>
-document.querySelectorAll('.cmt').forEach(function (sec) {
-  var tip = sec.querySelector('.c-tip');
-  if (!tip) return;
-  var base = tip.textContent;
-  sec.querySelectorAll('.c-bar').forEach(function (bar) {
-    if (bar.closest('.c-ch')) return;
-    bar.querySelectorAll('.c-seg').forEach(function (s) {
-      function show() { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.toggle('on', o === s); }); tip.textContent = s.dataset.tip; }
-      s.addEventListener('click', show);
-      s.addEventListener('mouseenter', show);
-      s.addEventListener('focus', show);
-    });
-    bar.addEventListener('mouseleave', function () { if (!bar.querySelector('.c-seg:focus')) { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.remove('on'); }); tip.textContent = base; } });
-  });
-});
-</script>
+
 <!-- 공통 푸딩 메뉴: 개인 메모는 브라우저 저장, 게시판은 준비 중. -->
 <style>
   html.show-intro .pf-root { visibility: hidden; }

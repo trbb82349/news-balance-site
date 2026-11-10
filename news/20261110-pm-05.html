@@ -479,7 +479,7 @@
     <p class="note">찬반이 갈리는 쟁점이 없는 이슈입니다. 언론사마다 무엇에 초점을 뒀는지만 정리했습니다.</p>
   </section>
   <details class="fold" open><summary>언론사별 보도 초점 <small>4갈래</small></summary><div class="fold-body"><div class="grp"><b>주가·경영 공백·후계 구도 중심</b><span class="who">연합뉴스, 조선일보, 매일경제, 한국경제, YTN</span><span class="what">주가 급락과 조사 결과에 따른 거취 불확실성, 후계자 부재, 코어위브 등 AI 생태계로의 파장을 주로 다룸</span></div><div class="grp"><b>앨리스 황의 정체와 스파이 의혹 규명 중심</b><span class="who">중앙일보, 동아일보, 한겨레, 경향신문, 노컷뉴스</span><span class="what">앨리스 황과 메가스피드의 이력·실체, 중국 정보기관 포섭 의혹의 근거와 한계, 과거 유사 사례를 설명</span></div><div class="grp"><b>미 정치권·중국 반응과 보도 경위 중심</b><span class="who">KBS, SBS, JTBC, 한국일보</span><span class="what">트럼프 대통령의 두둔과 사전 보고 여부, 중국의 반발, 미 의회 대응과 사생활 관련 후속 보도를 함께 전함</span></div><div class="grp"><b>주주 집단소송·투자자 문제 중심</b><span class="who">뉴시스</span><span class="what">사생활보다 투자자 오도 여부가 소송 쟁점이라는 점과 앨리스 황의 투자 유치 시도 보도를 다룸</span></div></div></details>
-  <section class="block cmt"><h2>댓글 반응</h2><p class="note">언론사 유튜브 영상의 댓글 반응은 <strong>21:45~22:00 (한국 시간)</strong> 사이 사이트에 반영될 예정입니다.</p><p class="c-note">최근 분석·사이트 배포 소요 시간을 바탕으로 한 잠정 예상이며, 처리 상황에 따라 늦어질 수 있어요.</p></section>
+  
   <details class="fold"><summary>공통 사실 더보기 <small>5개</small></summary><div class="fold-body"><ul class="facts"><li>황 CEO는 8일 직원들에게 보낸 글에서 앨리스 황과의 불륜을 인정하고 가족과 직원, 주주에게 사과했다</li><li>엔비디아 이사회는 독립 조사에 착수했고, 국가안보나 기밀이 침해됐다고 믿을 근거는 현재 없다는 입장이다</li><li>9일 엔비디아 주가는 뉴욕증시에서 장중 한때 8.79% 하락했다</li><li>중국 외교부는 간첩 의혹을 근거 없는 중상모략이라며 부인했고, 실제 첩보 활동 여부는 확인되지 않았다</li><li>트럼프 대통령은 황 CEO를 옹호하면서 FBI가 사안을 조사 중이라고 밝혔다</li></ul></div></details>
 
   <nav class="pager"><a class="prev" href="20261110-pm-04.html"><span>← 이전 뉴스</span>코스피·코스닥 4%대 상승 마감, 장 초반 매수 사이드카 발동…삼성전자·SK하이닉스 급등</a></nav>
@@ -517,23 +517,7 @@
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && opener) { const o = opener; closeTip(); o.focus(); } });
   })();
 </script>
-<script>
-document.querySelectorAll('.cmt').forEach(function (sec) {
-  var tip = sec.querySelector('.c-tip');
-  if (!tip) return;
-  var base = tip.textContent;
-  sec.querySelectorAll('.c-bar').forEach(function (bar) {
-    if (bar.closest('.c-ch')) return;
-    bar.querySelectorAll('.c-seg').forEach(function (s) {
-      function show() { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.toggle('on', o === s); }); tip.textContent = s.dataset.tip; }
-      s.addEventListener('click', show);
-      s.addEventListener('mouseenter', show);
-      s.addEventListener('focus', show);
-    });
-    bar.addEventListener('mouseleave', function () { if (!bar.querySelector('.c-seg:focus')) { bar.querySelectorAll('.c-seg').forEach(function (o) { o.classList.remove('on'); }); tip.textContent = base; } });
-  });
-});
-</script>
+
 <!-- 공통 푸딩 메뉴: 개인 메모는 브라우저 저장, 게시판은 준비 중. -->
 <style>
   html.show-intro .pf-root { visibility: hidden; }
